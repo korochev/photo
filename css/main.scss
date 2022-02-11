@@ -1,0 +1,282 @@
+$fontsrc: ('Roboto-Regular.woff2', 'Roboto-Bold.woff2', 'TTFirsNeue-Regular.woff2', 'TTFirsNeue-Bold.woff2');
+$baseuri: '../fonts/';
+$basecolor: #202020;
+$secondcolor: #fff;
+$forwardcolor: #4A4A4A;
+$primarycolor: #FF6E30;
+$rarecolor: #CACACA;
+$lightcolor: #999999;
+$formcolor: #E9E9E9;
+$greycolor: #666666;
+
+$br1st: 700px;
+$br2nd: 1024px;
+$br3rd: 1280px;
+
+@mixin nonvisible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+@mixin tempimg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+@mixin btn {
+    display: inline-block;
+    padding: 15px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    background-color: $primarycolor;
+    color: inherit; 
+}
+@mixin grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 30px;    
+}
+@mixin tag {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    display: block;
+    padding: 7px 14px;
+    font-size: 14px;
+    line-height: 1;
+    color: inherit;
+    background-color: #333333;  
+}
+@mixin placeholder {
+    &::placeholder {
+        color: currentColor;
+    } 
+}
+
+@mixin switch($args) {
+    $block: nth(map-keys($args),1);
+    $list: map-get($args, $block);
+    @if $block == "tab" {
+        @each $cat in $list {
+            @at-root &_cat_#{$cat}:checked ~ .promo > .promo__list_cat_#{$cat} {
+                display: flex;
+            }
+            @at-root &_cat_#{$cat}:checked ~ .service-tab__label-wrap > .service-tab__toggle_cat_#{$cat} {
+                color: $primarycolor;
+                border-bottom: 4px solid currentColor;
+            }
+        }
+    }
+    @else if $block == "galery" {
+        @each $page in $list {
+            @at-root &_page_#{$page}:checked ~ .galery > .galery__list_page_#{$page} {
+                display: grid;
+            }
+            @at-root &_page_#{$page}:checked ~ .label-wrap > .projects__toggle_page_#{$page} {
+                color: $secondcolor;
+                background-color: $primarycolor;
+            }
+            @at-root &_page_#{$page}:focus ~ .label-wrap > .projects__toggle_page_#{$page} {
+                outline: 3px solid red;
+            }
+        }
+    }
+}
+@mixin cleargap($i) {
+    &:not(:nth-child(#{$i}n)) {
+        margin-right: 30px;
+    }
+}
+@mixin heading {
+    font: {
+        family: 'TTFirsNeue', sans-serif;
+        size: 24px;
+        weight: 400;
+    }
+    color: $basecolor;
+    line-height: 1;
+
+    @media (max-width:#{$br2nd}) {
+        font-size: 22px;
+    }
+    @media (max-width:#{$br1st}) {
+        font-size: 18px;
+    }
+    
+}
+
+@mixin lowerstripe {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $forwardcolor;
+    z-index: 2;
+    
+}
+
+@import '_fonts.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus,
+.search__switch:focus ~  .search__toggle {
+    outline: 1px solid $primarycolor;
+}
+
+html,
+body {
+    width: 100%;
+    min-width: 350px;
+    font: {
+        family: 'Roboto', sans-serif;
+        size: 16px;
+        weight: 400;
+        style: normal;
+    }
+    color: $secondcolor;
+    line-height: 28px;
+    scroll-padding-top: 115px;
+
+    @media (max-width:#{$br1st}) {
+        font-size: 14px;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h2 {
+    @include heading;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    line-height: 1;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $secondcolor;
+}
+
+section {
+    padding: 30px 0;
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    line-height: 0;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    @include nonvisible;
+}
+
+[class*="ground-pane"] {
+    filter: grayscale(1);
+}
+
+/* [class*="gototech"]:focus,
+[class*="copyright__link"]:focus {
+    color: red !important;
+    outline: 1px solid red;
+} */ 
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.date {  
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 14px;
+
+    background: {
+        image: url('../img/svg/calendar-white.svg');
+        repeat: no-repeat;
+        size: auto 100%;
+        position: left center;
+    }
+}
+
+
+.sn {
+    display: flex;
+    line-height: 0;
+    &__item {
+        .sn__link {
+            display: inline-block;
+            &__img {
+                width: 30px;
+                height: 30px;;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.logo {
+    line-height: 0;
+    &__link {
+        display: inline-block;
+        .logo__img {
+            width: 190px;
+            height: 30px;
+    
+            @media (max-width:#{$br3rd}) { //new
+                width: 160px;
+            }
+            @media (max-width:#{$br1st}) { //new
+                width: 116px;
+                height: 22px;
+            }
+        }
+    }  
+}
+
+@import '_header.scss';
+
+@import '_hero.scss';
+
+@import '_us.scss';
+
+@import '_projects.scss';
+
+@import '_service.scss';
+
+@import '_masterclass.scss';
+
+@import '_contacts.scss';
+
+@import '_footer.scss';

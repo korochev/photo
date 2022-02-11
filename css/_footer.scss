@@ -1,0 +1,87 @@
+.more__heading,
+.identity__logo {
+    margin-bottom: 8px;
+}
+
+.footer {
+    position: relative;
+    background-color: $basecolor;
+    z-index: 2;
+
+    @media (max-width: $br1st) {
+        &::before {
+            @include lowerstripe; 
+            height: 72px;
+        }
+    }
+
+    &__wrap {
+        @extend .header__wrap;
+        align-items: center;
+
+        @media (max-width: $br1st) {
+            & p, & figure {
+                text-align: center;
+            } 
+        }
+
+        .footer-item {
+            @extend .header-item;
+            @media (max-width: $br1st) {
+                flex: 1 1 100%;
+            }
+        }
+        .footer__identity {
+            order: 0;
+            @media (max-width: $br1st) {
+                order: 1;
+            }
+        }   
+        .footer__citation {
+            order: 1;
+
+            @media (max-width: $br2nd) {
+                display: none;
+            }    
+        }
+        .footer__more {
+            order: 2;
+            @media (max-width: $br1st) {
+                order: 0;
+                margin: 30px 0;
+            }
+        }
+    }
+
+}
+
+.identity {
+    &__copyright {
+        font-family: 'TTFirsNeue', sans-serif;
+        line-height: 1;
+
+        @media (max-width: $br1st) {
+            font-size: 12px;
+        }
+    }
+}
+
+.citation {
+    &__author {
+        font-style: normal;
+        color: $rarecolor;
+    }
+}
+
+.more {
+    &__heading {
+        line-height: 1;
+
+        @media (max-width: $br1st) {
+            font-size: 16px;
+        }
+    }
+    &__sn {
+        justify-content: center;
+    }
+}

@@ -4,252 +4,762 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skillbox. Курсы 3D моделирования</title>
-    <!-- Установка шрифтов -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Сброс стилей по умолчанию -->
+    <title>High pass. Неоновый фотосет 2.0 7 июля 20:00.</title>
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2">
+
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- Формирование двенадцатиколоночной сетки -->
-    <link rel="stylesheet" href="css/grid.css">
-    <!-- Кастомизация стилей -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="header" role="contentinfo" aria-label="Навигация по сайту">
-        <div class="header__container container-xl">
-            <div class="header__logo-wrap" role="region">
-                <a href="#" class="header__logo">
-                    <img src="img/logo.svg" alt="Логотип" class="header__logo-img">
+    <header class="header"> 
+        <div class="header__wrap container">
+            <figure class="header__logo logo header-item">
+                <a href="#" class="logo__link" aria-label="Главная страница">
+                   <img src="img/svg/logo.svg" alt="High pass" class="logo__img"><!-- SVG-спрайт -->
                 </a>
-            </div>
-            <nav class="header__navigation navigation">
-                <input type="checkbox" class="navigation__switch" id="ns">
-                <label id="toggle" class="navigation__toggle" for="ns" role="presentation">
-                    <span aria-controls="menu"  aria-expanded="false" role="button" style="display: block; position:absolute; height: 100%; width: 100%;">
-                        <span class="navigation__icon"></span>
-                    </span>
-                </label>
-                <ul id="menu" class="navigation__menu menu" role="menu" aria-labelledby="toggle">
-                    <li class="menu__item" role="none">
-                        <a href="#hero" class="menu__link" role="menuitem" onclick="hideMenu()">Главная</a>
-                    </li>
-                    <li class="menu__item" role="none">
-                        <a href="#benefits" class="menu__link" role="menuitem" onclick="hideMenu()">О&nbsp;нас</a>
-                    </li>
-                    <li class="menu__item" role="none">
-                        <a href="#teachers" class="menu__link" role="menuitem" onclick="hideMenu()">Преподаватели</a>
-                    </li>
-                    <li class="menu__item" role="none">
-                        <a href="#courses" class="menu__link" role="menuitem" onclick="hideMenu()">Курсы</a>
-                    </li>
+            </figure>
+            <nav class="header__menu menu header-item">
+                <input type="checkbox" id="ms" class="menu__switch" role="presentation" aria-label="Отобразить/скрыть меню" title="hidden checkbox" tabindex="-1" hidden>
+                <label for="ms" class="menu__toggle" aria-hidden="true" role="presentation"><span>x</span></label>
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="#about" class="menu__link">О студии</a></li>
+                    <li class="menu__item"><a href="#projects" class="menu__link"><nobr>Наши проекты</nobr></a></li>
+                    <li class="menu__item"><a href="#service" class="menu__link">Услуги</a></li>
+                    <li class="menu__item"><a href="#masterclass" class="menu__link">Мастер-классы</a></li>
+                    <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
                 </ul>
             </nav>
+            <ul class="header__sn sn header-item">
+                <li class="sn__item">
+                    <a href="" class="sn__link">
+                        <img src="img/svg/insta.svg" alt="Аккаунт Instagram"><!-- SVG-спрайт -->
+                    </a>
+                </li>
+                <li class="sn__item">
+                    <a href="" class="sn__link">
+                        <img src="img/svg/fb.svg" alt="Сообщество Facebook"><!-- SVG-спрайт -->
+                    </a>
+                </li>
+                <li class="sn__item">
+                    <a href="" class="sn__link">
+                        <img src="img/svg/vk.svg" alt="Группа Vkontakte"><!-- SVG-спрайт -->
+                    </a>
+                </li>
+            </ul>
+            <address class="header__phone phone header-item">
+                <a href="tel:+749542423532" class="phone__link">+7 (495) 42-423-532</a><!-- SVG-спрайт -->
+            </address>
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="header__search search header-item">
+                <input type="checkbox" id="hfs" class="search__switch" role="button" aria-label="Отобразить/скрыть форму поиска" title="hidden checkbox">
+                <label for="hfs" class="search__toggle" aria-hidden="true"  role="presentation"><span hidden>x</span></label><!-- SVG-спрайт -->
+                <input type="search" name="data" id="hfd" class="search__data"  placeholder="Что будем искать?" aria-required="false" aria-invalid="false" spellcheck="false">
+                <label for="hfd" class="search__hidden">Нажмите Enter, чтоб осуществить поиск</label>
+            </form>
         </div>
     </header>
-    <section id="hero" class="hero">
-        <div class="hero__container container-xl">
-            <div class="hero__wrap row g-0">
-                <div class="hero__content col-12 col-sm-7 col-lg-5">
-                    <h1 class="hero__heading">Курсы 3D моделирования</h1>
-                    <p class="hero__desc">Следует отметить, что существующая теория способствует повышению качества благоприятных перспектив. Не следует, однако, забывать.</p>
-                    <div class="hero__btn">
-                        <a href="#" class="btn btn_big" role="button">Выбрать курс</a>
+    <main>
+        <section class="hero">
+            <div class="hero__wrap container">
+                <article class="hero__bar hero-bar">
+                    <img src="img/hero/1.jpg" alt="Пример работ фотографа" class="hero-img" style="height: 100%;"><!-- WEBP -->
+                    <a href="#" class="hero-bar__tag">#мастеркласс</a>
+                    <div class="hero-bar__info">
+                        <p class="hero-bar__desc">Мастер-класс от Игоря Робова</p>
+                        <h1 class="hero-bar__title">Неоновый фотосет&nbsp;2.0<br> 7 июля 20:00</h1>
+                        <a href="#" class="hero-bar__btn" role="button">Узнать больше</a>
                     </div>
-                </div>
-                <div class="hero__image col"></div>
+                </article>
+                <article class="hero__big hero-big">
+                    <p class="hero-big__caption">Работы участников предыдущего мастер-класса</p>
+                    <figure class="hero-big__img-wrap">
+                        <img src="img/hero/2.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                    </figure>
+                </article>
+                <figure class="hero__leg hero-leg">
+                    <img src="img/hero/3.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                </figure>
+                <figure class="hero__rig hero-rig">
+                    <img src="img/hero/4.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                </figure>
             </div>
-        </div>
-    </section>
-    <section  class="benefits container-xl">
-        <span id="benefits"></span>
-        <div class="benefits__info benefits-info row">
-            <div class="benefits-info__img-wrap col-sm-4 col-md-3">
-                <img src="img/firewood.svg" alt="Декоративная иконка/разделитель" class="benefits-info__img">
+        </section>
+        <section id="about" class="us">
+            <div class="us__wrap container">
+                <h2 class="us__title">О студии</h2>
+                <article class="us__content">
+                    <div class="us__content-item">
+                        <p class="us__text">В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий  фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.</p>
+                    </div>
+                    <div class="us__content-item">
+                        <figure class="us__img-wrap">
+                            <img src="img/camera.jpg" class="us__img" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                        </figure>
+                        <p class="us__mailing-list" id="usl">Подписаться на рассылку</p>
+                        <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="us__feedback feedback">
+                            <input type="email" name="email" id="fe" class="feedback__email" placeholder="E-mail" aria-required="false" aria-invalid="false" aria-labelledby="usl" spellcheck="false">
+                            <input type="submit" value="Отправить" class="feedback__submit" aria-label="Отправить форму">
+                        </form>
+                    </div>
+                </article>
             </div>
-            <div class="benefits-info__content col">
-                <h2 class="benefits-info__heading">Преимущества обучения в skillbox</h2>
-                <p class="benefits-info__desc">Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут рассмотрены исключительно в разрезе маркетинговых предпосылок.</p>
+        </section>
+        <section id="projects" class="projects" style="position: relative;">
+            <div class="container">
+                <h2 class="projects__title">Наши проекты</h2>
+                <input type="radio" class="projects__switch projects__switch_page_1" name="ps" id="psp1" role="button" aria-label="Список 1" aria-current="true" tabindex="-1" checked>
+                <input type="radio" class="projects__switch projects__switch_page_2" name="ps" id="psp2" role="button" aria-label="Список 2" tabindex="-1">
+                <div class="projects__gallery galery">
+                    <ul class="galery__list galery__list_page_1">
+                        <li class="galery-posts galery__posts galery__posts_page_1">
+                            <ul class="galery-posts__list">
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-1/small-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag" data-change="have">#пейзаж</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">Синтетически, смешаны с не уникальными данными до степени...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-06-16">16 июня</time>
+                                    </a>
+                                </li>
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-1/small-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag">#портрет</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">В своём стремлении улучшить опыт мы упускаем, что явные...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-05-28">28 мая</time>
+                                    </a>
+                                </li>
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-1/small-03.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag">#предмет</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">Равным образом, высокое качество позиционных...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-05-14">14 мая</time>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_1">
+                            <img src="img/projects/page-1/big-01.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <a href="#" class="galery-tag">#fuji</a>
+                            <div class="prevhit__info">
+                                <a href="#" class="prevhit__date date">
+                                    <time datetime="2021-04-09">9 апреля</time>
+                                </a>
+                                <p class="prevhit__heading"><strong>Cемантический разбор</strong></p>
+                                <p class="prevhit__desc">В рамках спецификации современных стандартов, интерактивные прототипы</p>
+                            </div>
+                            <a href="#" class="prevhit__btn" role="button">О проекте</a>
+                        </li>
+                        <li class="galery__prevhit prevhit galery-different galery-different_page_1">
+                            <img src="img/projects/page-1/big-02.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <a href="#" class="galery-tag">#проектзабвение</a>
+                            <div class="prevhit__info">
+                                <a href="#" class="prevhit__date date">
+                                    <time datetime="2021-03-21">21 марта</time>
+                                </a>
+                                <p class="prevhit__heading"><strong>Забвение</strong></p>
+                                <p class="prevhit__desc">Играет важную роль в формировании глубокомысленных рассуждений</p>
+                            </div>
+                            <a href="#" class="prevhit__btn" role="button">О проекте</a>
+                        </li>
+                        <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_1">
+                            <figure class="evtprofile__img-wrap">
+                                <img src="img/projects/page-1/middle-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <a href="#" class="galery-tag">#ретушь</a>
+                            </figure>
+                            <a href="#" class="evtprofile__extract">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</a>
+                            <a href="#" class="evtprofile__date date">
+                                <time datetime="2021-03-09">9 марта</time>
+                            </a>
+                        </li>
+                        <li class="galery__evtprofile evtprofile galery__portrait galery__portrait_page_1">
+                            <figure class="evtprofile__img-wrap">
+                                <img src="img/projects/page-1/middle-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <a href="#" class="galery-tag">#портрет</a>
+                            </figure>
+                            <a href="#" class="evtprofile__extract">С учётом сложившейся международной обстановки, новая модель организационной...</a>
+                            <a href="#" class="evtprofile__date date">
+                                <time datetime="2021-03-01">1 марта</time>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="galery__list galery__list_page_2">
+                        <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_2">
+                            <img src="img/projects/page-2/big-01.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <a href="#" class="galery-tag" data-change="have">#портрет</a>
+                            <div class="prevhit__info">
+                                <a href="#" class="prevhit__date date">
+                                    <time datetime="2021-02-24">24 февраля</time>
+                                </a>
+                                <p class="prevhit__heading"><strong>Спорная точка зрения</strong></p>
+                                <p class="prevhit__desc">Ясность нашей позиции очевидна: убеждённость некоторых оппонентов</p>
+                            </div>
+                            <a href="#" class="prevhit__btn" role="button">О проекте</a>
+                        </li>
+                        <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_2">
+                            <figure class="evtprofile__img-wrap">
+                                <img src="img/projects/page-2/middle-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <a href="#" class="galery-tag">#ретушь</a>
+                            </figure>
+                            <a href="#" class="evtprofile__extract">Идейные соображения высшего порядка, а также убеждённость некоторых оппонентов...</a>
+                            <a href="#" class="evtprofile__date date">
+                                <time datetime="2021-02-20">20 февраля</time>
+                            </a>
+                        </li>
+                        <li class="galery__evtprofile evtprofile  galery__portrait galery__portrait_page_2">
+                            <figure class="evtprofile__img-wrap">
+                                <img src="img/projects/page-2/middle-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <a href="#" class="galery-tag">#портрет</a>
+                            </figure>
+                            <a href="#" class="evtprofile__extract">Прежде всего, повышение уровня гражданского сознания говорит о возможностях приоритизации...</a>
+                            <a href="#" class="evtprofile__date date">
+                                <time datetime="2021-02-18">18 февраля</time>
+                            </a>
+                        </li>
+                        <li class="galery-posts galery__posts galery__posts_page_2">
+                            <ul class="galery-posts__list">
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-2/small-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag">#пейзаж</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">Равным образом, сложившаяся структура организации...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-02-13">13 февраля</time>
+                                    </a>
+                                </li>
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-2/small-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag">#предмет</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">Безусловно, реализация намеченных плановых заданий обеспечивает...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-02-10">10 февраля</time>
+                                    </a>
+                                </li>
+                                <li class="galery-posts__item evtprofile">
+                                    <figure class="evtprofile__img-wrap">
+                                        <img src="img/projects/page-2/small-03.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <a href="#" class="galery-tag">#пейзаж</a>
+                                    </figure>
+                                    <a href="#" class="evtprofile__extract">Безусловно, курс на социальный национальный...</a>
+                                    <a href="#" class="evtprofile__date date">
+                                        <time datetime="2021-02-07">7 февраля</time>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="galery__prevhit prevhit galery-different galery-different_page_2">
+                            <img src="img/projects/page-2/big-02.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <a href="#" class="galery-tag">#проектджаз</a>
+                            <div class="prevhit__info">
+                                <a href="#" class="prevhit__date date">
+                                    <time datetime="2021-02-02">2 февраля</time>
+                                </a>
+                                <p class="prevhit__heading"><strong>Задания по разработке своевременного</strong></p>
+                                <p class="prevhit__desc">Повседневная практика показывает, что сложившаяся структура организации играет важную роль</p>
+                            </div>
+                            <a href="#" class="prevhit__btn" role="button">О проекте</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="label-wrap">
+                        <label for="psp1" class="projects__toggle projects__toggle_page_1" aria-hidden="true" role="presentation" tabindex="0">1</label><!-- 
+                     --><label for="psp2" class="projects__toggle projects__toggle_page_2" aria-hidden="true" role="presentation" tabindex="0">2</label>
+                </div>
             </div>
-        </div>
-        <ul class="benefits__list benefits-list row row-cols-12 row-cols-sm-3 gy-4">
-            <li class="benefits-list__item">
-                <img src="img/benefits/1.svg" alt="Стильная иконка" class="benefits-list__icon">
-                <p class="benefits-list__text">Результат вашего обучения является самым важным для нас приоритетом</p>
-            </li>
-            <li class="benefits-list__item">
-                <img src="img/benefits/2.svg" alt="Стильная иконка" class="benefits-list__icon">
-                <p class="benefits-list__text">Лично познакомитесь с одним из своих будущих преподавателей</p>
-            </li>
-            <li class="benefits-list__item">
-                <img src="img/benefits/3.svg" alt="Стильная иконка" class="benefits-list__icon">
-                <p class="benefits-list__text">Значимость этих проблем очевидна, поэтому стоит всегда быть внимательным</p>
-            </li>
-        </ul>
-    </section>
-    <section class="teachers">
-        <span id="teachers"></span>
-        <div class="teachers__container container-xl">   
-            <h2 class="teachers__heading">Преподаватели курса</h2>
-            <ul class="teachers__list row row-cols-12 row-cols-sm-2 row-cols-lg-4 gy-4">
-                <li class="teachers__item grid-column">
-                    <div class="teachers__img-wrap">
-                        <picture>
-                            <source srcset="img/teachers/1.jpg 1x, img/teachers/1@2x.jpg 2x">
-                            <img src="img/teachers/1@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
-                        </picture>
+        </section>
+        <section id="service" class="service">
+            <div class="service__wrap container">
+                <section class="service__tab service-tab">
+                    <h2 class="service-title">Услуги студии</h2>
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" role="tab" aria-selected="true" checked>
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" role="tab">
+                    <div class="service-tab__label-wrap">
+                        <label for="sas-g" class="service-tab__toggle service-tab__toggle_cat_gen" aria-hidden="true" role="presentation">Основной перечень</label>
+                        <label for="sas-r" class="service-tab__toggle service-tab__toggle_cat_ret" aria-hidden="true" role="presentation">Услуги по ретуши</label>
                     </div>
-                    <div class="teachers__person">
-                        <strong class="teachers__name grid-title">Владимир Петров</strong>
-                        <p class="teachers__bio">Лишь непосредственные участники технического прогресса неоднозначны и будут в равной степени предоставлены сами себе.</p>
+                    <div class="service-tab__promo promo">
+                        <ul class="promo__list promo__list_cat_gen" role="tabpanel" aria-labelledby="sas-g">
+                            <li class="promo__item product product_cat_gen">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/general/1.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Высокий уровень вовлечения</strong></p>
+                                    <p class="product__desc">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_gen">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/general/2.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Диаграммы связей</strong></p>
+                                    <p class="product__desc">Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за собой процесс.</p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_gen">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/general/3.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Высоко<wbr>технологичная концепция</strong></p>
+                                    <p class="product__desc">В частности, убеждённость некоторых оппонентов способствует подготовке и реализации анализа существующих паттернов.</p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_gen">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/general/4.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Сложившаяся структура организации</strong></p>
+                                    <p class="product__desc">Кстати,  сторонники тоталитаризма в науке будут объединены в целые кластеры себе подобных.</p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="promo__list promo__list_cat_ret" role="tabpanel" aria-labelledby="sas-r">
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/1.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Принимая во внимание показатели</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/2.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Таким образом, выбранный нами...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/3.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Также как высокое качество...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/4.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Безусловно, семантический разбор...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/5.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Внезапно, предприниматели в интернете...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/6.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Есть над чем подумать: активные...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/7.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Сделанные на базе аналитики выводы...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/8.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Как принято считать, сторонники...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/9.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Задача организации, в особенности...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="promo__item product product_cat_ret">
+                                <figure class="product__image-wrap">
+                                    <img src="img/service/tab/retouch/10.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                </figure>
+                                <div class="product__info">
+                                    <p class="product__heading"><strong>Активно развивающиеся страны...</strong></p>
+                                    <a href="#" class="product__link">Подробнее</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-                <li class="teachers__item grid-column">
-                    <div class="teachers__img-wrap">
-                        <picture>
-                            <source srcset="img/teachers/2.jpg 1x, img/teachers/2@2x.jpg 2x">
-                            <img src="img/teachers/2@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
-                        </picture>
+                </section>
+                <article class="service__sale sale">
+                    <img src="img/service/sale.jpg" alt="Образец портретной съемки девушки" class="sale__background-img service-img">
+                    <p class="sale__attent">
+                        <b class="sale__1stline">Акция!</b>
+                        <small class="sale__2ndline">Только в июне</small>
+                    </p>
+                    <div class="sale__info-wrap">
+                        <img src="img/service/discount.svg" alt="Размер скидки" class="sale__discount">
+                        <div class="sale__nestel">
+                            <p class="sale__condition">1,5 часа портретной съемки<br>+ ретушь 10 снимков</p>
+                            <a href="" class="sale__btn" role="button">Узнать больше</a>
+                        </div>
                     </div>
-                    <div class="teachers__person">
-                        <strong class="teachers__name grid-title">Денис Сергеев</strong>
-                        <p class="teachers__bio">Безусловно, разбавленное изрядной долей эмпатии, рациональное мышление.</p>
+                </article>
+                <aside class="service__portfolio portfolio">
+                    <h2 class="service-title">Выполненные работы</h2>
+                    <div class="portfolio__area">
+                        <ul class="portfolio__list">
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/1.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/2.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/3.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/4.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/5.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/6.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/7.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/8.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/9.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/10.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/11.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/12.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/13.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/14.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/15.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part1/16.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                            </li>
+                        </ul>
+                        <ul class="portfolio__list_overlay portfolio__list">
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/1.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/2.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/3.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/4.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/5.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/6.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/7.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/8.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/9.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/10.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/11.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/12.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/13.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/14.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/15.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                            <li class="portfolio__item">
+                                <img src="img/service/portfolio/part2/16.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                            </li>
+                        </ul>
                     </div>
-                </li>
-                <li class="teachers__item grid-column">
-                    <div class="teachers__img-wrap">
-                        <picture>
-                            <source srcset="img/teachers/3.jpg 1x, img/teachers/3@2x.jpg 2x">
-                            <img src="img/teachers/3@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
-                        </picture>
-                    </div>
-                    <div class="teachers__person">
-                        <strong class="teachers__name grid-title">Михаил Андреев</strong>
-                        <p class="teachers__bio">Ясность нашей позиции очевидна: высокое качество позиционных исследований напрямую зависит от вывода.</p>
-                    </div>
-                </li>
-                <li class="teachers__item grid-column">
-                    <div class="teachers__img-wrap">
-                        <picture>
-                            <source srcset="img/teachers/4.jpg 1x, img/teachers/4@2x.jpg 2x">
-                            <img src="img/teachers/4@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
-                        </picture>
-                    </div>
-                    <div class="teachers__person">
-                        <strong class="teachers__name grid-title">Константин Дмитриев</strong>
-                        <p class="teachers__bio">Мы вынуждены отталкиваться от того, что существующая теория, в своём классическом представлении.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section class="courses container-xl">
-        <span id="courses"></span>
-        <h2 class="courses__heading">Курсы</h2>
-        <ul class="courses__list row row-cols-12 row-cols-sm-2 gy-4">
-            <li class="courses__item grid-column">
-                <div class="courses__img-wrap">
-                    <picture>
-                        <source srcset="img/courses/1.png 1x, img/courses/1@2x.png 2x">
-                        <img src="img/courses/1.png" alt="Образец 3d-моделирования" class="courses__img">
-                    </picture>
-                    <span class="img-docked" aria-hidden="true">60 часов</span>
+                </aside>
+            </div>
+        </section>
+        <section id="masterclass" class="masterclass">
+            <div class="masterclass__wrap container">
+                <h2 class="masterclass__title">Мастер-классы</h2>
+                <div class="masterclass__content">
+                    <article class="masterclass__bestseller bestseller">
+                        <figure class="bestseller__img-wrap">
+                            <img src="img/masterclass/big.jpg" alt="Выставочная работа лектора" class="bestseller__img">
+                        </figure>
+                        <div class="bestseller__info-wrap">
+                            <p class="bestseller__validity">
+                                <time class="updateon" datetime="2021-06-08T15:00">
+                                    <a href="#" class="updateon__date date">8 июня</a>
+                                    <a href="#" class="updateon__time">15:00</a>
+                                </time>
+                            </p>
+                            <p class="bestseller__heading"><strong>Пленка для начинающих</strong></p>
+                            <p class="bestseller__desc">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: семантический разбор внешних противодействий, в своём классическом представлении.</p>
+                            <a href="" class="bestseller__btn" role="button">Узнать больше</a> 
+                        </div>
+                    </article>
+                    <ul class="masterclass__list masterclass-list">
+                        <li class="masterclass-list__workshop workshop">
+                            <figure class="workshop__img-wrap">
+                                <img src="img/masterclass/01.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                            </figure>
+                            <div class="workshop__info-wrap">
+                                <p class="workshop__validity">
+                                    <time class="updateon" datetime="2021-06-09T15:00">
+                                        <a href="#" class="updateon__date date">9 июня</a>
+                                        <a href="#" class="updateon__time">15:00</a>
+                                    </time>
+                                </p>
+                                <p class="workshop__extract">Ретушь. Продвинутый уровень</p>
+                            </div>
+                        </li>
+                        <li class="masterclass-list__workshop workshop">
+                            <figure class="workshop__img-wrap">
+                                <img src="img/masterclass/02.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                            </figure>
+                            <div class="workshop__info-wrap">
+                                <p class="workshop__validity">
+                                    <time class="updateon" datetime="2021-06-10T16:00">
+                                        <a href="#" class="updateon__date date">10 июня</a>
+                                        <a href="#" class="updateon__time">16:00</a>
+                                    </time>
+                                </p>
+                                <p class="workshop__extract">Портретная съемка. Свет</p>
+                            </div>
+                        </li>
+                        <li class="masterclass-list__workshop workshop">
+                            <figure class="workshop__img-wrap">
+                                <img src="img/masterclass/03.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                            </figure>
+                            <div class="workshop__info-wrap">
+                                <p class="workshop__validity">
+                                    <time class="updateon" datetime="2021-06-11T16:00">
+                                        <a href="#" class="updateon__date date">11 июня</a>
+                                        <a href="#" class="updateon__time">16:00</a>
+                                    </time>
+                                </p>
+                                <p class="workshop__extract">Макросъемка. Проблемы и нюансы</p>
+                            </div>
+                        </li>
+                        <li class="masterclass-list__workshop workshop">
+                            <figure class="workshop__img-wrap">
+                                <img src="img/masterclass/04.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                            </figure>
+                            <div class="workshop__info-wrap">
+                                <p class="workshop__validity">
+                                    <time class="updateon" datetime="2021-06-13T18:00">
+                                        <a href="#" class="updateon__date date">13 июня</a>
+                                        <a href="#" class="updateon__time">18:00</a>
+                                    </time>
+                                </p>
+                                <p class="workshop__extract">Творческая ретушь для начинающих</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="courses__text">
-                    <strong class="courses__title grid-title">Cinema 4d для начинающих</strong>
-                    <p class="courses__desc">Учитывая ключевые сценарии поведения, базовый вектор развития напрямую зависит от системы массового участия. Следует отметить, что сложившаяся структура организации напрямую зависит от стандартных подходов.</p>
+            </div>
+        </section>
+        <section id="contacts" class="contacts">
+            <div class="contacts-wrap container">
+                <h2 class="contacts__title">Контакты</h2>
+                <div class="contacts__content">
+                    <article class="contacts__map map">
+                        <div class="map__layer_upper popup" id="popup">
+                            <p class="popup__heading"><strong>Студия “High pass”</strong></p>
+                            <address class="popup__address">
+                                107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                                <a href="tel:+749542423532" class="popup__phone">+7 (495) 42-423-532</a></address>
+                            <a href="#popup" class="popup__close"><img src="img/svg/х.svg" alt="Крестик"></a>
+                        </div>
+                        <div class="map__layer_bottom" id="map" style="width: 100%; height: 100%;" tabindex="-1" role="application"></div>
+                    </article>
+                    <article class="contacts__fback fback">
+                        <p class="fback__heading"><strong>Оставить заявку</strong></p>
+                        <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="fback__form fback-form" novalidate>
+                            <label for="message" class="fback-form__label">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</label>
+                            <fieldset class="fback-form__fieldset" aria-label="Укажите Ваше имя (можно без фамилии)">
+                                <input type="text" name="name" value="" class="fback-form__input" id="fname" aria-required="false" aria-invalid="false" placeholder="Имя"  spellcheck="false">
+                            </fieldset>
+                            <fieldset class="fback-form__fieldset" aria-label="Напишите коррекный адрес электронной почты">
+                                <input type="email" name="email" value="" class="fback-form__input" id="email" aria-required="true" aria-invalid="false" placeholder="E-mail"  spellcheck="false">
+                            </fieldset>
+                            <fieldset class="fback-form__fieldset" aria-label="Как можно точнее укажите цель мероприятия и дополнительную информацию по заказу">
+                                <textarea name="message" class="fback-form__input fback-form__input_textarea" id="message" aria-required="false" aria-invalid="false" placeholder="Комментарий"  spellcheck="false"></textarea>
+                            </fieldset>
+                            <fieldset class="fback-form__fieldset" aria-label="Нажмите, чтобы отправить форму">
+                                <input type="submit" value="Отправить" class="fback-form__btn">
+                            </fieldset>
+                        </form>
+                    </article>
                 </div>
-                <div class="courses__btn-wrap">
-                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
-                </div>
-            </li>
-            <li class="courses__item grid-column">
-                <div class="courses__img-wrap">
-                    <picture>
-                        <source srcset="img/courses/2.png 1x, img/courses/2@2x.png 2x">
-                        <img src="img/courses/2.png" alt="Образец 3d-моделирования" class="courses__img">
-                    </picture>
-                    <span class="img-docked" aria-hidden="true">40 часов</span>
-                </div>
-                <div class="courses__text">
-                    <strong class="courses__title grid-title">Blender: продвинутый уровень</strong>
-                    <p class="courses__desc">Но убеждённость некоторых оппонентов в значительной степени обусловливает важность форм воздействия. Внезапно, тщательные исследования конкурентов представлены.</p>
-                </div>
-                <div class="courses__btn-wrap">
-                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
-                </div>
-            </li>
-            <li class="courses__item grid-column">
-                <div class="courses__img-wrap">
-                    <picture>
-                        <source srcset="img/courses/3.png 1x, img/courses/3@2x.png 2x">
-                        <img src="img/courses/3.png" alt="Образец 3d-моделирования" class="courses__img">
-                    </picture>
-                    <span class="img-docked" aria-hidden="true">40 часов</span>
-                </div>
-                <div class="courses__text">
-                    <strong class="courses__title grid-title">Визуализация в 3ds Max</strong>
-                    <p class="courses__desc">Повседневная практика показывает, что сложившаяся структура организации обеспечивает актуальность кластеризации усилий.</p>
-                </div>
-                <div class="courses__btn-wrap">
-                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
-                </div>
-            </li>
-            <li class="courses__item grid-column">
-                <div class="courses__img-wrap">
-                    <picture>
-                        <source srcset="img/courses/4.png 1x, img/courses/4@2x.png 2x">
-                        <img src="img/courses/4.png" alt="Образец 3d-моделирования" class="courses__img">
-                    </picture>
-                    <span class="img-docked" aria-hidden="true">80 часов</span>
-                </div>
-                <div class="courses__text">
-                    <strong class="courses__title grid-title">Скульптинг в ZBrush</strong>
-                    <p class="courses__desc">Разнообразный и богатый опыт говорит нам, что граница обучения кадров требует определения и уточнения прогресса профессионального сообщества! В частности, постоянный количественный рост и сфера нашей активности.</p>
-                </div>
-                <div class="courses__btn-wrap">
-                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <footer class="footer" aria-label="Нижний колонтитул">
-        <div class="footer__top">
-            <ul class="page-footer__sn sn container-xl">
-                <li class="sn__item">
-                    <a href="#" class="sn__link">
-                        <img src="img/sn/1.svg" alt="Страница Facebook" class="sn__img">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrap container">
+            <article class="footer__identity identity footer-item">
+                <figure class="identity__logo logo">
+                    <a href="#" class="logo__link" aria-label="Главная страница">
+                       <img src="img/svg/logo.svg" alt="High pass" class="logo__img"><!-- SVG-спрайт -->
                     </a>
-                </li>
-                <li class="sn__item">
-                    <a href="#" class="sn__link">
-                        <img src="img/sn/2.svg" alt="Профиль Twitter" class="sn__img">
-                    </a>
-                </li>
-                <li class="sn__item">
-                    <a href="#" class="sn__link">
-                        <img src="img/sn/3.svg" alt="Аккаунт Instagram" class="sn__img">
-                    </a>
-                </li>
-                <li class="sn__item">
-                    <a href="#" class="sn__link">
-                        <img src="img/sn/4.svg" alt="Канал YouTube" class="sn__img">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer__bottom container-xl">
-            <p class="trademark">SKILLBOX &reg; 2020</p>
+                </figure>
+                <p class="identity__copyright">Фотостудия High pass<sup>&reg;</sup> 2018-2020</p>
+            </article>
+            <blockqoute class="footer__citation citation footer-item">
+                <p class="citation__text">Которая из моих фотографий самая любимая?<br> Та, которую я собираюсь снять завтра.</p>
+                <cite class="citation__author">&copy; Имоджен Каннингем</cite>
+            </blockqoute>
+            <article class="footer__more more footer-item">
+                <p class="more__heading">Больше интересного:</p>
+                <ul class="more__sn sn">
+                    <li class="sn__item">
+                        <a href="" class="sn__link">
+                            <img src="img/svg/insta.svg" alt="Аккаунт Instagram"><!-- SVG-спрайт -->
+                        </a>
+                    </li>
+                    <li class="sn__item">
+                        <a href="" class="sn__link">
+                            <img src="img/svg/fb.svg" alt="Сообщество Facebook"><!-- SVG-спрайт -->
+                        </a>
+                    </li>
+                    <li class="sn__item">
+                        <a href="" class="sn__link">
+                            <img src="img/svg/vk.svg" alt="Группа Vkontakte"><!-- SVG-спрайт -->
+                        </a>
+                    </li>
+                </ul>
+            </article>
         </div>
     </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9a00826a-9809-4483-9570-df06b6b46647&lang=ru_RU" type="text/javascript"></script>
     <script>
-        function hideMenu() {
-            var mCheck= document.querySelector('.navigation__switch');
-            if (mCheck.checked) {
-                mCheck.checked = false;
-            }    
+        let eventCheckers = [
+            ['#hfs', 'keydown'],
+            ['.projects__toggle', 'focus'],
+            ['[type = "radio"]', 'keydown'],
+            ['.projects__switch', 'blur']
+        ];
+        eventCheckers.forEach(function(item, i) {
+            document.querySelectorAll(item[0]).forEach(function(el){el.addEventListener(item[1],function(event){
+                if(i == 0) {
+                    if(event.key=='Enter'){
+                        if(!this.checked){this.checked=!0}else{this.checked=!1}
+                    }
+                }
+                else if (i == 1) {
+                    document.querySelector('#' + this.getAttribute('for')).focus();
+                }
+                else if (i == 2) {
+                    if(event.key=='ArrowUp' || event.key=='ArrowDown'){
+                        event.preventDefault();
+                        this.blur();
+                    }
+                    if(event.key=='Tab'){
+                        if (this.getAttribute('id') == 'psp1' || this.getAttribute('id') == 'sas-g') {
+                            event.preventDefault();
+                            this.nextElementSibling.focus();
+                        }
+                    }
+                    if(event.key=='Enter'){
+                        this.checked = 1;
+                    }
+                }
+                else if (i == 3) {
+                    if (event.relatedTarget && event.relatedTarget.dataset.change) {
+                        document.querySelector('.service-tab__switch_cat_gen').focus();      
+                    } 
+                }
+            })})
+        })
+        
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                        // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.769535,37.639985],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 15,
+                controls: []
+            });
         }
+
+        
     </script>
 </body>
 </html>

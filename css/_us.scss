@@ -1,0 +1,78 @@
+.us {
+    background-color: $basecolor;
+
+    .us__title {
+        color: $secondcolor
+    }
+    
+    &__content {
+        @include grid;
+        @media (max-width:#{$br1st}) {
+            grid-template-rows: repeat(2, auto);
+        }
+
+        .us__content-item {
+            grid-column-end: span 6;
+            @media (max-width:#{$br1st}) {
+                grid-column-end: span 12;
+            }
+
+            .us__img-wrap {
+                margin-bottom: 25px;
+                height: calc(100% - 108px);
+
+                @media (max-width:#{$br2nd}) {
+                    height: calc(100% - 177px);
+                }
+                @media (max-width:#{$br1st}) {
+                    height: auto;
+                }
+                
+                .us__img{
+                    @include tempimg;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .us__mailing-list {
+                @include heading;
+                margin-bottom: 15px;
+                font-weight: 700;
+                color: $secondcolor;
+            }
+        }
+
+    }
+}
+
+.feedback {
+    display: flex;
+    @media (max-width:#{$br2nd}) {
+        flex-direction: column;
+    }
+
+    & > * {
+        height: 44px;
+        border: none;
+        outline: none;
+    }
+    &__email {
+        flex: 1 1 auto;
+        padding-left: 25px;
+        background-color: $forwardcolor;
+        color: $rarecolor;
+        @include placeholder;
+    }
+    &__submit {
+        flex: 0 0 auto;
+        width: max-content;
+        margin-left: 30px;
+        cursor: pointer;
+
+        @include btn;
+
+        @media (max-width:#{$br2nd}) {
+            margin: 25px 0 0 0;
+        }
+    }
+}

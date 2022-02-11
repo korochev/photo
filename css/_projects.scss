@@ -1,0 +1,258 @@
+.galery-img {
+    @include tempimg;
+}
+.galery-tag {
+    @include tag;
+}
+.projects__title {
+    color: $basecolor;
+}
+
+.label-wrap{
+    padding-top: 30px;
+    line-height: 0;
+    text-align: center;
+
+    .projects__toggle {
+        display: inline-block;
+        padding: 7px 10.53px;
+        color: #223444;
+        background-color: #C4C4C4;
+        cursor: pointer;
+        line-height: 1;
+
+        @at-root &_page_1 {
+            margin-right: 30px;
+        }
+    }
+}
+
+.projects__switch {
+    bottom: 40px;
+    left: 50%;
+    @include switch((galery:(1, 2)));
+
+}
+
+.galery {
+    &__list {
+        @include grid;
+        
+        display: none;
+        grid-template-rows: repeat(2, auto);
+
+        @media (max-width:$br3rd) {
+            grid-template-rows: repeat(3, auto);
+        }
+        @media (max-width:$br2nd) {
+            grid-template-rows: repeat(4, auto);
+        }
+        @media (max-width:$br1st) {
+            grid-template-rows: auto repeat(4,1fr);
+        }
+        .galery__posts {
+            @at-root &_page_1 {
+                grid-column: 1 / span 6;
+                grid-row: 1 / 2;
+            }
+            @at-root &_page_2 {
+                grid-column: 1 / span 6;
+                grid-row: 2 / 3;
+            }
+
+            @media (max-width:$br3rd) {
+                grid-column: 1 / span 9;
+                grid-row: 3 / 4;
+            }
+            @media (max-width:$br2nd) {
+                grid-column: 1 / span 12;
+                grid-row: 1 / 2;
+            }
+            @media (max-width:$br1st) {
+                grid-column: 1 / span 12;
+                grid-row: 1 / 2;
+            }
+        }
+        .galery-eyes {
+            @at-root &_page_1 {
+                grid-column: 7 / span 6;
+                grid-row: 1 / 2;
+            }
+            @at-root &_page_2 {
+                grid-column: 1 / span 6;
+                grid-row: 1 / 2;
+            }
+
+            @media (max-width:$br3rd) {
+                grid-column: 1 / span 8;
+                grid-row: 1 / 2;
+            }
+            @media (max-width:$br2nd) {
+                grid-column: 1 / span 12;
+                grid-row: 2 / 3;
+            }
+            @media (max-width:$br1st) {
+                grid-column: 1 / span 12;
+                grid-row: 2 / 3;
+            }
+        }
+        .galery-different {
+            @at-root &_page_1 {
+                grid-column: 1 / span 6;
+                grid-row: 2 / 3;
+            }
+            @at-root &_page_2 {
+                grid-column: 7 / span 6;
+                grid-row: 2 / 3;
+            }
+
+            @media (max-width:$br3rd) {
+                grid-column: 5 / span 8;
+                grid-row: 2 / 3;
+            }
+            @media (max-width:$br2nd) {
+                grid-column: 1 / span 12;
+                grid-row: 4 / 5;
+            }
+            @media (max-width:$br1st) {
+                grid-column: 1 / span 12;
+                grid-row: 5 / 6;
+            }
+        }
+        .galery__retouch {
+            @at-root &_page_1 {
+                grid-column: 7 / span 3;
+                grid-row: 2 / 3;
+            }
+            @at-root &_page_2 {
+                grid-column: 7 / span 3;
+                grid-row: 1 / 2;
+            }
+
+            @media (max-width:$br3rd) {
+                grid-column: 9 / span 4;
+                grid-row: 1 / 2;
+            }
+            @media (max-width:$br2nd) {
+                grid-column: 1 / span 6;
+                grid-row: 3 / 4;
+            }
+            @media (max-width:$br1st) {
+                grid-column: 1 / span 12;
+                grid-row: 3 / 4;
+            }
+        }
+        .galery__portrait {
+            @at-root &_page_1 {
+                grid-column: 10 / span 3;
+                grid-row: 2 / 3;
+            }
+            @at-root &_page_2 {
+                grid-column: 10 / span 3;
+                grid-row: 1 / 2;
+            }
+
+            @media (max-width:$br3rd) {
+                grid-column: 1 / span 4;
+                grid-row: 2 / 3;
+            }
+            @media (max-width:$br2nd) {
+                grid-column: 7 / span 6;
+                grid-row: 3 / 4;
+            }
+            @media (max-width:$br1st) {
+                grid-column: 1 / span 12;
+                grid-row: 4 / 5;
+            }
+        }
+    }
+}
+
+.galery-posts {
+    &__list {
+        display: flex;
+        @media (max-width:$br1st) {
+            flex-direction: column;
+        }
+
+        .galery-posts__item {
+            flex: 1 1 33%;
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+
+            @media (max-width:$br1st) {
+                flex: 0 0 auto;
+                &:not(:last-child){
+                    margin: 0 0 30px 0;
+                }
+            }
+        }
+    }
+}
+
+.evtprofile {
+    display: flex;
+    flex-direction: column;
+
+    &__img-wrap {
+        position: relative;
+        margin-bottom: 18px;
+    }
+    &__extract {
+        display: block;
+        margin-bottom: 13px;
+        color: $basecolor;
+
+        @media (max-width: $br1st) {
+            font-size: 16px;
+        }
+    }
+    &__date {
+        display: block;
+        margin-top: auto;
+        color: $lightcolor;
+        background-image: url('../img/svg/calendar-grey.svg');
+    }
+}
+
+.prevhit {
+    position: relative;
+
+    &__img {
+        height: 100%;
+    }
+    &__info {
+        position: absolute;
+        top: 0;
+        margin: 22px 0 0 30px;
+        max-width: 292px;
+        @media (max-width:$br1st) {
+            top:auto;
+            bottom: 100px;
+        }
+
+        .prevhit__date {
+            display: block;
+            margin-bottom: 7px;
+            color: inherit;
+        }
+        .prevhit__heading {
+            @include heading;
+            font-style: 24px !important;
+            margin-bottom: 5px;
+            line-height: 31px;
+            color: inherit;
+        }
+    }
+    &__btn {
+        @include btn;
+
+        position: absolute;
+        bottom: 0;
+        margin: 0 0 30px 30px;
+        background-color: transparent;
+        outline: 3px solid $primarycolor;
+    }
+}
+
