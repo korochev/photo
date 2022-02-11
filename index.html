@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillbox. Курсы 3D моделирования</title>
+    <!-- Установка шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Сброс стилей по умолчанию -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Формирование двенадцатиколоночной сетки -->
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- Кастомизация стилей -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" role="contentinfo" aria-label="Навигация по сайту">
+        <div class="header__container container-xl">
+            <div class="header__logo-wrap" role="region">
+                <a href="#" class="header__logo">
+                    <img src="img/logo.svg" alt="Логотип" class="header__logo-img">
+                </a>
+            </div>
+            <nav class="header__navigation navigation">
+                <input type="checkbox" class="navigation__switch" id="ns">
+                <label id="toggle" class="navigation__toggle" for="ns" role="presentation">
+                    <span aria-controls="menu"  aria-expanded="false" role="button" style="display: block; position:absolute; height: 100%; width: 100%;">
+                        <span class="navigation__icon"></span>
+                    </span>
+                </label>
+                <ul id="menu" class="navigation__menu menu" role="menu" aria-labelledby="toggle">
+                    <li class="menu__item" role="none">
+                        <a href="#hero" class="menu__link" role="menuitem" onclick="hideMenu()">Главная</a>
+                    </li>
+                    <li class="menu__item" role="none">
+                        <a href="#benefits" class="menu__link" role="menuitem" onclick="hideMenu()">О&nbsp;нас</a>
+                    </li>
+                    <li class="menu__item" role="none">
+                        <a href="#teachers" class="menu__link" role="menuitem" onclick="hideMenu()">Преподаватели</a>
+                    </li>
+                    <li class="menu__item" role="none">
+                        <a href="#courses" class="menu__link" role="menuitem" onclick="hideMenu()">Курсы</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero" class="hero">
+        <div class="hero__container container-xl">
+            <div class="hero__wrap row g-0">
+                <div class="hero__content col-12 col-sm-7 col-lg-5">
+                    <h1 class="hero__heading">Курсы 3D моделирования</h1>
+                    <p class="hero__desc">Следует отметить, что существующая теория способствует повышению качества благоприятных перспектив. Не следует, однако, забывать.</p>
+                    <div class="hero__btn">
+                        <a href="#" class="btn btn_big" role="button">Выбрать курс</a>
+                    </div>
+                </div>
+                <div class="hero__image col"></div>
+            </div>
+        </div>
+    </section>
+    <section  class="benefits container-xl">
+        <span id="benefits"></span>
+        <div class="benefits__info benefits-info row">
+            <div class="benefits-info__img-wrap col-sm-4 col-md-3">
+                <img src="img/firewood.svg" alt="Декоративная иконка/разделитель" class="benefits-info__img">
+            </div>
+            <div class="benefits-info__content col">
+                <h2 class="benefits-info__heading">Преимущества обучения в skillbox</h2>
+                <p class="benefits-info__desc">Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут рассмотрены исключительно в разрезе маркетинговых предпосылок.</p>
+            </div>
+        </div>
+        <ul class="benefits__list benefits-list row row-cols-12 row-cols-sm-3 gy-4">
+            <li class="benefits-list__item">
+                <img src="img/benefits/1.svg" alt="Стильная иконка" class="benefits-list__icon">
+                <p class="benefits-list__text">Результат вашего обучения является самым важным для нас приоритетом</p>
+            </li>
+            <li class="benefits-list__item">
+                <img src="img/benefits/2.svg" alt="Стильная иконка" class="benefits-list__icon">
+                <p class="benefits-list__text">Лично познакомитесь с одним из своих будущих преподавателей</p>
+            </li>
+            <li class="benefits-list__item">
+                <img src="img/benefits/3.svg" alt="Стильная иконка" class="benefits-list__icon">
+                <p class="benefits-list__text">Значимость этих проблем очевидна, поэтому стоит всегда быть внимательным</p>
+            </li>
+        </ul>
+    </section>
+    <section class="teachers">
+        <span id="teachers"></span>
+        <div class="teachers__container container-xl">   
+            <h2 class="teachers__heading">Преподаватели курса</h2>
+            <ul class="teachers__list row row-cols-12 row-cols-sm-2 row-cols-lg-4 gy-4">
+                <li class="teachers__item grid-column">
+                    <div class="teachers__img-wrap">
+                        <picture>
+                            <source srcset="img/teachers/1.jpg 1x, img/teachers/1@2x.jpg 2x">
+                            <img src="img/teachers/1@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
+                        </picture>
+                    </div>
+                    <div class="teachers__person">
+                        <strong class="teachers__name grid-title">Владимир Петров</strong>
+                        <p class="teachers__bio">Лишь непосредственные участники технического прогресса неоднозначны и будут в равной степени предоставлены сами себе.</p>
+                    </div>
+                </li>
+                <li class="teachers__item grid-column">
+                    <div class="teachers__img-wrap">
+                        <picture>
+                            <source srcset="img/teachers/2.jpg 1x, img/teachers/2@2x.jpg 2x">
+                            <img src="img/teachers/2@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
+                        </picture>
+                    </div>
+                    <div class="teachers__person">
+                        <strong class="teachers__name grid-title">Денис Сергеев</strong>
+                        <p class="teachers__bio">Безусловно, разбавленное изрядной долей эмпатии, рациональное мышление.</p>
+                    </div>
+                </li>
+                <li class="teachers__item grid-column">
+                    <div class="teachers__img-wrap">
+                        <picture>
+                            <source srcset="img/teachers/3.jpg 1x, img/teachers/3@2x.jpg 2x">
+                            <img src="img/teachers/3@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
+                        </picture>
+                    </div>
+                    <div class="teachers__person">
+                        <strong class="teachers__name grid-title">Михаил Андреев</strong>
+                        <p class="teachers__bio">Ясность нашей позиции очевидна: высокое качество позиционных исследований напрямую зависит от вывода.</p>
+                    </div>
+                </li>
+                <li class="teachers__item grid-column">
+                    <div class="teachers__img-wrap">
+                        <picture>
+                            <source srcset="img/teachers/4.jpg 1x, img/teachers/4@2x.jpg 2x">
+                            <img src="img/teachers/4@2x.jpg" alt="Фотография преподавателя" class="teachers__img">
+                        </picture>
+                    </div>
+                    <div class="teachers__person">
+                        <strong class="teachers__name grid-title">Константин Дмитриев</strong>
+                        <p class="teachers__bio">Мы вынуждены отталкиваться от того, что существующая теория, в своём классическом представлении.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="courses container-xl">
+        <span id="courses"></span>
+        <h2 class="courses__heading">Курсы</h2>
+        <ul class="courses__list row row-cols-12 row-cols-sm-2 gy-4">
+            <li class="courses__item grid-column">
+                <div class="courses__img-wrap">
+                    <picture>
+                        <source srcset="img/courses/1.png 1x, img/courses/1@2x.png 2x">
+                        <img src="img/courses/1.png" alt="Образец 3d-моделирования" class="courses__img">
+                    </picture>
+                    <span class="img-docked" aria-hidden="true">60 часов</span>
+                </div>
+                <div class="courses__text">
+                    <strong class="courses__title grid-title">Cinema 4d для начинающих</strong>
+                    <p class="courses__desc">Учитывая ключевые сценарии поведения, базовый вектор развития напрямую зависит от системы массового участия. Следует отметить, что сложившаяся структура организации напрямую зависит от стандартных подходов.</p>
+                </div>
+                <div class="courses__btn-wrap">
+                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
+                </div>
+            </li>
+            <li class="courses__item grid-column">
+                <div class="courses__img-wrap">
+                    <picture>
+                        <source srcset="img/courses/2.png 1x, img/courses/2@2x.png 2x">
+                        <img src="img/courses/2.png" alt="Образец 3d-моделирования" class="courses__img">
+                    </picture>
+                    <span class="img-docked" aria-hidden="true">40 часов</span>
+                </div>
+                <div class="courses__text">
+                    <strong class="courses__title grid-title">Blender: продвинутый уровень</strong>
+                    <p class="courses__desc">Но убеждённость некоторых оппонентов в значительной степени обусловливает важность форм воздействия. Внезапно, тщательные исследования конкурентов представлены.</p>
+                </div>
+                <div class="courses__btn-wrap">
+                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
+                </div>
+            </li>
+            <li class="courses__item grid-column">
+                <div class="courses__img-wrap">
+                    <picture>
+                        <source srcset="img/courses/3.png 1x, img/courses/3@2x.png 2x">
+                        <img src="img/courses/3.png" alt="Образец 3d-моделирования" class="courses__img">
+                    </picture>
+                    <span class="img-docked" aria-hidden="true">40 часов</span>
+                </div>
+                <div class="courses__text">
+                    <strong class="courses__title grid-title">Визуализация в 3ds Max</strong>
+                    <p class="courses__desc">Повседневная практика показывает, что сложившаяся структура организации обеспечивает актуальность кластеризации усилий.</p>
+                </div>
+                <div class="courses__btn-wrap">
+                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
+                </div>
+            </li>
+            <li class="courses__item grid-column">
+                <div class="courses__img-wrap">
+                    <picture>
+                        <source srcset="img/courses/4.png 1x, img/courses/4@2x.png 2x">
+                        <img src="img/courses/4.png" alt="Образец 3d-моделирования" class="courses__img">
+                    </picture>
+                    <span class="img-docked" aria-hidden="true">80 часов</span>
+                </div>
+                <div class="courses__text">
+                    <strong class="courses__title grid-title">Скульптинг в ZBrush</strong>
+                    <p class="courses__desc">Разнообразный и богатый опыт говорит нам, что граница обучения кадров требует определения и уточнения прогресса профессионального сообщества! В частности, постоянный количественный рост и сфера нашей активности.</p>
+                </div>
+                <div class="courses__btn-wrap">
+                    <a href="#" class="btn btn_small" role="button">Подробнее</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <footer class="footer" aria-label="Нижний колонтитул">
+        <div class="footer__top">
+            <ul class="page-footer__sn sn container-xl">
+                <li class="sn__item">
+                    <a href="#" class="sn__link">
+                        <img src="img/sn/1.svg" alt="Страница Facebook" class="sn__img">
+                    </a>
+                </li>
+                <li class="sn__item">
+                    <a href="#" class="sn__link">
+                        <img src="img/sn/2.svg" alt="Профиль Twitter" class="sn__img">
+                    </a>
+                </li>
+                <li class="sn__item">
+                    <a href="#" class="sn__link">
+                        <img src="img/sn/3.svg" alt="Аккаунт Instagram" class="sn__img">
+                    </a>
+                </li>
+                <li class="sn__item">
+                    <a href="#" class="sn__link">
+                        <img src="img/sn/4.svg" alt="Канал YouTube" class="sn__img">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__bottom container-xl">
+            <p class="trademark">SKILLBOX &reg; 2020</p>
+        </div>
+    </footer>
+    <script>
+        function hideMenu() {
+            var mCheck= document.querySelector('.navigation__switch');
+            if (mCheck.checked) {
+                mCheck.checked = false;
+            }    
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+:root {
+    --base-color:#3F2AFF;
+    --second-color: #fff;
+    --base-gutter:30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    overflow:auto;
+}
+
+body,
+.benefits,
+.courses,
+.footer__bottom {
+    background-color: var(--second-color);
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+/* ======================Общие=стили======================= */
+
+.btn {
+    display: inline-block;
+    background-color: var(--base-color);
+    border-radius: 20px;
+}
+
+.btn:hover {
+    color: var(--base-color);
+    background: var(--second-color);
+}
+
+section:not(.hero) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+h2:not(.benefits-info__heading) {
+    margin-bottom: var(--base-gutter);
+    font-size:40px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-title {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+/* ======================Шапка=страницы======================= */
+
+.header {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--base-color);
+    z-index: 1;
+}
+
+.header__container {
+    display: flex;
+} 
+
+.header__logo-wrap,
+.header__navigation {
+    padding: 30px 0;
+}
+
+.header__logo-wrap {
+    display: inline-block;
+    margin-right: auto;
+}
+
+/* .header__logo {
+
+}
+
+.header__logo-img {
+
+}
+
+.header__navigation {
+
+}
+
+.navigation {
+
+}*/
+
+.navigation__switch {
+    display: none;
+}
+
+.navigation__toggle {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.navigation__icon {
+    position: absolute;
+    top: 19px;
+    right: 8px;
+    left: 8px;
+    height: 2px;
+    background: var(--second-color);
+}
+
+.navigation__icon::before, 
+.navigation__icon::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    right: 0;
+    left: 0;
+    height: 2px;
+}
+
+.navigation__icon::before {
+    top:-10px;
+}
+
+.navigation__icon::after {
+    bottom: -10px;
+}        
+
+/* .navigation__menu {
+    
+} */
+
+.menu {
+    display: flex;
+}
+
+.menu__item:not(:last-child) {
+    margin-right: 56px;
+}
+
+.menu__link {
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+@media (min-width:510px) and (max-width:620px) {
+    .header__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__logo-wrap {
+        margin: 0;
+    }
+}
+
+@media (max-width:510px) {
+    .menu__link:hover {
+        text-decoration: none;
+    }
+
+    section:not(.hero) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .navigation__toggle {
+        display: block;
+    }
+
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        height: 0;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        background-color: var(--base-color);
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .menu__item {
+        width: 100%;
+        margin: 0 !important;
+        border-top: 1px solid var(--second-color);
+        text-align: center;
+        
+    }
+
+    .menu__link {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .menu__link:hover {
+        color: var(--base-color);
+        background: var(--second-color);
+    }
+
+    .navigation__switch:checked ~ .menu {
+        height: auto;
+    }
+    
+    .navigation__switch:checked + .navigation__toggle .navigation__icon::before {
+        left:-6px;
+    }
+
+    .navigation__switch:checked + .navigation__toggle .navigation__icon {
+        left: 14px;
+    }
+
+    .navigation__switch:checked + .navigation__toggle .navigation__icon::after  {
+        left: 6px;
+    } 
+}
+
+/* ======================Hero=section======================= */
+
+.hero {
+    min-height: 500px;
+    height: 100%;
+    padding-top:88px;
+    margin-top:-88px;
+    background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
+}
+
+.hero__container,
+.hero__wrap {
+    height: 100%;
+} 
+
+.hero__wrap {
+    max-height: 800px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+}
+
+.hero__content {
+    height: fit-content;
+    color: var(--second-color);
+}
+
+
+.hero__heading {
+    margin-bottom: var(--base-gutter);
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 700;
+
+}
+
+.hero__desc {
+    margin-bottom: 70px;
+    font-size: 18px;
+    line-height: 150%;
+
+}
+
+.hero__btn {
+    display: inline-block;
+}
+
+.btn_big {
+    padding: 24px 76px;
+}
+
+.hero__image {
+    height: 100%;
+    background: url('../img/heroimg.svg') no-repeat center center;
+    background-size: 70% auto;
+}
+
+@media (min-width:510px) and (max-width:620px) {
+    .hero {
+        padding-top: 172px;
+    }
+}
+
+@media (max-width:720px) {
+    .hero__image {
+        background-size: 100% auto;
+    }
+}
+
+@media (max-width:510px) {
+    
+    .hero__heading {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .hero__desc {
+        margin-bottom: 50px;
+    }
+
+    .btn_big {
+        padding: 21px 54px;
+    }
+}
+
+/* ======================Блок=Преимущества======================= */
+
+/*  .benefits {
+
+} 
+
+.benefits__info {
+
+}*/
+
+.benefits-info {
+    max-width: 775px;
+    margin-bottom: var(--base-gutter);
+    align-items: center;
+}
+
+.benefits-info__img-wrap {
+    height: fit-content;
+}
+
+.benefits-info__img {
+    width: 100%;
+    height: auto;
+}
+
+/* .benefits-info__content {
+
+} */
+
+.benefits-info__heading {
+    color: #2E2B44;
+}
+
+/* .benefits-info__desc {
+    
+}
+
+.benefits__list {
+
+}
+
+.benefits-list {
+
+} */
+
+.benefits-list__item {
+    display: flex;
+    align-items: center;
+}
+
+.benefits-list__icon {
+    display: inline-block;
+    margin-right: var(--base-gutter);
+}
+
+.benefits-list__text {
+    font-weight: 700;
+    line-height: 19,2px;
+}
+
+@media (max-width:620px) {
+    .benefits-info__img-wrap {
+        display: none;
+    }
+
+    .benefits-info__heading {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width:575px) and (max-width:720px) {
+    .benefits-list__item {
+        flex-direction: column;
+    }
+
+    .benefits-list__icon {
+        margin: 0;
+        margin-bottom: var(--base-gutter);
+    }
+}
+
+/* ======================Список=Преподавателей======================= */
+
+.teachers {
+    background: #2E2B44;
+}
+
+/* .teachers__container {
+
+} */
+
+.teachers__heading {
+    color: var(--second-color);
+}
+
+/* .teachers__list {
+
+} */
+
+.teachers__img-wrap {
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
+    overflow: hidden;
+}
+
+.teachers__img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.teachers__person {
+    padding-top: var(--base-gutter);
+}
+
+.teachers__name {
+    color: var(--second-color);
+}
+
+.teachers__bio {
+    color: #85859B;
+}
+
+/* ======================Курсы====================== */
+
+/* .courses {
+    
+} */
+
+.courses__heading {
+    color:#212133;
+}
+
+.courses__item {
+    border-radius: 30px;
+    background-clip: content-box;
+    background-color: #EDF0F9;
+    overflow: hidden;
+}
+
+.courses__img-wrap {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.courses__img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.courses__text {
+    padding: var(--base-gutter);
+    padding-bottom: 0;
+}
+
+.courses__title {
+    color: #212133; 
+}
+
+.courses__desc {
+    margin-bottom: var(--base-gutter);
+}
+
+.courses__btn-wrap {
+    margin-top: auto;
+    padding: 0 0 var(--base-gutter) var(--base-gutter);
+}
+
+.btn_small {
+    padding: 21px 59px;
+}
+
+.img-docked {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding-left: 25px;
+    line-height: 19px;
+    color: var(--second-color);
+    background: url('../img/time.svg') no-repeat left center;
+    background-size: 25px 100%;
+}
+
+/* ======================Нижняя=часть====================== */
+
+/* .footer {
+    
+} */
+
+.footer__top {
+    background-color: #2E2B44;
+}
+
+.page-footer__sn {
+    display: flex;
+    padding: var(--base-gutter) 0;
+    justify-content: center;
+}
+
+/* .sn {
+
+} */
+
+.sn__item:not(:last-child) {
+    margin-right: var(--base-gutter);
+}
+
+.sn__item {
+    width: 24px;
+    height: 24px;
+}
+
+.sn__img,
+.sn__link {
+    width: 100%;
+    height: 100%;
+}
+
+.sn__link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* .footer__bottom {
+
+} */
+
+.trademark {
+    font-size: 13px;
+    line-height: 15,23px;
+    text-align: center;
+    color: #2E2B44;
+}
+
+/* Устранение смещения якорей */
+
+section:not(.hero)>span {
+    position: relative;
+    display: block;
+    top: -100px;
+    visibility: hidden;
+} 
+
+@media (min-width:510px) and (max-width:620px) {
+    section:not(.hero)>span {
+        top: -200px;
+    }
+}
