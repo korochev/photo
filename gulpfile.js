@@ -130,7 +130,7 @@ const gh = () => {
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log('###Changes to main branch:###' + process.stdout.write())
+            console.log('###Changes to main branch:###' + process.cmd.write())
         })
 };
 
