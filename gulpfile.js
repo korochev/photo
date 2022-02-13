@@ -1,5 +1,5 @@
 const { gulp, src, dest, series, watch } = require('gulp')
-const { execSync } = require("child_process");
+const { exec } = require("child_process");
 
 const gulpif = require('gulp-if')
 const argv = require('yargs').argv
@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create()
 const merge = require('gulp-merge')
 const through = require('through2')
 const size = require('gulp-size')
+var shell = require('shelljs');
 
 
 const sass = require('gulp-sass')(require('sass'))
@@ -127,11 +128,11 @@ const jpeg = () => {
 
 
 const gh = async () => {
-    const cmd = execSync('git add -A && git commit -m "upd" && git push origin main');
+    const cmd = shell.exec('git add -A && git commit -m "upd" && git push origin main', {async: false}).stdout
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log(cmd.stdout)
+            console.log(cmd)
         })
 };
 
