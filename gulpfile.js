@@ -124,7 +124,19 @@ const jpeg = () => {
 
 const gh = () => {
     var main = function() {
-        return exec('git add -A && git commit -m "upd" && git push origin main')
+        return exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
+            if (error) {
+              console.error(`error: ${error.message}`);
+              return;
+            }
+          
+            if (stderr) {
+              console.error(`stderr: ${stderr}`);
+              return;
+            }
+          
+            console.log(`stdout:\n${stdout}`);
+          })
     }
     var branch = function() {
         return src('dest/build/**/*')
