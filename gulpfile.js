@@ -124,23 +124,20 @@ const jpeg = () => {
 
 
 const gh = () => {
-    const main = exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
+    exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
             if (error) {
               console.error(`error: ${error.message}`);
-              return;
             }
           
             if (stderr) {
               console.error(`stderr: ${stderr}`);
-              return;
             }
           
-            console.log(`stdout:\n${stdout}`);
+             else {console.log(`stdout:\n${stdout}`);}
           })
     
-    const branch = src('dest/build/**/*')
+    return src('dest/build/**/*')
                     .pipe(ghPages());
-    merge(branch)
 };
 
 const watchFiles = () => {
