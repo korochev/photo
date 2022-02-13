@@ -128,19 +128,21 @@ const gh = () => {
     function main(){
         exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
             if (error) {
-              console.error(`error: ${error.message}`);
+              return console.error(`error: ${error.message}`);
             }
           
             if (stderr) {
-              console.error(`stderr: ${stderr}`);
+              return console.error(`stderr: ${stderr}`);
             }
           
-             else {console.log(`stdout:\n${stdout}`);}
+            else {
+                return console.log(`stdout:\n${stdout}`);
+            }
           })
     }
-    return src('dest/build/**/*')
-            .pipe(ghPages())
+    return src('dest/build/**/*') 
             .pipe(through.obj(main()))
+            .pipe(ghPages())
 };
 
 const watchFiles = () => {
