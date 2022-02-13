@@ -130,7 +130,7 @@ const gh = () => {
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log(stdout._events.data)
+            console.log(process.stdout)
         })
 };
 
