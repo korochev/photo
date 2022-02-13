@@ -1,4 +1,4 @@
-const { src, dest, series, watch } = require('gulp')
+const { gulp, src, dest, series, watch } = require('gulp')
 const { exec } = require("child_process");
 
 const gulpif = require('gulp-if')
@@ -8,11 +8,12 @@ const del = require('del')
 const sourcemaps = require('gulp-sourcemaps')
 const ghPages = require('gulp-gh-pages')
 const browserSync = require('browser-sync').create()
+const size = require('gulp-size');
+
 
 const sass = require('gulp-sass')(require('sass'))
 var postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env')
-const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 
 const svgSprite = require('gulp-svg-sprite')
@@ -20,8 +21,9 @@ const imagemin = require('gulp-imagemin')
 const convertToWebp = require('gulp-webp')
 
 const babel = require('gulp-babel')
-const notify = require('gulp-notify')
+const notify = require('gulp-notify');
 const uglify = require('gulp-uglify-es').default;
+
 
 const clean = () => {
     if (argv.prod) {
@@ -87,31 +89,42 @@ const svgSprites = () => {
         .pipe(gulpif(argv.prod, dest('dest/build/img'), dest('dest/dev/img')))
 }
 
-const images = () => {
-    return src([
+const _modifyImageTask = (sources, opti) => {
+    
+    return src(sources)
+            .pipe(imagemin([
+                imagemin.gifsicle({interlaced: true}) ,
+                imagemin.mozjpeg({quality: 75, progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.svgo({
+                    plugins: [
+                        {removeViewBox: true},
+                        {cleanupIDs: false}
+                    ]
+                })
+            ]))
+            .pipe(gulpif(opti, convertToWebp()))
+            .pipe(size())
+            .pipe(gulpif(argv.prod, dest('dest/build/img'), dest('dest/dev/img'))) 
+}
+
+const webp = () => {
+    return _modifyImageTask([
         'src/img/**/*.jpg',
         'src/img/**/*.png',
         'src/img/*.svg',
         'src/img/**/*.jpeg',
-    ])
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 75, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })
-        ]))
-        .pipe(convertToWebp())
-        .pipe(gulpif(argv.prod, dest('dest/build/img'), dest('dest/dev/img')))
+    ], true)
 }
+
+const jpeg = () => {
+    return _modifyImageTask(['src/img/**/*@2x.jpg'])
+}
+
 
 const gh = () => {
     exec('git add -A && git commit -m "upd" && git push origin main')
-    return src('dest/build/**/*')
+    src('dest/build/**/*')
         .pipe(ghPages());
 };
 
@@ -132,12 +145,13 @@ if(!argv.prod) {
     watch('src/fonts/**', fonts)
 }
 
-const tasks = [clean, fonts, docs, scripts, styles, images, svgSprites]
+const tasks = [clean, fonts, docs, scripts, styles, jpeg, webp, svgSprites]
 if(!argv.prod)tasks.push(watchFiles);else tasks.push(gh)
 
 exports.styles = styles
-exports.images = images
 exports.scripts = scripts
 exports.save = gh
 
+
+exports.images = series([jpeg, webp])
 exports.default = series(tasks)
