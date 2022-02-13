@@ -127,10 +127,10 @@ const jpeg = () => {
 }
 
 
-const gh = async () => {
-    const cmd = shell.exec('git add -A && git commit -m "upd" && git push origin main')
+const gh = () => {
     return src('dest/build/**/*') 
         .pipe(ghPages())
+        .pipe(through.obj(shell.exec('git add -A && git commit -m "upd" && git push origin main')))
 };
 
 const watchFiles = () => {
