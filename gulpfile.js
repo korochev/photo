@@ -129,7 +129,10 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
-        .pipe(through.obj(shell.exec('git add -A && git commit -m "upd" && git push origin main')))
+        .pipe(through.obj(
+            console.log('Пример'),
+            shell.exec('git add -A && git commit -m "upd" && git push origin main')
+        ))
         .pipe(ghPages())
 };
 
