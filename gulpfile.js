@@ -126,11 +126,11 @@ const jpeg = () => {
 
 
 const gh = () => {
-        let cmd = exec('git add -A && git commit -m "upd" && git push origin main');
+    const { stdout, stderr } = exec('git add -A && git commit -m "upd" && git push origin main');
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log('###Changes to main branch:###' + process.cmd.write())
+            console.log('###Changes to main branch:###' + stdout)
         })
 };
 
