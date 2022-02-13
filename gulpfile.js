@@ -126,19 +126,20 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
+            
+    .on('data', function(){
+        exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+        }
+      
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+        }
+            return console.log(`stdout:\n${stdout}`);
+      })
+    })
             .pipe(ghPages())
-            .on('end', function(){
-                exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
-                if (error) {
-                    console.log(`error: ${error.message}`);
-                }
-              
-                if (stderr) {
-                    console.log(`stderr: ${stderr}`);
-                }
-                    return console.log(`stdout:\n${stdout}`);
-              })
-            })
 };
 
 const watchFiles = () => {
