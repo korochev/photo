@@ -129,10 +129,11 @@ const gh = () => {
     return src('dest/build/**/*') 
     .pipe(ghPages())
     .pipe(through.obj(function (file, enc, cb) {
+        var that = this;
         exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
             // take appropriate action then
             console.log('Например')
-            this.push(file);
+            that.push(file);
         });
     }))
 };
