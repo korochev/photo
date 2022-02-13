@@ -39,6 +39,7 @@
     "postcss": "^8.4.6",
     "postcss-preset-env": "^7.3.1",
     "sass": "^1.49.7",
+    "through2": "^4.0.2",
     "yargs": "^17.3.1"
   }
 }

@@ -9,6 +9,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const ghPages = require('gulp-gh-pages')
 const browserSync = require('browser-sync').create()
 const merge = require('gulp-merge')
+const through = require('through2')
 const size = require('gulp-size')
 
 
@@ -124,7 +125,8 @@ const jpeg = () => {
 
 
 const gh = () => {
-    exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
+    function main(){
+        exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
             if (error) {
               console.error(`error: ${error.message}`);
             }
@@ -135,9 +137,10 @@ const gh = () => {
           
              else {console.log(`stdout:\n${stdout}`);}
           })
-    
+    }
     return src('dest/build/**/*')
-                    .pipe(ghPages());
+            .pipe(ghPages())
+            .pipe(through.obj(main()))
 };
 
 const watchFiles = () => {
