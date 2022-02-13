@@ -125,10 +125,10 @@ const jpeg = () => {
 }
 
 
-const gh = () => {
+const gh = (done) => {
     return src('dest/build/**/*') 
             
-    .on('data', function(){
+    .on('data', function(done){
         exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
@@ -138,7 +138,7 @@ const gh = () => {
             console.log(`stderr: ${stderr}`);
         }
             console.log(`stdout:\n${stdout}`);
-            exit()
+            done()
       })
     })
             .pipe(ghPages())
