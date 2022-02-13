@@ -126,14 +126,14 @@ const jpeg = () => {
 
 
 const gh = () => {
-    exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
-        // take appropriate action then
-        global.st = stdout; 
-    });
+        exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
+            // take appropriate action then
+            global.st = stdout; 
+        });
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log(st)
+            console.log('###Changes to main branch:###' + st)
         })
 };
 
