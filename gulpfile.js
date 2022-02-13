@@ -127,15 +127,15 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
-    .pipe(
-        through.obj(
-        exec('git add -A && git commit -m "upd" && git push origin main', (err, stdout, stderr) => {
-          
-          console.log(stdout);
-        
-      }))
-    .on('end',ghPages)
-    )
+    .pipe(ghPages())
+    .pipe(through.obj(function (file, enc, cb) {
+        var that = this;
+        exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
+            // take appropriate action then
+            that.push(file);
+            cb(null);
+        });
+    }))
 };
 
 const watchFiles = () => {
