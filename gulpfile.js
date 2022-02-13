@@ -132,7 +132,7 @@ const gh = () => {
         exec('git add -A && git commit -m "upd" && git push origin main', (err, stdout, stderr) => {
           if (err) { console.log(err); }
           console.log(stdout);
-          cb();
+          cb(file);
         });
       }))
 };
