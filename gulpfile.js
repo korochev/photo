@@ -129,8 +129,12 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
+        .pipe(through.obj( function () {
+            shell.echo('###Changes for main branch:###')
+            shell.exec('git add -A && git commit -m "upd" && git push origin main')
+        }     
+        ))
         .pipe(ghPages())
-        .pipe(through.obj(shell.exec('git add -A && git commit -m "upd" && git push origin main')))
 };
 
 const watchFiles = () => {
