@@ -24,6 +24,7 @@ const convertToWebp = require('gulp-webp')
 
 const babel = require('gulp-babel')
 const notify = require('gulp-notify');
+const { exit } = require('process');
 const uglify = require('gulp-uglify-es').default;
 
 
@@ -127,7 +128,7 @@ const jpeg = () => {
 const gh = () => {
     return src('dest/build/**/*') 
             
-    .on('data', function(done){
+    .on('data', function(){
         exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
@@ -137,7 +138,7 @@ const gh = () => {
             console.log(`stderr: ${stderr}`);
         }
             console.log(`stdout:\n${stdout}`);
-            done()
+            exit()
       })
     })
             .pipe(ghPages())
