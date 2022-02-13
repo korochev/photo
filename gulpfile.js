@@ -8,7 +8,6 @@ const del = require('del')
 const sourcemaps = require('gulp-sourcemaps')
 const ghPages = require('gulp-gh-pages')
 const browserSync = require('browser-sync').create()
-const merge = require('gulp-merge')
 const through = require('through2')
 const size = require('gulp-size')
 var shell = require('shelljs');
