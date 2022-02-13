@@ -133,6 +133,9 @@ const gh = () => {
     });
     return src('dest/build/**/*') 
         .pipe(ghPages())
+        .on('end', function(){
+            console.log("Ну иии")
+        })
 };
 
 const watchFiles = () => {
