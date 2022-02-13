@@ -142,19 +142,19 @@ const gh = () => {
     }
     return src('dest/build/**/*') 
             .pipe(ghPages())
-            .on('end', function(){
+            .on('end', function(done){
                 exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
                 if (error) {
-                  return console.log(`error: ${error.message}`);
+                    console.log(`error: ${error.message}`);
                 }
               
                 if (stderr) {
                   return console.log(`stderr: ${stderr}`);
                 }
               
-                else {
-                    return console.log(`stdout:\n${stdout}`);
-                }
+                
+                    console.log(`stdout:\n${stdout}`);
+                    done()
               })
             })
 };
