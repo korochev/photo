@@ -128,11 +128,11 @@ const gh = () => {
     function main(){
         exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
             if (error) {
-              return console.error(`error: ${error.message}`);
+              return console.log(`error: ${error.message}`);
             }
           
             if (stderr) {
-              return console.error(`stderr: ${stderr}`);
+              return console.log(`stderr: ${stderr}`);
             }
           
             else {
