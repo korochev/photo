@@ -127,11 +127,14 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
-            
-    .on('data', function(){
-        exec('git add -A && git commit -m "upd" && git push origin main')
-    })
-            .pipe(ghPages())
+    .pipe(through.obj((file, enc, cb) => {
+        exec('git add -A && git commit -m "upd" && git push origin main', (err, stdout, stderr) => {
+          if (err) { gutil.log(err); }
+          gutil.log(stdout);
+          cb(err, file);
+        });
+      }))
+    .pipe(ghPages())
 };
 
 const watchFiles = () => {
