@@ -128,7 +128,7 @@ const jpeg = () => {
 
 
 const gh = async () => {
-    const cmd = shell.exec('git add -A && git commit -m "upd" && git push origin main', {async: false}).stdout
+    const cmd = shell.exec('git add -A && git commit -m "upd" && git push origin main').stdout
     return src('dest/build/**/*') 
         .pipe(ghPages())
 };
