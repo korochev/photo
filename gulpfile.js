@@ -126,15 +126,15 @@ const jpeg = () => {
 
 
 const gh = () => {
-    let abc;
+    let st =
     exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
         // take appropriate action then
-        abc = stdout;
+        return stdout;
     });
     return src('dest/build/**/*') 
         .pipe(ghPages())
         .on('end', function(){
-            console.log(abc)
+            console.log(st)
         })
 };
 
