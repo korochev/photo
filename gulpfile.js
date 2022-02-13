@@ -129,15 +129,15 @@ const gh = () => {
         new Promise(function(){
             exec('git add -A && git commit -m "upd" && git push origin main', (error, stdout, stderr) => {
                 if (error) {
-                  return console.log(`error: ${error.message}`);
+                  console.log(`error: ${error.message}`);
                 }
               
                 if (stderr) {
-                  return console.log(`stderr: ${stderr}`);
+                  console.log(`stderr: ${stderr}`);
                 }
               
                 else {
-                    return console.log(`stdout:\n${stdout}`);
+                    console.log(`stdout:\n${stdout}`);
                 }
             }),
             new Promise(function(){
