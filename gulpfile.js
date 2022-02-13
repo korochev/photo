@@ -127,7 +127,6 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
-    .pipe(ghPages())
     .pipe(
         through.obj(
         exec('git add -A && git commit -m "upd" && git push origin main', (err, stdout, stderr) => {
@@ -135,6 +134,7 @@ const gh = () => {
           console.log(stdout);
         
       }))
+    .on('end',ghPages)
     )
 };
 
