@@ -129,11 +129,10 @@ const jpeg = () => {
 
 const gh = () => {
     return src('dest/build/**/*') 
-        .pipe(through.obj( function (file, encoding,callback) {
+        .pipe(through.obj( function (file, encoding, callback) {
             shell.echo('###Changes for main branch:###')
             shell.exec('git add -A && git commit -m "upd" && git push origin main')
             this.push(file)
-            callback()
         }     
         ))
         .pipe(ghPages())
