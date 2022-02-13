@@ -133,8 +133,7 @@ const gh = () => {
         exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
             // take appropriate action then
             console.log('Например')
-            that.push(file);
-            cb(null);
+            return 0;
         });
     }))
 };
