@@ -125,9 +125,14 @@ const jpeg = () => {
 }
 
 
-const gh = (cb) => {
-    return exec('git add -A && git commit -m "upd" && git push origin main');
-    
+const gh = () => {
+    let abc;
+    exec('git add -A && git commit -m "upd" && git push origin main', function (err, stdout, stderr) {
+        // take appropriate action then
+        abc = stdout;
+    });
+    return src('dest/build/**/*') 
+        .pipe(ghPages())
 };
 
 const watchFiles = () => {
