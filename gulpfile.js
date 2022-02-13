@@ -130,7 +130,7 @@ const gh = () => {
         return src('dest/build/**/*')
             .pipe(ghPages());
     }
-    return main().on('end', branch)
+    return branch().on('end', main)
 };
 
 const watchFiles = () => {
