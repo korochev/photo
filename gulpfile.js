@@ -123,9 +123,10 @@ const jpeg = () => {
 
 
 const gh = () => {
-    exec('git add -A && git commit -m "upd" && git push origin main')
-    return src('dest/build/**/*')
+    let git = exec('git add -A && git commit -m "upd" && git push origin main')
+    let github = src('dest/build/**/*')
         .pipe(ghPages());
+    return[git, github]
 };
 
 const watchFiles = () => {
