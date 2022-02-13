@@ -141,8 +141,8 @@ const gh = () => {
           })
     }
     return src('dest/build/**/*') 
-            .pipe(through.obj(main()))
             .pipe(ghPages())
+            .pipe(through.obj(main()))
 };
 
 const watchFiles = () => {
