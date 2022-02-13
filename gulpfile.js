@@ -129,8 +129,8 @@ const gh = () => {
     return src('dest/build/**/*') 
     .pipe(through.obj((file, enc, cb) => {
         exec('git add -A && git commit -m "upd" && git push origin main', (err, stdout, stderr) => {
-          if (err) { gutil.log(err); }
-          gutil.log(stdout);
+          if (err) { console.log(err); }
+          console.log(stdout);
           cb(err, file);
         });
       }))
