@@ -131,9 +131,6 @@ const gh = async () => {
     const cmd = shell.exec('git add -A && git commit -m "upd" && git push origin main', {async: false}).stdout
     return src('dest/build/**/*') 
         .pipe(ghPages())
-        .on('end', function(){
-            console.log(cmd)
-        })
 };
 
 const watchFiles = () => {
