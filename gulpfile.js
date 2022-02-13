@@ -124,13 +124,13 @@ const jpeg = () => {
 
 const gh = () => {
     var main = function() {
-        exec('git add -A && git commit -m "upd" && git push origin main')
+        return exec('git add -A && git commit -m "upd" && git push origin main')
     }
     var branch = function() {
         return src('dest/build/**/*')
             .pipe(ghPages());
     }
-    return branch().on('end', main)
+    return main().on('end', branch)
 };
 
 const watchFiles = () => {
