@@ -140,7 +140,7 @@ const gh = () => {
     
     const branch = src('dest/build/**/*')
                     .pipe(ghPages());
-    merge(branch, main)
+    merge(branch)
 };
 
 const watchFiles = () => {
