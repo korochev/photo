@@ -109,8 +109,8 @@ const _modifyImageTask = (webp) => {
             .pipe(gulpif(webp, convertToWebp()))
             .pipe(size())
             .pipe(gulpif(argv.prod, 
-                gulpif(webp,dest('dest/build/img/webp'),dest('dest/build/img/jpeg')), 
-                gulpif(webp,dest('dest/dev/img/webp'),dest('dest/dev/img/jpeg'))
+                gulpif(webp,dest('dest/build/img/webp'),dest('dest/build/img/jpg')), 
+                gulpif(webp,dest('dest/dev/img/webp'),dest('dest/dev/img/jpg'))
             )) 
 }
 
@@ -118,7 +118,7 @@ const webp = () => {
     return _modifyImageTask(true)
 }
 
-const jpeg = () => {
+const jpg = () => {
     return _modifyImageTask()
 }
 
@@ -149,7 +149,7 @@ if(!argv.prod) {
     watch('src/resources/**', resources)
 }
 
-const tasks = [clean, resources, docs, scripts, styles, jpeg, webp]
+const tasks = [clean, resources, docs, scripts, styles, jpg, webp]
 if(!argv.prod)tasks.push(watchFiles);else tasks.push(gh)
 
 exports.styles = styles
@@ -157,5 +157,5 @@ exports.scripts = scripts
 exports.save = gh
 
 
-exports.images = series([jpeg, webp])
+exports.images = series([jpg, webp])
 exports.default = series(tasks)
