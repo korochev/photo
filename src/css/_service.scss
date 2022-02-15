@@ -259,9 +259,10 @@
                 position: absolute;
             }
             .sale__discount {
-                top:0;
-                left: calc(100% - 146px);
-                margin: 20px 30px 0 0;
+                top: 20px;
+                right: 30px;
+                /* left: calc(100% - 146px);
+                margin: 20px 30px 0 0; */
                 width: 116px;
                 height: 59px;
             }
