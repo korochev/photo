@@ -212,9 +212,8 @@ svg {
 
 input,
 textarea {
-    border-radius: 0;
-    -webkit-border-radius:0px;
-    -webkit-appearance: none; 
+    border-radius: 0 !important;
+    appearance: none !Important; 
     font-size: 16px !important;
 }
 
