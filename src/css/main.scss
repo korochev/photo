@@ -209,6 +209,10 @@ svg {
     @include nonvisible;
 }
 
+input {
+    border-radius: 0;
+}
+
 [class*="ground-pane"] {
     filter: grayscale(1);
 }
