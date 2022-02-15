@@ -253,10 +253,9 @@
     }
     @media (max-width:$br2nd) {
         &__info-wrap {
-            left: 30px;
-            right:30px;
-            top: 20px;
-            bottom: 20px;
+            width: calc(100vh - 30px);
+            top: 0;
+            bottom: 0;
             & > * {
                 position: absolute;
                 min-width: max-content;
@@ -264,11 +263,10 @@
             .sale__discount {
                 top: 0;
                 right: 0;
-                margin: 0;
+                margin: 20px 30px 0 0;
             }
             .sale__nestel{
                 bottom: 0;
-                margin: 0;
             }
         }
     }
