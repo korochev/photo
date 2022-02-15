@@ -251,7 +251,8 @@
     }
     @media (max-width:$br2nd) {
         &__info-wrap {
-            position: static !important;
+            top:0;
+            bottom: 0;
             left: 0;
             right: 0;
             & > * {
@@ -259,8 +260,9 @@
                 min-width: max-content;
             }
             .sale__discount {
-                top: 20px;
-                right: 30px;
+                top:0;
+                right: 0;
+                margin: 20px 30px 0 0;
                 width: 116px;
                 height: 59px;
             }
