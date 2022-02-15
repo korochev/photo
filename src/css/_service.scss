@@ -258,16 +258,16 @@
                 left: 0;
                 right: 0;
             
-            & > * {
-                position: absolute;
-                min-width: max-content;
-            }
+        
             .sale__discount {
+                position: absolute !important;
                 left: 0;
                 top: 0;
-                margin: 20px 30px 0 calc(100% - 146px);
+                margin: 20px 30px 0 0;
             }
             .sale__nestel{
+                min-width: max-content;
+                position: absolute;
                 bottom: 0;
             }
         }
