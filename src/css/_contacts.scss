@@ -102,7 +102,11 @@
             margin-left: 10px;
             font-weight: normal;
             color: $primarycolor;
-            background-image: url(../img/svg/call-ginger.svg);
+
+            @media (max-width:$br1st) {
+                height: 18px;
+                line-height: 18px;
+            }
             
             @media (max-width: $br2nd) {
                 display: block;

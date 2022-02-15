@@ -1,4 +1,9 @@
 .hero {
+    margin-top: 112px;
+
+    @media (max-width: $br2nd) {
+        margin-top: 105px; 
+    }
     &__wrap {
         @include grid;
         grid-template-rows: repeat(2, auto);

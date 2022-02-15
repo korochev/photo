@@ -1,5 +1,5 @@
 $fontsrc: ('Roboto-Regular.woff2', 'Roboto-Bold.woff2', 'TTFirsNeue-Regular.woff2', 'TTFirsNeue-Bold.woff2');
-$baseuri: '../fonts/';
+$baseuri: '../resources/';
 $basecolor: #202020;
 $secondcolor: #fff;
 $forwardcolor: #4A4A4A;
@@ -55,6 +55,7 @@ $br3rd: 1280px;
     color: inherit;
     background-color: #333333;  
 }
+
 @mixin placeholder {
     &::placeholder {
         color: currentColor;
@@ -122,6 +123,11 @@ $br3rd: 1280px;
     background-color: $forwardcolor;
     z-index: 2;
     
+}
+
+@mixin svgicon {
+    float: left;
+    margin: 0 5px 0 0;
 }
 
 @import '_fonts.scss';
@@ -193,6 +199,12 @@ fieldset {
     line-height: 0;
 }
 
+svg {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+}
+
 [type="checkbox"],
 [type="radio"] {
     @include nonvisible;
@@ -215,16 +227,13 @@ fieldset {
     margin: 0 auto;
 }
 
-.date {  
-    padding-left: 20px;
+.date { 
     font-size: 12px;
+    height: 14px;
     line-height: 14px;
-
-    background: {
-        image: url('../img/svg/calendar-white.svg');
-        repeat: no-repeat;
-        size: auto 100%;
-        position: left center;
+    
+    & > svg {
+        @include svgicon;
     }
 }
 
@@ -235,7 +244,7 @@ fieldset {
     &__item {
         .sn__link {
             display: inline-block;
-            &__img {
+            .sn__img {
                 width: 30px;
                 height: 30px;;
             }
@@ -257,7 +266,7 @@ fieldset {
             @media (max-width:#{$br3rd}) { //new
                 width: 160px;
             }
-            @media (max-width:#{$br1st}) { //new
+            @media (max-width:#{$br2nd}) { //new
                 width: 116px;
                 height: 22px;
             }

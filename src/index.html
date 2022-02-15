@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High pass. Неоновый фотосет 2.0 7 июля 20:00.</title>
-    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="resources/Roboto-Regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="resources/Roboto-Bold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="resources/TTFirsNeue-Regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="resources/TTFirsNeue-Bold.woff2" as="font" type="font/woff2">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="resources/normalize.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header class="header"> 
         <div class="header__wrap container">
             <figure class="header__logo logo header-item">
                 <a href="#" class="logo__link" aria-label="Главная страница">
-                   <img src="img/svg/logo.svg" alt="High pass" class="logo__img"><!-- SVG-спрайт -->
+                    <img src="logo.svg" class="logo__img inline-svg" title="High Pass" role="img">
                 </a>
             </figure>
             <nav class="header__menu menu header-item">
@@ -34,27 +34,31 @@
             </nav>
             <ul class="header__sn sn header-item">
                 <li class="sn__item">
-                    <a href="" class="sn__link">
-                        <img src="img/svg/insta.svg" alt="Аккаунт Instagram"><!-- SVG-спрайт -->
+                    <a href="#" class="sn__link">
+                        <img src="img/svg/insta.svg" class="sn__img" title="Аккаунт Instagram" role="img">
                     </a>
                 </li>
                 <li class="sn__item">
-                    <a href="" class="sn__link">
-                        <img src="img/svg/fb.svg" alt="Сообщество Facebook"><!-- SVG-спрайт -->
+                    <a href="#" class="sn__link">
+                        <img src="img/svg/fb.svg" class="sn__img" title="Сообщество Facebook" role="img">
                     </a>
                 </li>
                 <li class="sn__item">
-                    <a href="" class="sn__link">
-                        <img src="img/svg/vk.svg" alt="Группа Vkontakte"><!-- SVG-спрайт -->
+                    <a href="#" class="sn__link">
+                        <img src="img/svg/vk.svg" class="sn__img" title="Группа Вконтакте" role="img">
                     </a>
                 </li>
             </ul>
             <address class="header__phone phone header-item">
-                <a href="tel:+749542423532" class="phone__link">+7 (495) 42-423-532</a><!-- SVG-спрайт -->
+                <a href="tel:+749542423532" class="phone__link">
+                    <img src="img/svg/call.svg" class="phone__img" alt="Позвонить" role="img">
+                    +7 (495) 42-423-532</a>
             </address>
             <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="header__search search header-item">
                 <input type="checkbox" id="hfs" class="search__switch" role="button" aria-label="Отобразить/скрыть форму поиска" title="hidden checkbox">
-                <label for="hfs" class="search__toggle" aria-hidden="true"  role="presentation"><span hidden>x</span></label><!-- SVG-спрайт -->
+                <label for="hfs" class="search__toggle" aria-hidden="true"  role="presentation">
+                    <img src="img/svg/search.svg" class="search__img" title="Форма поиска" role="img">
+                </label>
                 <input type="search" name="data" id="hfd" class="search__data"  placeholder="Что будем искать?" aria-required="false" aria-invalid="false" spellcheck="false">
                 <label for="hfd" class="search__hidden">Нажмите Enter, чтоб осуществить поиск</label>
             </form>
@@ -64,7 +68,11 @@
         <section class="hero">
             <div class="hero__wrap container">
                 <article class="hero__bar hero-bar">
-                    <img src="img/hero/1.jpg" alt="Пример работ фотографа" class="hero-img" style="height: 100%;"><!-- WEBP -->
+                    <picture>
+                        <source srcset="img/webp/hero/1.webp 1x, img/webp/hero/1@2x.webp 2x" type="image/webp">
+                        <source srcset="img/jpeg/hero/1.jpeg 1x, img/jpeg/hero/1@2x.jpeg 2x" type="image/jpeg">
+                        <img class="hero-img" src="img/jpeg/hero/1@2x.jpeg 2x" alt="Пример работ фотографа" style="height: 100%;">
+                    </picture>
                     <a href="#" class="hero-bar__tag">#мастеркласс</a>
                     <div class="hero-bar__info">
                         <p class="hero-bar__desc">Мастер-класс от Игоря Робова</p>
@@ -75,14 +83,26 @@
                 <article class="hero__big hero-big">
                     <p class="hero-big__caption">Работы участников предыдущего мастер-класса</p>
                     <figure class="hero-big__img-wrap">
-                        <img src="img/hero/2.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                        <picture>
+                            <source srcset="img/webp/hero/2.webp 1x, img/webp/hero/2@2x.webp 2x" type="image/webp">
+                            <source srcset="img/jpeg/hero/2.jpeg 1x, img/jpeg/hero/2@2x.jpeg 2x" type="image/jpeg">
+                            <img class="hero-img" src="img/jpeg/hero/2@2x.jpeg 2x" alt="Девушка на фоне разноцветных вывесок">
+                        </picture>
                     </figure>
                 </article>
                 <figure class="hero__leg hero-leg">
-                    <img src="img/hero/3.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                    <picture>
+                        <source srcset="img/webp/hero/3.webp 1x, img/webp/hero/3@2x.webp 2x" type="image/webp">
+                        <source srcset="img/jpeg/hero/3.jpeg 1x, img/jpeg/hero/3@2x.jpeg 2x" type="image/jpeg">
+                        <img class="hero-img" src="img/jpeg/hero/3@2x.jpeg 2x" alt="Девушка на фоне разноцветных вывесок">
+                    </picture>
                 </figure>
                 <figure class="hero__rig hero-rig">
-                    <img src="img/hero/4.jpg" alt="Девушка на фоне разноцветных вывесок" class="hero-img"><!-- WEBP -->
+                    <picture>
+                        <source srcset="img/webp/hero/4.webp 1x, img/webp/hero/4@2x.webp 2x" type="image/webp">
+                        <source srcset="img/jpeg/hero/4.jpeg 1x, img/jpeg/hero/4@2x.jpeg 2x" type="image/jpeg">
+                        <img class="hero-img" src="img/jpeg/hero/4@2x.jpeg 2x" alt="Девушка на фоне разноцветных вывесок">
+                    </picture>
                 </figure>
             </div>
         </section>
@@ -95,7 +115,11 @@
                     </div>
                     <div class="us__content-item">
                         <figure class="us__img-wrap">
-                            <img src="img/camera.jpg" class="us__img" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                            <picture>
+                                <source srcset="img/webp/camera.webp 1x, img/webp/camera@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/camera.jpeg 1x, img/jpeg/camera@2x.jpeg 2x" type="image/jpeg">
+                                <img class="us__img" src="img/jpeg/camera@2x.jpeg 2x" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                            </picture>
                         </figure>
                         <p class="us__mailing-list" id="usl">Подписаться на рассылку</p>
                         <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="us__feedback feedback">
@@ -117,41 +141,61 @@
                             <ul class="galery-posts__list">
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-1/small-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-1/small-01.webp 1x, img/webp/projects/page-1/small-01@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-1/small-01.jpeg 1x, img/jpeg/projects/page-1/small-01@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-1/small-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag" data-change="have">#пейзаж</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Синтетически, смешаны с не уникальными данными до степени...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-06-16">16 июня</time>
                                     </a>
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-1/small-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-1/small-02.webp 1x, img/webp/projects/page-1/small-02@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-1/small-02.jpeg 1x, img/jpeg/projects/page-1/small-02@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-1/small-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag">#портрет</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">В своём стремлении улучшить опыт мы упускаем, что явные...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-05-28">28 мая</time>
                                     </a>
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-1/small-03.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-1/small-03.webp 1x, img/webp/projects/page-1/small-03@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-1/small-03.jpeg 1x, img/jpeg/projects/page-1/small-03@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-1/small-03@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag">#предмет</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Равным образом, высокое качество позиционных...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-05-14">14 мая</time>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_1">
-                            <img src="img/projects/page-1/big-01.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <picture>
+                                <source srcset="img/webp/projects/page-1/big-01.webp 1x, img/webp/projects/page-1/big-01@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/projects/page-1/big-01.jpeg 1x, img/jpeg/projects/page-1/big-01@2x.jpeg 2x" type="image/jpeg">
+                                <img class="galery-img prevhit__img" src="img/jpeg/projects/page-1/big-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                            </picture>
                             <a href="#" class="galery-tag">#fuji</a>
                             <div class="prevhit__info">
                                 <a href="#" class="prevhit__date date">
+                                    <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                     <time datetime="2021-04-09">9 апреля</time>
                                 </a>
                                 <p class="prevhit__heading"><strong>Cемантический разбор</strong></p>
@@ -160,10 +204,15 @@
                             <a href="#" class="prevhit__btn" role="button">О проекте</a>
                         </li>
                         <li class="galery__prevhit prevhit galery-different galery-different_page_1">
-                            <img src="img/projects/page-1/big-02.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <picture>
+                                <source srcset="img/webp/projects/page-1/big-02.webp 1x, img/webp/projects/page-1/big-02@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/projects/page-1/big-02.jpeg 1x, img/jpeg/projects/page-1/big-02@2x.jpeg 2x" type="image/jpeg">
+                                <img class="galery-img prevhit__img" src="img/jpeg/projects/page-1/big-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                            </picture>
                             <a href="#" class="galery-tag">#проектзабвение</a>
                             <div class="prevhit__info">
                                 <a href="#" class="prevhit__date date">
+                                    <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                     <time datetime="2021-03-21">21 марта</time>
                                 </a>
                                 <p class="prevhit__heading"><strong>Забвение</strong></p>
@@ -173,31 +222,46 @@
                         </li>
                         <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_1">
                             <figure class="evtprofile__img-wrap">
-                                <img src="img/projects/page-1/middle-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <picture>
+                                    <source srcset="img/webp/projects/page-1/middle-01.webp 1x, img/webp/projects/page-1/middle-01@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/projects/page-1/middle-01.jpeg 1x, img/jpeg/projects/page-1/middle-01@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="galery-img" src="img/jpeg/projects/page-1/middle-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                                </picture>
                                 <a href="#" class="galery-tag">#ретушь</a>
                             </figure>
                             <a href="#" class="evtprofile__extract">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</a>
                             <a href="#" class="evtprofile__date date">
+                                <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                 <time datetime="2021-03-09">9 марта</time>
                             </a>
                         </li>
                         <li class="galery__evtprofile evtprofile galery__portrait galery__portrait_page_1">
                             <figure class="evtprofile__img-wrap">
-                                <img src="img/projects/page-1/middle-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <picture>
+                                    <source srcset="img/webp/projects/page-1/middle-02.webp 1x, img/webp/projects/page-1/middle-02@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/projects/page-1/middle-02.jpeg 1x, img/jpeg/projects/page-1/middle-02@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="galery-img" src="img/jpeg/projects/page-1/middle-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                                </picture>
                                 <a href="#" class="galery-tag">#портрет</a>
                             </figure>
                             <a href="#" class="evtprofile__extract">С учётом сложившейся международной обстановки, новая модель организационной...</a>
                             <a href="#" class="evtprofile__date date">
+                                <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                 <time datetime="2021-03-01">1 марта</time>
                             </a>
                         </li>
                     </ul>
                     <ul class="galery__list galery__list_page_2">
                         <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_2">
-                            <img src="img/projects/page-2/big-01.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <picture>
+                                <source srcset="img/webp/projects/page-2/big-01.webp 1x, img/webp/projects/page-2/big-01@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/projects/page-2/big-01.jpeg 1x, img/jpeg/projects/page-2/big-01@2x.jpeg 2x" type="image/jpeg">
+                                <img class="galery-img prevhit__img" src="img/jpeg/projects/page-2/big-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                            </picture>
                             <a href="#" class="galery-tag" data-change="have">#портрет</a>
                             <div class="prevhit__info">
                                 <a href="#" class="prevhit__date date">
+                                    <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                     <time datetime="2021-02-24">24 февраля</time>
                                 </a>
                                 <p class="prevhit__heading"><strong>Спорная точка зрения</strong></p>
@@ -207,21 +271,31 @@
                         </li>
                         <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_2">
                             <figure class="evtprofile__img-wrap">
-                                <img src="img/projects/page-2/middle-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <picture>
+                                    <source srcset="img/webp/projects/page-2/middle-01.webp 1x, img/webp/projects/page-2/middle-01@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/projects/page-2/middle-01.jpeg 1x, img/jpeg/projects/page-2/middle-01@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="galery-img" src="img/jpeg/projects/page-2/middle-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                                </picture>
                                 <a href="#" class="galery-tag">#ретушь</a>
                             </figure>
                             <a href="#" class="evtprofile__extract">Идейные соображения высшего порядка, а также убеждённость некоторых оппонентов...</a>
                             <a href="#" class="evtprofile__date date">
+                                <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                 <time datetime="2021-02-20">20 февраля</time>
                             </a>
                         </li>
                         <li class="galery__evtprofile evtprofile  galery__portrait galery__portrait_page_2">
                             <figure class="evtprofile__img-wrap">
-                                <img src="img/projects/page-2/middle-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                <picture>
+                                    <source srcset="img/webp/projects/page-2/middle-02.webp 1x, img/webp/projects/page-2/middle-02@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/projects/page-2/middle-02.jpeg 1x, img/jpeg/projects/page-2/middle-02@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="galery-img" src="img/jpeg/projects/page-2/middle-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                                </picture>
                                 <a href="#" class="galery-tag">#портрет</a>
                             </figure>
                             <a href="#" class="evtprofile__extract">Прежде всего, повышение уровня гражданского сознания говорит о возможностях приоритизации...</a>
                             <a href="#" class="evtprofile__date date">
+                                <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                 <time datetime="2021-02-18">18 февраля</time>
                             </a>
                         </li>
@@ -229,41 +303,61 @@
                             <ul class="galery-posts__list">
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-2/small-01.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-2/small-01.webp 1x, img/webp/projects/page-2/small-01@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-2/small-01.jpeg 1x, img/jpeg/projects/page-2/small-01@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-2/small-01@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag">#пейзаж</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Равным образом, сложившаяся структура организации...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-02-13">13 февраля</time>
                                     </a>
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-2/small-02.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-2/small-02.webp 1x, img/webp/projects/page-2/small-02@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-2/small-02.jpeg 1x, img/jpeg/projects/page-2/small-02@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-2/small-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag">#предмет</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Безусловно, реализация намеченных плановых заданий обеспечивает...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-02-10">10 февраля</time>
                                     </a>
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <img src="img/projects/page-2/small-03.jpg" alt="Пример работ фотографа" class="galery-img"><!-- WEBP --> 
+                                        <picture>
+                                            <source srcset="img/webp/projects/page-2/small-03.webp 1x, img/webp/projects/page-2/small-03@2x.webp 2x" type="image/webp">
+                                            <source srcset="img/jpeg/projects/page-2/small-03.jpeg 1x, img/jpeg/projects/page-2/small-03@2x.jpeg 2x" type="image/jpeg">
+                                            <img class="galery-img" src="img/jpeg/projects/page-2/small-03@2x.jpeg 2x" alt="Пример работ фотографа">
+                                        </picture>
                                         <a href="#" class="galery-tag">#пейзаж</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Безусловно, курс на социальный национальный...</a>
                                     <a href="#" class="evtprofile__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                         <time datetime="2021-02-07">7 февраля</time>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="galery__prevhit prevhit galery-different galery-different_page_2">
-                            <img src="img/projects/page-2/big-02.jpg" alt="Пример работ фотографа" class="galery-img prevhit__img"><!-- WEBP -->
+                            <picture>
+                                <source srcset="img/webp/projects/page-2/big-02.webp 1x, img/webp/projects/page-2/big-02@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/projects/page-2/big-02.jpeg 1x, img/jpeg/projects/page-2/big-02@2x.jpeg 2x" type="image/jpeg">
+                                <img class="galery-img prevhit__img" src="img/jpeg/projects/page-2/big-02@2x.jpeg 2x" alt="Пример работ фотографа">
+                            </picture>
                             <a href="#" class="galery-tag">#проектджаз</a>
                             <div class="prevhit__info">
                                 <a href="#" class="prevhit__date date">
+                                    <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
                                     <time datetime="2021-02-02">2 февраля</time>
                                 </a>
                                 <p class="prevhit__heading"><strong>Задания по разработке своевременного</strong></p>
@@ -293,147 +387,249 @@
                         <ul class="promo__list promo__list_cat_gen" role="tabpanel" aria-labelledby="sas-g">
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/general/1.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/general/1.webp 1x, img/webp/service/tab/general/1@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/general/1.jpeg 1x, img/jpeg/service/tab/general/1@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/general/1@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Высокий уровень вовлечения</strong></p>
                                     <p class="product__desc">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        Подробнее
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_gen">
-                                <figure class="product__image-wrap">
-                                    <img src="img/service/tab/general/2.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                <figure class="product__image-wrap">    
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/general/2.webp 1x, img/webp/service/tab/general/2@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/general/2.jpeg 1x, img/jpeg/service/tab/general/2@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/general/2@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Диаграммы связей</strong></p>
                                     <p class="product__desc">Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за собой процесс.</p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/general/3.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/general/3.webp 1x, img/webp/service/tab/general/3@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/general/3.jpeg 1x, img/jpeg/service/tab/general/3@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/general/3@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Высоко<wbr>технологичная концепция</strong></p>
                                     <p class="product__desc">В частности, убеждённость некоторых оппонентов способствует подготовке и реализации анализа существующих паттернов.</p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/general/4.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/general/4.webp 1x, img/webp/service/tab/general/4@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/general/4.jpeg 1x, img/jpeg/service/tab/general/4@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/general/4@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Сложившаяся структура организации</strong></p>
                                     <p class="product__desc">Кстати,  сторонники тоталитаризма в науке будут объединены в целые кластеры себе подобных.</p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                         </ul>
                         <ul class="promo__list promo__list_cat_ret" role="tabpanel" aria-labelledby="sas-r">
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/1.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/1.webp 1x, img/webp/service/tab/retouch/1@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/1.jpeg 1x, img/jpeg/service/tab/retouch/1@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/1@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Принимая во внимание показатели</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/2.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/2.webp 1x, img/webp/service/tab/retouch/2@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/2.jpeg 1x, img/jpeg/service/tab/retouch/2@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/2@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Таким образом, выбранный нами...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/3.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/3.webp 1x, img/webp/service/tab/retouch/3@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/3.jpeg 1x, img/jpeg/service/tab/retouch/3@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/3@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Также как высокое качество...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/4.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/4.webp 1x, img/webp/service/tab/retouch/4@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/4.jpeg 1x, img/jpeg/service/tab/retouch/4@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/4@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Безусловно, семантический разбор...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/5.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/5.webp 1x, img/webp/service/tab/retouch/5@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/5.jpeg 1x, img/jpeg/service/tab/retouch/5@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/5@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Внезапно, предприниматели в интернете...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/6.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/6.webp 1x, img/webp/service/tab/retouch/6@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/6.jpeg 1x, img/jpeg/service/tab/retouch/6@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/6@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Есть над чем подумать: активные...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/7.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/7.webp 1x, img/webp/service/tab/retouch/7@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/7.jpeg 1x, img/jpeg/service/tab/retouch/7@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/7@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Сделанные на базе аналитики выводы...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/8.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/8.webp 1x, img/webp/service/tab/retouch/8@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/8.jpeg 1x, img/jpeg/service/tab/retouch/8@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/8@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Как принято считать, сторонники...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/9.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/9.webp 1x, img/webp/service/tab/retouch/9@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/9.jpeg 1x, img/jpeg/service/tab/retouch/9@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/9@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Задача организации, в особенности...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <img src="img/service/tab/retouch/10.jpg" alt="Образец выполненных работ" class="product__img service-img"><!-- WEBP -->
+                                    <picture>
+                                        <source srcset="img/webp/service/tab/retouch/10.webp 1x, img/webp/service/tab/retouch/10@2x.webp 2x" type="image/webp">
+                                        <source srcset="img/jpeg/service/tab/retouch/10.jpeg 1x, img/jpeg/service/tab/retouch/10@2x.jpeg 2x" type="image/jpeg">
+                                        <img class="product__img service-img" src="img/jpeg/service/tab/retouch/10@2x.jpeg 2x" alt="Образец выполненных работ">
+                                    </picture>
                                 </figure>
                                 <div class="product__info">
                                     <p class="product__heading"><strong>Активно развивающиеся страны...</strong></p>
-                                    <a href="#" class="product__link">Подробнее</a>
+                                    <a href="#" class="product__link">
+                                        <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
+                                        Подробнее
+                                    </a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </section>
                 <article class="service__sale sale">
-                    <img src="img/service/sale.jpg" alt="Образец портретной съемки девушки" class="sale__background-img service-img">
+                    <picture>
+                        <source srcset="img/webp/service/sale.webp 1x, img/webp/service/sale@2x.webp 2x" type="image/webp">
+                        <source srcset="img/jpeg/service/sale.jpeg 1x, img/jpeg/service/sale@2x.jpeg 2x" type="image/jpeg">
+                        <img class="sale__background-img service-img" src="img/jpeg/service/sale@2x.jpeg 2x" alt="Образец портретной съемки девушки">
+                    </picture>
                     <p class="sale__attent">
                         <b class="sale__1stline">Акция!</b>
                         <small class="sale__2ndline">Только в июне</small>
                     </p>
                     <div class="sale__info-wrap">
-                        <img src="img/service/discount.svg" alt="Размер скидки" class="sale__discount">
+                        <img src="img/svg/discount.svg" title="Размер скидки" class="sale__discount" role="image">
                         <div class="sale__nestel">
                             <p class="sale__condition">1,5 часа портретной съемки<br>+ ретушь 10 снимков</p>
                             <a href="" class="sale__btn" role="button">Узнать больше</a>
@@ -445,102 +641,230 @@
                     <div class="portfolio__area">
                         <ul class="portfolio__list">
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/1.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/1.webp 1x, img/webp/service/portfolio/part1/1@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/1.jpeg 1x, img/jpeg/service/portfolio/part1/1@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/1@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/2.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/2.webp 1x, img/webp/service/portfolio/part1/2@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/2.jpeg 1x, img/jpeg/service/portfolio/part1/2@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/2@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/3.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/3.webp 1x, img/webp/service/portfolio/part1/3@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/3.jpeg 1x, img/jpeg/service/portfolio/part1/3@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/3@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/4.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/4.webp 1x, img/webp/service/portfolio/part1/4@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/4.jpeg 1x, img/jpeg/service/portfolio/part1/4@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/4@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/5.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/5.webp 1x, img/webp/service/portfolio/part1/5@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/5.jpeg 1x, img/jpeg/service/portfolio/part1/5@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/5@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/6.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/6.webp 1x, img/webp/service/portfolio/part1/6@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/6.jpeg 1x, img/jpeg/service/portfolio/part1/6@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/6@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/7.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/7.webp 1x, img/webp/service/portfolio/part1/7@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/7.jpeg 1x, img/jpeg/service/portfolio/part1/7@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/7@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/8.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/8.webp 1x, img/webp/service/portfolio/part1/8@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/8.jpeg 1x, img/jpeg/service/portfolio/part1/8@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/8@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/9.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/9.webp 1x, img/webp/service/portfolio/part1/9@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/9.jpeg 1x, img/jpeg/service/portfolio/part1/9@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/9@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/10.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/10.webp 1x, img/webp/service/portfolio/part1/10@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/10.jpeg 1x, img/jpeg/service/portfolio/part1/10@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/10@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/11.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/11.webp 1x, img/webp/service/portfolio/part1/11@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/11.jpeg 1x, img/jpeg/service/portfolio/part1/11@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/11@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/12.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/12.webp 1x, img/webp/service/portfolio/part1/12@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/12.jpeg 1x, img/jpeg/service/portfolio/part1/12@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/12@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/13.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/13.webp 1x, img/webp/service/portfolio/part1/13@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/13.jpeg 1x, img/jpeg/service/portfolio/part1/13@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/13@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/14.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/14.webp 1x, img/webp/service/portfolio/part1/14@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/14.jpeg 1x, img/jpeg/service/portfolio/part1/14@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/14@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/15.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/15.webp 1x, img/webp/service/portfolio/part1/15@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/15.jpeg 1x, img/jpeg/service/portfolio/part1/15@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/15@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part1/16.jpg" alt="Архивный снимок(ТОП-16)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part1/16.webp 1x, img/webp/service/portfolio/part1/16@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part1/16.jpeg 1x, img/jpeg/service/portfolio/part1/16@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part1/16@2x.jpeg 2x" alt="Архивный снимок(ТОП-16)">
+                                </picture>
                             </li>
                         </ul>
                         <ul class="portfolio__list_overlay portfolio__list">
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/1.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/1.webp 1x, img/webp/service/portfolio/part2/1@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/1.jpeg 1x, img/jpeg/service/portfolio/part2/1@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/1@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/2.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/2.webp 1x, img/webp/service/portfolio/part2/2@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/2.jpeg 1x, img/jpeg/service/portfolio/part2/2@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/2@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/3.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/3.webp 1x, img/webp/service/portfolio/part2/3@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/3.jpeg 1x, img/jpeg/service/portfolio/part2/3@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/3@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/4.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/4.webp 1x, img/webp/service/portfolio/part2/4@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/4.jpeg 1x, img/jpeg/service/portfolio/part2/4@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/4@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/5.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/5.webp 1x, img/webp/service/portfolio/part2/5@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/5.jpeg 1x, img/jpeg/service/portfolio/part2/5@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/5@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/6.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/6.webp 1x, img/webp/service/portfolio/part2/6@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/6.jpeg 1x, img/jpeg/service/portfolio/part2/6@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/6@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/7.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/7.webp 1x, img/webp/service/portfolio/part2/7@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/7.jpeg 1x, img/jpeg/service/portfolio/part2/7@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/7@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/8.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/8.webp 1x, img/webp/service/portfolio/part2/8@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/8.jpeg 1x, img/jpeg/service/portfolio/part2/8@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/8@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/9.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/9.webp 1x, img/webp/service/portfolio/part2/9@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/9.jpeg 1x, img/jpeg/service/portfolio/part2/9@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/9@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/10.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/10.webp 1x, img/webp/service/portfolio/part2/10@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/10.jpeg 1x, img/jpeg/service/portfolio/part2/10@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/10@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/11.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/11.webp 1x, img/webp/service/portfolio/part2/11@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/11.jpeg 1x, img/jpeg/service/portfolio/part2/11@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/11@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/12.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/12.webp 1x, img/webp/service/portfolio/part2/12@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/12.jpeg 1x, img/jpeg/service/portfolio/part2/12@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/12@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/13.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/13.webp 1x, img/webp/service/portfolio/part2/13@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/13.jpeg 1x, img/jpeg/service/portfolio/part2/13@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/13@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/14.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/14.webp 1x, img/webp/service/portfolio/part2/14@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/14.jpeg 1x, img/jpeg/service/portfolio/part2/14@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/14@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/15.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/15.webp 1x, img/webp/service/portfolio/part2/15@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/15.jpeg 1x, img/jpeg/service/portfolio/part2/15@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/15@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                             <li class="portfolio__item">
-                                <img src="img/service/portfolio/part2/16.jpg" alt="Архивный снимок(ТОП-32)" class="portfolio__img service-img">
+                                <picture>
+                                    <source srcset="img/webp/service/portfolio/part2/16.webp 1x, img/webp/service/portfolio/part2/16@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/service/portfolio/part2/16.jpeg 1x, img/jpeg/service/portfolio/part2/16@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="portfolio__img service-img" src="img/jpeg/service/portfolio/part2/16@2x.jpeg 2x" alt="Архивный снимок(ТОП-32)">
+                                </picture>
                             </li>
                         </ul>
                     </div>
@@ -553,13 +877,23 @@
                 <div class="masterclass__content">
                     <article class="masterclass__bestseller bestseller">
                         <figure class="bestseller__img-wrap">
-                            <img src="img/masterclass/big.jpg" alt="Выставочная работа лектора" class="bestseller__img">
+                            <picture>
+                                <source srcset="img/webp/masterclass/big.webp 1x, img/webp/masterclass/big@2x.webp 2x" type="image/webp">
+                                <source srcset="img/jpeg/masterclass/big.jpeg 1x, img/jpeg/masterclass/big@2x.jpeg 2x" type="image/jpeg">
+                                <img class="bestseller__img" src="img/jpeg/masterclass/big@2x.jpeg 2x" alt="Выставочная работа лектора">
+                            </picture>
                         </figure>
                         <div class="bestseller__info-wrap">
                             <p class="bestseller__validity">
                                 <time class="updateon" datetime="2021-06-08T15:00">
-                                    <a href="#" class="updateon__date date">8 июня</a>
-                                    <a href="#" class="updateon__time">15:00</a>
+                                    <a href="#" class="updateon__date date">
+                                        <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
+                                        8 июня
+                                    </a>
+                                    <a href="#" class="updateon__time">
+                                        <img src="img/svg/watch.svg" title="Время" role="img">
+                                        15:00
+                                    </a>
                                 </time>
                             </p>
                             <p class="bestseller__heading"><strong>Пленка для начинающих</strong></p>
@@ -570,13 +904,23 @@
                     <ul class="masterclass__list masterclass-list">
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <img src="img/masterclass/01.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                                <picture>
+                                    <source srcset="img/webp/masterclass/1.webp 1x, img/webp/masterclass/01@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/masterclass/1.jpeg 1x, img/jpeg/masterclass/01@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="workshop-img" src="img/jpeg/masterclass/01@2x.jpeg 2x" alt="Выставочная работа лектора">
+                                </picture>
                             </figure>
                             <div class="workshop__info-wrap">
                                 <p class="workshop__validity">
                                     <time class="updateon" datetime="2021-06-09T15:00">
-                                        <a href="#" class="updateon__date date">9 июня</a>
-                                        <a href="#" class="updateon__time">15:00</a>
+                                        <a href="#" class="updateon__date date">
+                                            <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
+                                            9 июня
+                                        </a>
+                                        <a href="#" class="updateon__time">
+                                            <img src="img/svg/watch.svg" title="Время" role="img">
+                                            15:00
+                                        </a>
                                     </time>
                                 </p>
                                 <p class="workshop__extract">Ретушь. Продвинутый уровень</p>
@@ -584,13 +928,23 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <img src="img/masterclass/02.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                                <picture>
+                                    <source srcset="img/webp/masterclass/2.webp 1x, img/webp/masterclass/02@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/masterclass/2.jpeg 1x, img/jpeg/masterclass/02@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="workshop-img" src="img/jpeg/masterclass/02@2x.jpeg 2x" alt="Выставочная работа лектора">
+                                </picture>
                             </figure>
                             <div class="workshop__info-wrap">
                                 <p class="workshop__validity">
                                     <time class="updateon" datetime="2021-06-10T16:00">
-                                        <a href="#" class="updateon__date date">10 июня</a>
-                                        <a href="#" class="updateon__time">16:00</a>
+                                        <a href="#" class="updateon__date date">
+                                            <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
+                                            10 июня
+                                        </a>
+                                        <a href="#" class="updateon__time">
+                                            <img src="img/svg/watch.svg" title="Время" role="img">
+                                            16:00
+                                        </a>
                                     </time>
                                 </p>
                                 <p class="workshop__extract">Портретная съемка. Свет</p>
@@ -598,13 +952,23 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <img src="img/masterclass/03.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                                <picture>
+                                    <source srcset="img/webp/masterclass/3.webp 1x, img/webp/masterclass/03@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/masterclass/3.jpeg 1x, img/jpeg/masterclass/03@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="workshop-img" src="img/jpeg/masterclass/03@2x.jpeg 2x" alt="Выставочная работа лектора">
+                                </picture>
                             </figure>
                             <div class="workshop__info-wrap">
                                 <p class="workshop__validity">
                                     <time class="updateon" datetime="2021-06-11T16:00">
-                                        <a href="#" class="updateon__date date">11 июня</a>
-                                        <a href="#" class="updateon__time">16:00</a>
+                                        <a href="#" class="updateon__date date">
+                                            <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
+                                            11 июня
+                                        </a>
+                                        <a href="#" class="updateon__time">
+                                            <img src="img/svg/watch.svg" title="Время" role="img">
+                                            16:00
+                                        </a>
                                     </time>
                                 </p>
                                 <p class="workshop__extract">Макросъемка. Проблемы и нюансы</p>
@@ -612,13 +976,23 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <img src="img/masterclass/04.jpg" alt="Выставочная работа лектора" class="workshop-img">
+                                <picture>
+                                    <source srcset="img/webp/masterclass/4.webp 1x, img/webp/masterclass/04@2x.webp 2x" type="image/webp">
+                                    <source srcset="img/jpeg/masterclass/4.jpeg 1x, img/jpeg/masterclass/04@2x.jpeg 2x" type="image/jpeg">
+                                    <img class="workshop-img" src="img/jpeg/masterclass/4@2x.jpeg 2x" alt="Выставочная работа лектора">
+                                </picture>
                             </figure>
                             <div class="workshop__info-wrap">
                                 <p class="workshop__validity">
                                     <time class="updateon" datetime="2021-06-13T18:00">
-                                        <a href="#" class="updateon__date date">13 июня</a>
-                                        <a href="#" class="updateon__time">18:00</a>
+                                        <a href="#" class="updateon__date date">
+                                            <img src="img/svg/calendar.svg" title="Календарь" role="img" class="date__img">
+                                            13 июня
+                                        </a>
+                                        <a href="#" class="updateon__time">
+                                            <img src="img/svg/watch.svg" title="Время" role="img">
+                                            18:00
+                                        </a>
                                     </time>
                                 </p>
                                 <p class="workshop__extract">Творческая ретушь для начинающих</p>
@@ -637,8 +1011,12 @@
                             <p class="popup__heading"><strong>Студия “High pass”</strong></p>
                             <address class="popup__address">
                                 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
-                                <a href="tel:+749542423532" class="popup__phone">+7 (495) 42-423-532</a></address>
-                            <a href="#popup" class="popup__close"><img src="img/svg/х.svg" alt="Крестик"></a>
+                                <a href="tel:+749542423532" class="popup__phone">
+                                    <img src="img/svg/call.svg" class="phone__img" alt="Позвонить" role="img">
+                                    +7 (495) 42-423-532
+                                </a>
+                            </address>
+                            <a href="#popup" class="popup__close" role="button"><img src="img/svg/х.svg" title="Крестик"></a>
                         </div>
                         <div class="map__layer_bottom" id="map" style="width: 100%; height: 100%;" tabindex="-1" role="application"></div>
                     </article>
@@ -669,7 +1047,7 @@
             <article class="footer__identity identity footer-item">
                 <figure class="identity__logo logo">
                     <a href="#" class="logo__link" aria-label="Главная страница">
-                       <img src="img/svg/logo.svg" alt="High pass" class="logo__img"><!-- SVG-спрайт -->
+                        <img src="logo.svg" class="logo__img inline-svg" title="High Pass" role="img">
                     </a>
                 </figure>
                 <p class="identity__copyright">Фотостудия High pass<sup>&reg;</sup> 2018-2020</p>
@@ -682,18 +1060,18 @@
                 <p class="more__heading">Больше интересного:</p>
                 <ul class="more__sn sn">
                     <li class="sn__item">
-                        <a href="" class="sn__link">
-                            <img src="img/svg/insta.svg" alt="Аккаунт Instagram"><!-- SVG-спрайт -->
+                        <a href="#" class="sn__link">
+                            <img src="img/svg/insta.svg" class="sn__img" title="Аккаунт Instagram" role="img">
                         </a>
                     </li>
                     <li class="sn__item">
-                        <a href="" class="sn__link">
-                            <img src="img/svg/fb.svg" alt="Сообщество Facebook"><!-- SVG-спрайт -->
+                        <a href="#" class="sn__link">
+                            <img src="img/svg/fb.svg" class="sn__img" title="Сообщество Facebook" role="img">
                         </a>
                     </li>
                     <li class="sn__item">
-                        <a href="" class="sn__link">
-                            <img src="img/svg/vk.svg" alt="Группа Vkontakte"><!-- SVG-спрайт -->
+                        <a href="#" class="sn__link">
+                            <img src="img/svg/vk.svg" class="sn__img" title="Группа Вконтакте" role="img">
                         </a>
                     </li>
                 </ul>
@@ -701,6 +1079,6 @@
         </div>
     </footer>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=9a00826a-9809-4483-9570-df06b6b46647&lang=ru_RU" type="text/javascript"></script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

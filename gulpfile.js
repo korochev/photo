@@ -12,21 +12,22 @@ const through = require('through2')
 const size = require('gulp-size')
 var shell = require('shelljs');
 
+const inline = require('gulp-inline')
+const formatHtml = require('gulp-format-html')
 
 const sass = require('gulp-sass')(require('sass'))
 var postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env')
 const cleanCSS = require('gulp-clean-css')
 
-const svgSprite = require('gulp-svg-sprite')
 const imagemin = require('gulp-imagemin')
 const convertToWebp = require('gulp-webp')
 
 const babel = require('gulp-babel')
-const notify = require('gulp-notify');
-const { exit } = require('process');
-const { write } = require('fs');
-const uglify = require('gulp-uglify-es').default;
+const notify = require('gulp-notify')
+const { exit } = require('process')
+const { write } = require('fs')
+const uglify = require('gulp-uglify-es').default
 
 
 const clean = () => {
@@ -38,21 +39,27 @@ const clean = () => {
     }
 }
 
-const fonts = () => {
-    return src('src/fonts/**')
-        .pipe(gulpif(argv.prod, dest('dest/build/fonts'), dest('dest/dev/fonts')))
+const resources = () => {
+    return src('src/resources/**')
+        .pipe(gulpif(argv.prod, dest('dest/build/resources'), dest('dest/dev/resources')))
 }
 
 const docs = () => {
     return src('src/*.html')
+        .pipe(inline({
+            base: 'src/',
+            disabledTypes: ['js', 'css'] 
+        }))
+        .pipe(formatHtml())
         .pipe(gulpif(argv.prod, dest('dest/build'), dest('dest/dev')))
         .pipe(browserSync.stream())
 }
 
 const styles = () => {
-    return src('src/css/**/*.css')
+    return src('src/css/**/*.scss')
         .pipe(gulpif(!argv.prod, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(!argv.prod, sourcemaps.write()))
          .pipe(postcss([
             postcssPresetEnv({})
           ]))
@@ -64,8 +71,7 @@ const styles = () => {
         .pipe(gulpif(argv.prod, cleanCSS({
             level:2
         })))
-        .pipe(gulpif(!argv.prod, sourcemaps.write()))
-        .pipe(gulpif(argv.prod, dest('dest/build/css'), dest('dest/dev/css')))
+        .pipe(gulpif(argv.prod, dest('dest/build'), dest('dest/dev')))
         .pipe(browserSync.stream())
 }
 
@@ -77,25 +83,18 @@ const scripts = () => {
         .pipe(gulpif(argv.prod, babel()))
         .pipe(gulpif(argv.prod, uglify({toplevel: true}).on('error', notify.onError())))
         .pipe(gulpif(!argv.prod, sourcemaps.write()))
-        .pipe(gulpif(argv.prod, dest('dest/build/js'), dest('dest/dev/js')))
+        .pipe(gulpif(argv.prod, dest('dest/build'), dest('dest/dev')))
         .pipe(browserSync.stream())
 }
 
-const svgSprites = () => {
-    return src('src/img/svg/**/*.svg')
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: '../sprite.svg'
-                }
-            }
-        }))
-        .pipe(gulpif(argv.prod, dest('dest/build/img'), dest('dest/dev/img')))
-}
-
-const _modifyImageTask = (sources, opti) => {
+const _modifyImageTask = (webp) => {
     
-    return src(sources)
+    return src([
+                'src/img/**/*.jpg',
+                'src/img/**/*.png',
+                'src/img/*.svg',
+                'src/img/**/*.jpeg',
+            ])
             .pipe(imagemin([
                 imagemin.gifsicle({interlaced: true}) ,
                 imagemin.mozjpeg({quality: 75, progressive: true}),
@@ -107,22 +106,20 @@ const _modifyImageTask = (sources, opti) => {
                     ]
                 })
             ]))
-            .pipe(gulpif(opti, convertToWebp()))
+            .pipe(gulpif(webp, convertToWebp()))
             .pipe(size())
-            .pipe(gulpif(argv.prod, dest('dest/build/img'), dest('dest/dev/img'))) 
+            .pipe(gulpif(argv.prod, 
+                gulpif(webp,dest('dest/build/img/webp'),dest('dest/build/img/jpeg')), 
+                gulpif(webp,dest('dest/dev/img/webp'),dest('dest/dev/img/jpeg'))
+            )) 
 }
 
 const webp = () => {
-    return _modifyImageTask([
-        'src/img/**/*.jpg',
-        'src/img/**/*.png',
-        'src/img/*.svg',
-        'src/img/**/*.jpeg',
-    ], true)
+    return _modifyImageTask(true)
 }
 
 const jpeg = () => {
-    return _modifyImageTask(['src/img/**/*@2x.jpg'])
+    return _modifyImageTask()
 }
 
 
@@ -146,14 +143,13 @@ const watchFiles = () => {
 }
 
 if(!argv.prod) {
-    watch('src/css/**/*.css', styles)
+    watch('src/css/**/*.scss', styles)
     watch('src/**/*.html', docs)
-    watch('src/img/svg/**/*.svg', svgSprites)
     watch('src/js/**/*.js', scripts)
-    watch('src/fonts/**', fonts)
+    watch('src/resources/**', resources)
 }
 
-const tasks = [clean, fonts, docs, scripts, styles, jpeg, webp, svgSprites]
+const tasks = [clean, resources, docs, scripts, styles, jpeg, webp]
 if(!argv.prod)tasks.push(watchFiles);else tasks.push(gh)
 
 exports.styles = styles

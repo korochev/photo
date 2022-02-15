@@ -212,7 +212,10 @@
         display: block;
         margin-top: auto;
         color: $lightcolor;
-        background-image: url('../img/svg/calendar-grey.svg');
+
+        .date__img path {
+            fill: #999999;
+        }
     }
 }
 

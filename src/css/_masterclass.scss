@@ -78,13 +78,11 @@
 }
 .updateon {
     display: flex;
-    align-items: start;
 
     &__time {
         margin-left: 18px;
 
         @extend .date;
-        background-image: url('../img/svg/watch.svg');
     }
 }
 
