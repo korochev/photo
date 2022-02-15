@@ -253,7 +253,8 @@
     }
     @media (max-width:$br2nd) {
         &__info-wrap {
-            width: calc(100vh - 30px);
+            width: calc(100vw - 30px);
+            left: 0;
             top: 0;
             bottom: 0;
             & > * {
