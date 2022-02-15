@@ -252,7 +252,8 @@
     @media (max-width:$br2nd) {
         &__info-wrap {
             position: static !important;
-            width: 100% !important;
+            left: 0;
+            right: 0;
             & > * {
                 position: absolute;
                 min-width: max-content;
