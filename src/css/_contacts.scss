@@ -67,7 +67,7 @@
 
 .map {
     position: relative;
-    overflow: hidden;
+    
     &__layer_upper {
         position: absolute;
         bottom: 0;
@@ -79,11 +79,7 @@
     width: 100%;
     padding: 30px 0 30px 30px;
     background-color: rgba(32, 32, 32, 0.90);
-    overflow: hidden;
-
-    &:target {
-        visibility: hidden;
-    }
+   
 
     @media (max-width:$br1st) {
         padding: 20px 0 20px 20px;
@@ -136,13 +132,10 @@
     
 }
 
-/* .close-layer {
-    position: absolute;
-    left: ;
-    bottom: 90px;
-    z-index: -9999;
+.close-layer {
+    display: none;
 
     &:target + .popup {
         visibility: hidden;
     }
-} */
+}
