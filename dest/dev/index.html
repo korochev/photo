@@ -6,13 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>High pass. Неоновый фотосет 2.0 7 июля 20:00.</title>
-  <link rel="preload" href="resources/Roboto-Regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="resources/Roboto-Bold.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="resources/TTFirsNeue-Regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="resources/TTFirsNeue-Bold.woff2" as="font" type="font/woff2">
+
+
+
+  <link rel="preload" href="resources/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="resources/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="resources/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="resources/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="resources/normalize.css">
   <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
@@ -1178,8 +1182,8 @@
       <div class="contacts-wrap container">
         <h2 class="contacts__title">Контакты</h2>
         <div class="contacts__content">
-          <article class="contacts__map map">
-            <div class="map__layer_upper popup" id="popup">
+          <article class="contacts__map map" id="close">
+            <div class="map__layer_upper popup">
               <p class="popup__heading">
                 <strong>Студия “High pass”</strong>
               </p>
@@ -1194,7 +1198,7 @@
                   +7 (495) 42-423-532
                 </a>
               </address>
-              <a href="#popup" class="popup__close" role="button">
+              <a href="#close" class="popup__close" role="button">
                 <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" title="Крестик">
                   <circle cx="10" cy="10" r="10" fill="#666666" />
                   <rect x="6.20709" y="5.5" width="12" height="1" transform="rotate(45 6.20709 5.5)" fill="white" />

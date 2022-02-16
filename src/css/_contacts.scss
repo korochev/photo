@@ -72,6 +72,10 @@
         bottom: 0;
         z-index: 1;
     }
+
+    &:target > .popup {
+        visibility: hidden;
+    }
 }
 
 .popup {
@@ -128,6 +132,4 @@
         }
     }
     
-#map:target .popup{
-    visibility: hidden;
 }
