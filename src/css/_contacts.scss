@@ -79,7 +79,10 @@
     width: 100%;
     padding: 30px 0 30px 30px;
     background-color: rgba(32, 32, 32, 0.90);
-   
+
+    &:target {
+        display: none;
+    }
 
     @media (max-width:$br1st) {
         padding: 20px 0 20px 20px;
@@ -132,10 +135,10 @@
     
 }
 
-.close-layer {
+/* .close-layer {
     display: none;
 
     &:target + .popup {
         visibility: hidden;
     }
-}
+} */
