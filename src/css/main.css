@@ -836,14 +836,14 @@ fieldset {
   }
 }
 
-.feedback {
+.subscribe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 @media (max-width: 1024px) {
-  .feedback {
+  .subscribe {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -851,13 +851,13 @@ fieldset {
   }
 }
 
-.feedback > * {
+.subscribe > * {
   height: 44px;
   border: none;
   outline: none;
 }
 
-.feedback__email {
+.subscribe__email {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -866,23 +866,23 @@ fieldset {
   color: #CACACA;
 }
 
-.feedback__email::-webkit-input-placeholder {
+.subscribe__email::-webkit-input-placeholder {
   color: currentColor;
 }
 
-.feedback__email:-ms-input-placeholder {
+.subscribe__email:-ms-input-placeholder {
   color: currentColor;
 }
 
-.feedback__email::-ms-input-placeholder {
+.subscribe__email::-ms-input-placeholder {
   color: currentColor;
 }
 
-.feedback__email::placeholder {
+.subscribe__email::placeholder {
   color: currentColor;
 }
 
-.feedback__submit {
+.subscribe__submit {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -901,7 +901,7 @@ fieldset {
 }
 
 @media (max-width: 1024px) {
-  .feedback__submit {
+  .subscribe__submit {
     margin: 25px 0 0 0;
   }
 }

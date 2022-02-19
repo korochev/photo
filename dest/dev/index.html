@@ -171,9 +171,10 @@
               </picture>
             </figure>
             <p class="us__mailing-list" id="usl">Подписаться на рассылку</p>
-            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="us__feedback feedback">
-              <input type="email" name="email" id="fe" class="feedback__email" placeholder="E-mail" aria-required="false" aria-invalid="false" aria-labelledby="usl" spellcheck="false">
-              <input type="submit" value="Отправить" class="feedback__submit" aria-label="Отправить форму">
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="us__subscribe subscribe valid-form">
+              <input required type="email" name="email" id="fe" class="subscribe__email valid-input" placeholder="E-mail" aria-invalid="false" aria-labelledby="usl" spellcheck="false" aria-label="Обязательное поле" pattern="^(([^&lt;&gt;()\[\]\.,;:#\s@&quot;]+(\.[^&lt;&gt;()\[\]\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@(([^&lt;&gt;()\.,;#\s@&quot;]+\.{0,1})+[^&lt;&gt;()\.,;:\s@&quot;]{2,})$" autocomplete="on" title="Например, name@example.com &#010;(где user указывает имя почтового ящика,&#010;example.com - доменное имя того сервера,&#010; на котором расположен почтовый ящик)" aria-required="true" aria-describedby="fal" autocapitalize="off">
+              <label for="fe" id="fal" class="subscribe__error valid-alert" role="alert" aria-live="assertive">Недопустимый формат</label>
+              <input type="submit" value="Отправить" class="subscribe__submit valid-submit" aria-label="Отправить форму" disabled>
             </form>
           </div>
         </article>
@@ -1183,8 +1184,12 @@
         <h2 class="contacts__title">Контакты</h2>
         <div class="contacts__content">
           <article class="contacts__map map">
-            <span class="close-layer" id="closeL"></span>
-            <div class="map__layer_upper popup">
+            <picture>
+              <source srcset="resources/map.webp 1x, resources/map@2x.webp 2x" type="image/webp">
+              <source srcset="resources/map.jpg 1x, resources/map@2x.jpg 2x" type="image/jpg">
+              <img class="map-img" src="iresources/map@2x.jpg 2x" alt="Статичный фрагмент местности (нажмите, чтоб загрузить карту">
+            </picture>
+            <div class="map__layer_upper popup" id="closeL">
               <p class="popup__heading">
                 <strong>Студия “High pass”</strong>
               </p>
@@ -1210,22 +1215,24 @@
             <div class="map__layer_bottom" id="map" style="width: 100%; height: 100%;" tabindex="-1" role="application"></div>
           </article>
           <article class="contacts__fback fback">
-            <p class="fback__heading">
+            <p class="fback__heading" id="sbh">
               <strong>Оставить заявку</strong>
             </p>
-            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="fback__form fback-form" novalidate>
-              <label for="message" class="fback-form__label">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</label>
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="fback__form fback-form valid-form" aria-labelledby="sbm">
+              <label for="sbm" id="sbl" class="fback-form__label">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</label>
               <fieldset class="fback-form__fieldset" aria-label="Укажите Ваше имя (можно без фамилии)">
-                <input type="text" name="name" value class="fback-form__input" id="fname" aria-required="false" aria-invalid="false" placeholder="Имя" spellcheck="false">
+                <input required type="text" name="name" value class="fback-form__input valid-input" id="sbn" aria-required="true" aria-invalid="false" placeholder="Имя" spellcheck="false" aria-label="Обязательное поле" pattern="^(?![,\.'-])(?!.*\.\.|.*,,|.*''|.*--)[\p{L} ,\.'-]*[\p{L}\.\s]$" autocomplete="on" title="Имя в произвольном варианте (к примеру, 'Иван Петрович', 'Василиса' и т.д.)&#010; Может содержать: любые буквы, '.' (точку), ',' (запятую), '`' (апостроф), '-' (тире)" aria-labelledby="sban">
+                <label for="sbn" class="fback-form__error valid-alert" id="sban">Недопустимый формат</label>
               </fieldset>
               <fieldset class="fback-form__fieldset" aria-label="Напишите коррекный адрес электронной почты">
-                <input type="email" name="email" value class="fback-form__input" id="email" aria-required="true" aria-invalid="false" placeholder="E-mail" spellcheck="false">
+                <input required type="email" name="email" value class="fback-form__input valid-input" id="sbe" aria-required="true" aria-invalid="false" placeholder="E-mail" spellcheck="false" pattern="^(([^&lt;&gt;()\[\]\.,;:#\s@&quot;]+(\.[^&lt;&gt;()\[\]\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@(([^&lt;&gt;()\.,;#\s@&quot;]+\.{0,1})+[^&lt;&gt;()\.,;:\s@&quot;]{2,})$" autocomplete="on" title="Например, name@example.com &#010;(где user указывает имя почтового ящика,&#010;example.com - доменное имя того сервера,&#010; на котором расположен почтовый ящик)" aria-labelledby="sbae" autocapitalize="off">
+                <label for="sbe" class="fback-form__error valid-alert" id="sbae">Недопустимый формат</label>
               </fieldset>
               <fieldset class="fback-form__fieldset" aria-label="Как можно точнее укажите цель мероприятия и дополнительную информацию по заказу">
-                <textarea name="message" class="fback-form__input fback-form__input_textarea" id="message" aria-required="false" aria-invalid="false" placeholder="Комментарий" spellcheck="false"></textarea>
+                <textarea name="message" value class="fback-form__input fback-form__input_textarea" id="sbm" aria-required="false" aria-invalid="false" placeholder="Комментарий" spellcheck="false" autocapitalize="off" aria-labelledby="sbl"></textarea>
               </fieldset>
               <fieldset class="fback-form__fieldset" aria-label="Нажмите, чтобы отправить форму">
-                <input type="submit" value="Отправить" class="fback-form__btn">
+                <input type="submit" value="Отправить" class="fback-form__btn valid-submit" aria-label="Отправить форму" disabled>
               </fieldset>
             </form>
           </article>

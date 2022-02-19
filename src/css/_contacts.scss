@@ -39,6 +39,7 @@
         color: $lightcolor;
     }
     &__fieldset {
+        position: relative;
         margin-top: 20px;
         .fback-form__input {
             height: 50px;
@@ -60,6 +61,7 @@
     }
     &__btn {
         @include btn;
+        cursor: pointer;
         border: 0;
         outline: 0;
     }
@@ -67,11 +69,30 @@
 
 .map {
     position: relative;
+
+    &:hover .map-img {
+        display: none;
+    }
+
+    &:hover .map__layer_bottom {
+        display: block;
+    }
+
+    &-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     
     &__layer_upper {
         position: absolute;
         bottom: 0;
         z-index: 1;
+    }
+
+    &__layer_bottom {
+        display: none;
     }
 }
 

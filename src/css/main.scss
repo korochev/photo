@@ -205,27 +205,12 @@ svg {
     width: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
-    @include nonvisible;
-}
-
 input,
 textarea {
     border-radius: 0 !important;
     -webkit-appearance: none !important; 
     font-size: 16px !important;
 }
-
-[class*="ground-pane"] {
-    filter: grayscale(1);
-}
-
-/* [class*="gototech"]:focus,
-[class*="copyright__link"]:focus {
-    color: red !important;
-    outline: 1px solid red;
-} */ 
 
 .container {
     width: 100%;
@@ -280,6 +265,49 @@ textarea {
         }
     }  
 }
+
+
+    .valid-alert {
+        display: none;
+        position: absolute;
+        top: 2px;
+        left: 25px;
+        font-size: 9px;
+        line-height: 1;
+        color: #FF3030;
+    }
+    
+    #fe.valid-input_invalid:invalid,
+    #sbn.valid-input_invalid:invalid,
+    #sbe.valid-input_invalid:invalid {
+        border: 1px solid #FF3030;
+    }
+
+    #fe.valid-input_invalid:invalid + .valid-alert,
+    #sbn.valid-input_invalid:invalid + .valid-alert,
+    #sbe.valid-input_invalid:invalid + .valid-alert {
+        display: block;
+    }
+    
+[disabled] {
+    background-color: rgb(255,110,48,0.5) !important;
+    cursor: not-allowed !important;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    @include nonvisible;
+}
+
+[class*="ground-pane"] {
+    filter: grayscale(1);
+}
+
+/* [class*="gototech"]:focus,
+[class*="copyright__link"]:focus {
+    color: red !important;
+    outline: 1px solid red;
+} */ 
 
 @import '_header.scss';
 
