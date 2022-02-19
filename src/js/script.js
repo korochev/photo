@@ -75,9 +75,13 @@ function init(){
 
 function changeFormHandler(e) {
     let iterate = e.currentTarget;
+    let btn = iterate.querySelector('.valid-submit');
 
     if (e.target.checkValidity()) {
-        iterate.querySelector('.valid-submit').removeAttribute('disabled');
+        btn.removeAttribute('disabled');
+    }
+    else {
+        btn.setAttribute('disabled', true);
     }
 }
 
