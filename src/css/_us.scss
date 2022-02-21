@@ -31,6 +31,7 @@
                 .us__img{
                     @include tempimg;
                     height: 100%;
+                    min-height: 130px;
                     object-fit: cover;
                 }
             }
@@ -64,6 +65,7 @@
         color: $rarecolor;
         @include placeholder;
 
+        
     }
     &__submit {
         flex: 0 0 auto;

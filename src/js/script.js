@@ -7,7 +7,9 @@ let eventCheckers = [
     ['.projects__switch', 'blur'],
     ['.valid-input', 'blur'],
     ['.valid-input', 'input'],
-    ['.valid-form', 'change']
+    ['.valid-form', 'change'],
+    ['.service-tab__toggle', 'focus'],
+    ['*' , 'focus']
 ];
 eventCheckers.forEach(function(item, i) {
     document.querySelectorAll(item[0]).forEach(function(el){el.addEventListener(item[1],function(event){
@@ -19,7 +21,8 @@ eventCheckers.forEach(function(item, i) {
                 if(!this.checked){this.checked=!0}else{this.checked=!1}
             }
         }
-        else if (i == 1) {
+        else if (i == 1 || i == 7) {
+            event.preventDefault();
             document.querySelector('#' + this.getAttribute('for')).focus();
         }
         else if (i == 2) {
@@ -31,6 +34,15 @@ eventCheckers.forEach(function(item, i) {
                 if (this.getAttribute('id') == 'psp1' || this.getAttribute('id') == 'sas-g') {
                     event.preventDefault();
                     this.nextElementSibling.focus();
+                }
+                if (this.getAttribute('id') == 'sas-r') {
+                    event.preventDefault();
+                    if (!this.checked) {
+                        document.querySelector('#dsgen').focus();
+                    } else {
+                        console.log(this);
+                        document.querySelector('#dsret').focus();
+                    }
                 }
             }
             if(event.key=='Enter'){
@@ -107,3 +119,37 @@ function changeDefaultFormMessage(e) {
         }
     }
 }
+
+/* ##Lazy Load## */
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var lazyImages =[].slice.call(
+     document.querySelectorAll(".lazy > source")
+    )
+ 
+    if ("IntersectionObserver" in window) {
+        console.log('I was here');
+       let lazyImageObserver = 
+        new IntersectionObserver(function(entries, observer) {
+           entries.forEach(function(entry) {
+            if (entry.isIntersecting) {      
+               let lazyImage = entry.target;
+               lazyImage.srcset = lazyImage.dataset.srcset;
+               lazyImage.nextElementSibling.srcset = lazyImage.dataset.srcset;
+               lazyImage.nextElementSibling.classList.add('fade-in');
+               lazyImage.parentElement.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+             }
+          });
+         });
+ 
+       lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+       });
+    } else {
+      // Not supported, load all images immediately
+     lazyImages.forEach(function(image){
+         image.nextElementSibling.src = image.nextElementSibling.dataset.srcset;
+       });
+     }
+   });

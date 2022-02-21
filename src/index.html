@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High pass. Неоновый фотосет 2.0 7 июля 20:00.</title>
-
-    
     
     <link rel="preload" href="resources/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="resources/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="resources/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="resources/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="preload" as="image" href="img/webp/hero/1.webp">
+    <link rel="preload" as="image" href="img/webp/hero/2.webp">
+    <link rel="preload" as="image" href="img/webp/hero/3.webp">
+    <link rel="preload" as="image" href="img/webp/hero/4.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//1@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//2@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//3@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//4@2x.webp">
     
     <link rel="stylesheet" href="resources/normalize.css">
     <link rel="stylesheet" href="main.css">
@@ -22,7 +29,7 @@
         <div class="header__wrap container">
             <figure class="header__logo logo header-item">
                 <a href="#" class="logo__link" aria-label="Главная страница">
-                    <img src="img/svg/logo.svg" class="logo__img inline-svg" title="High Pass" role="img">
+                    <img src="img/svg/logo.svg" class="logo__img inline-svg" title="High Pass" role="img" >
                 </a>
             </figure>
             <nav class="header__menu menu header-item">
@@ -75,7 +82,7 @@
                     <picture>
                         <source srcset="img/webp/hero/1.webp 1x, img/webp/hero/1@2x.webp 2x" type="image/webp">
                         <source srcset="img/jpg/hero/1.jpg 1x, img/jpg/hero/1@2x.jpg 2x" type="image/jpg">
-                        <img class="hero-img" src="img/jpg/hero/1@2x.jpg 2x" alt="Пример работ фотографа" style="height: 100%;">
+                        <img class="hero-img" src="img/jpg/hero/1@2x.jpg" alt="Пример работ фотографа" style="height: 100%;">
                     </picture>
                     <a href="#" class="hero-bar__tag">#мастеркласс</a>
                     <div class="hero-bar__info">
@@ -90,7 +97,7 @@
                         <picture>
                             <source srcset="img/webp/hero/2.webp 1x, img/webp/hero/2@2x.webp 2x" type="image/webp">
                             <source srcset="img/jpg/hero/2.jpg 1x, img/jpg/hero/2@2x.jpg 2x" type="image/jpg">
-                            <img class="hero-img" src="img/jpg/hero/2@2x.jpg 2x" alt="Девушка на фоне разноцветных вывесок">
+                            <img class="hero-img" src="img/jpg/hero/2@2x.jpg" alt="Девушка на фоне разноцветных вывесок">
                         </picture>
                     </figure>
                 </article>
@@ -98,14 +105,14 @@
                     <picture>
                         <source srcset="img/webp/hero/3.webp 1x, img/webp/hero/3@2x.webp 2x" type="image/webp">
                         <source srcset="img/jpg/hero/3.jpg 1x, img/jpg/hero/3@2x.jpg 2x" type="image/jpg">
-                        <img class="hero-img" src="img/jpg/hero/3@2x.jpg 2x" alt="Девушка на фоне разноцветных вывесок">
+                        <img class="hero-img" src="img/jpg/hero/3@2x.jpg" alt="Девушка на фоне разноцветных вывесок">
                     </picture>
                 </figure>
                 <figure class="hero__rig hero-rig">
                     <picture>
                         <source srcset="img/webp/hero/4.webp 1x, img/webp/hero/4@2x.webp 2x" type="image/webp">
                         <source srcset="img/jpg/hero/4.jpg 1x, img/jpg/hero/4@2x.jpg 2x" type="image/jpg">
-                        <img class="hero-img" src="img/jpg/hero/4@2x.jpg 2x" alt="Девушка на фоне разноцветных вывесок">
+                        <img class="hero-img" src="img/jpg/hero/4@2x.jpg" alt="Девушка на фоне разноцветных вывесок">
                     </picture>
                 </figure>
             </div>
@@ -119,10 +126,13 @@
                     </div>
                     <div class="us__content-item">
                         <figure class="us__img-wrap">
-                            <picture>
-                                <source srcset="img/webp/camera.webp 1x, img/webp/camera@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/camera.jpg 1x, img/jpg/camera@2x.jpg 2x" type="image/jpg">
-                                <img class="us__img" src="img/jpg/camera@2x.jpg 2x" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/camera.webp 1x, img/webp/camera@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/camera.jpg 1x, img/jpg/camera@2x.jpg 2x" type="image/jpg">
+                                <img class="us__img" data-srcset="img/jpg/camera@2x.jpg" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                                <noscript>
+                                    <img class="us__img" src="img/jpg/camera@2x.jpg" alt="Цифровой фотоаппарат ( символизирует профессионализм )">
+                                </noscript>
                             </picture>
                         </figure>
                         <p class="us__mailing-list" id="usl">Подписаться на рассылку</p>
@@ -146,10 +156,13 @@
                             <ul class="galery-posts__list">
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-1/small-01.webp 1x, img/webp/projects/page-1/small-01@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-1/small-01.jpg 1x, img/jpg/projects/page-1/small-01@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-1/small-01@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-1/small-01.webp 1x, img/webp/projects/page-1/small-01@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-1/small-01.jpg 1x, img/jpg/projects/page-1/small-01@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-1/small-01@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-1/small-01@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag" data-change="have">#пейзаж</a>
                                     </figure>
@@ -161,10 +174,13 @@
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-1/small-02.webp 1x, img/webp/projects/page-1/small-02@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-1/small-02.jpg 1x, img/jpg/projects/page-1/small-02@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-1/small-02@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-1/small-02.webp 1x, img/webp/projects/page-1/small-02@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-1/small-02.jpg 1x, img/jpg/projects/page-1/small-02@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-1/small-02@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-1/small-02@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag">#портрет</a>
                                     </figure>
@@ -176,10 +192,13 @@
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-1/small-03.webp 1x, img/webp/projects/page-1/small-03@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-1/small-03.jpg 1x, img/jpg/projects/page-1/small-03@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-1/small-03@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-1/small-03.webp 1x, img/webp/projects/page-1/small-03@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-1/small-03.jpg 1x, img/jpg/projects/page-1/small-03@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-1/small-03@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-1/small-03@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag">#предмет</a>
                                     </figure>
@@ -192,10 +211,13 @@
                             </ul>
                         </li>
                         <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_1">
-                            <picture>
-                                <source srcset="img/webp/projects/page-1/big-01.webp 1x, img/webp/projects/page-1/big-01@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/projects/page-1/big-01.jpg 1x, img/jpg/projects/page-1/big-01@2x.jpg 2x" type="image/jpg">
-                                <img class="galery-img prevhit__img" src="img/jpg/projects/page-1/big-01@2x.jpg 2x" alt="Пример работ фотографа">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/projects/page-1/big-01.webp 1x, img/webp/projects/page-1/big-01@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/projects/page-1/big-01.jpg 1x, img/jpg/projects/page-1/big-01@2x.jpg 2x" type="image/jpg">
+                                <img class="galery-img prevhit__img" data-srcset="img/jpg/projects/page-1/big-01@2x.jpg" alt="Пример работ фотографа">
+                                <noscript>
+                                    <img class="galery-img prevhit__img" src="img/jpg/projects/page-1/big-01@2x.jpg" alt="Пример работ фотографа">
+                                </noscript>
                             </picture>
                             <a href="#" class="galery-tag">#fuji</a>
                             <div class="prevhit__info">
@@ -209,10 +231,13 @@
                             <a href="#" class="prevhit__btn" role="button">О проекте</a>
                         </li>
                         <li class="galery__prevhit prevhit galery-different galery-different_page_1">
-                            <picture>
-                                <source srcset="img/webp/projects/page-1/big-02.webp 1x, img/webp/projects/page-1/big-02@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/projects/page-1/big-02.jpg 1x, img/jpg/projects/page-1/big-02@2x.jpg 2x" type="image/jpg">
-                                <img class="galery-img prevhit__img" src="img/jpg/projects/page-1/big-02@2x.jpg 2x" alt="Пример работ фотографа">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/projects/page-1/big-02.webp 1x, img/webp/projects/page-1/big-02@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/projects/page-1/big-02.jpg 1x, img/jpg/projects/page-1/big-02@2x.jpg 2x" type="image/jpg">
+                                <img class="galery-img prevhit__img" data-srcset="img/jpg/projects/page-1/big-02@2x.jpg" alt="Пример работ фотографа">
+                                <noscript>
+                                    <img class="galery-img prevhit__img" src="img/jpg/projects/page-1/big-02@2x.jpg" alt="Пример работ фотографа">
+                                </noscript>
                             </picture>
                             <a href="#" class="galery-tag">#проектзабвение</a>
                             <div class="prevhit__info">
@@ -227,10 +252,13 @@
                         </li>
                         <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_1">
                             <figure class="evtprofile__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/projects/page-1/middle-01.webp 1x, img/webp/projects/page-1/middle-01@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/projects/page-1/middle-01.jpg 1x, img/jpg/projects/page-1/middle-01@2x.jpg 2x" type="image/jpg">
-                                    <img class="galery-img" src="img/jpg/projects/page-1/middle-01@2x.jpg 2x" alt="Пример работ фотографа">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/projects/page-1/middle-01.webp 1x, img/webp/projects/page-1/middle-01@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/projects/page-1/middle-01.jpg 1x, img/jpg/projects/page-1/middle-01@2x.jpg 2x" type="image/jpg">
+                                    <img class="galery-img" data-srcset="img/jpg/projects/page-1/middle-01@2x.jpg" alt="Пример работ фотографа">
+                                    <noscript>
+                                        <img class="galery-img" src="img/jpg/projects/page-1/middle-01@2x.jpg" alt="Пример работ фотографа">
+                                    </noscript>
                                 </picture>
                                 <a href="#" class="galery-tag">#ретушь</a>
                             </figure>
@@ -242,10 +270,13 @@
                         </li>
                         <li class="galery__evtprofile evtprofile galery__portrait galery__portrait_page_1">
                             <figure class="evtprofile__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/projects/page-1/middle-02.webp 1x, img/webp/projects/page-1/middle-02@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/projects/page-1/middle-02.jpg 1x, img/jpg/projects/page-1/middle-02@2x.jpg 2x" type="image/jpg">
-                                    <img class="galery-img" src="img/jpg/projects/page-1/middle-02@2x.jpg 2x" alt="Пример работ фотографа">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/projects/page-1/middle-02.webp 1x, img/webp/projects/page-1/middle-02@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/projects/page-1/middle-02.jpg 1x, img/jpg/projects/page-1/middle-02@2x.jpg 2x" type="image/jpg">
+                                    <img class="galery-img" data-srcset="img/jpg/projects/page-1/middle-02@2x.jpg" alt="Пример работ фотографа">
+                                    <noscript>
+                                        <img class="galery-img" src="img/jpg/projects/page-1/middle-02@2x.jpg" alt="Пример работ фотографа">
+                                    </noscript>
                                 </picture>
                                 <a href="#" class="galery-tag">#портрет</a>
                             </figure>
@@ -258,10 +289,13 @@
                     </ul>
                     <ul class="galery__list galery__list_page_2">
                         <li class="galery__prevhit prevhit galery-eyes galery-eyes_page_2">
-                            <picture>
-                                <source srcset="img/webp/projects/page-2/big-01.webp 1x, img/webp/projects/page-2/big-01@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/projects/page-2/big-01.jpg 1x, img/jpg/projects/page-2/big-01@2x.jpg 2x" type="image/jpg">
-                                <img class="galery-img prevhit__img" src="img/jpg/projects/page-2/big-01@2x.jpg 2x" alt="Пример работ фотографа">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/projects/page-2/big-01.webp 1x, img/webp/projects/page-2/big-01@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/projects/page-2/big-01.jpg 1x, img/jpg/projects/page-2/big-01@2x.jpg 2x" type="image/jpg">
+                                <img class="galery-img prevhit__img" data-srcset="img/jpg/projects/page-2/big-01@2x.jpg" alt="Пример работ фотографа">
+                                <noscript>
+                                    <img class="galery-img prevhit__img" src="img/jpg/projects/page-2/big-01@2x.jpg" alt="Пример работ фотографа">
+                                </noscript>
                             </picture>
                             <a href="#" class="galery-tag" data-change="have">#портрет</a>
                             <div class="prevhit__info">
@@ -276,10 +310,13 @@
                         </li>
                         <li class="galery__evtprofile evtprofile galery__retouch galery__retouch_page_2">
                             <figure class="evtprofile__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/projects/page-2/middle-01.webp 1x, img/webp/projects/page-2/middle-01@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/projects/page-2/middle-01.jpg 1x, img/jpg/projects/page-2/middle-01@2x.jpg 2x" type="image/jpg">
-                                    <img class="galery-img" src="img/jpg/projects/page-2/middle-01@2x.jpg 2x" alt="Пример работ фотографа">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/projects/page-2/middle-01.webp 1x, img/webp/projects/page-2/middle-01@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/projects/page-2/middle-01.jpg 1x, img/jpg/projects/page-2/middle-01@2x.jpg 2x" type="image/jpg">
+                                    <img class="galery-img" data-srcset="img/jpg/projects/page-2/middle-01@2x.jpg" alt="Пример работ фотографа">
+                                    <noscript>
+                                        <img class="galery-img" src="img/jpg/projects/page-2/middle-01@2x.jpg" alt="Пример работ фотографа">
+                                    </noscript>
                                 </picture>
                                 <a href="#" class="galery-tag">#ретушь</a>
                             </figure>
@@ -291,10 +328,13 @@
                         </li>
                         <li class="galery__evtprofile evtprofile  galery__portrait galery__portrait_page_2">
                             <figure class="evtprofile__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/projects/page-2/middle-02.webp 1x, img/webp/projects/page-2/middle-02@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/projects/page-2/middle-02.jpg 1x, img/jpg/projects/page-2/middle-02@2x.jpg 2x" type="image/jpg">
-                                    <img class="galery-img" src="img/jpg/projects/page-2/middle-02@2x.jpg 2x" alt="Пример работ фотографа">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/projects/page-2/middle-02.webp 1x, img/webp/projects/page-2/middle-02@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/projects/page-2/middle-02.jpg 1x, img/jpg/projects/page-2/middle-02@2x.jpg 2x" type="image/jpg">
+                                    <img class="galery-img" data-srcset="img/jpg/projects/page-2/middle-02@2x.jpg" alt="Пример работ фотографа">
+                                    <noscript>
+                                        <img class="galery-img" src="img/jpg/projects/page-2/middle-02@2x.jpg" alt="Пример работ фотографа">
+                                    </noscript>
                                 </picture>
                                 <a href="#" class="galery-tag">#портрет</a>
                             </figure>
@@ -308,10 +348,13 @@
                             <ul class="galery-posts__list">
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-2/small-01.webp 1x, img/webp/projects/page-2/small-01@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-2/small-01.jpg 1x, img/jpg/projects/page-2/small-01@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-2/small-01@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-2/small-01.webp 1x, img/webp/projects/page-2/small-01@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-2/small-01.jpg 1x, img/jpg/projects/page-2/small-01@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-2/small-01@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-2/small-01@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag">#пейзаж</a>
                                     </figure>
@@ -323,10 +366,13 @@
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-2/small-02.webp 1x, img/webp/projects/page-2/small-02@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-2/small-02.jpg 1x, img/jpg/projects/page-2/small-02@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-2/small-02@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-2/small-02.webp 1x, img/webp/projects/page-2/small-02@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-2/small-02.jpg 1x, img/jpg/projects/page-2/small-02@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-2/small-02@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-2/small-02@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag">#предмет</a>
                                     </figure>
@@ -338,10 +384,13 @@
                                 </li>
                                 <li class="galery-posts__item evtprofile">
                                     <figure class="evtprofile__img-wrap">
-                                        <picture>
-                                            <source srcset="img/webp/projects/page-2/small-03.webp 1x, img/webp/projects/page-2/small-03@2x.webp 2x" type="image/webp">
-                                            <source srcset="img/jpg/projects/page-2/small-03.jpg 1x, img/jpg/projects/page-2/small-03@2x.jpg 2x" type="image/jpg">
-                                            <img class="galery-img" src="img/jpg/projects/page-2/small-03@2x.jpg 2x" alt="Пример работ фотографа">
+                                        <picture class="lazy">
+                                            <source data-srcset="img/webp/projects/page-2/small-03.webp 1x, img/webp/projects/page-2/small-03@2x.webp 2x" type="image/webp">
+                                            <source data-srcset="img/jpg/projects/page-2/small-03.jpg 1x, img/jpg/projects/page-2/small-03@2x.jpg 2x" type="image/jpg">
+                                            <img class="galery-img" data-srcset="img/jpg/projects/page-2/small-03@2x.jpg" alt="Пример работ фотографа">
+                                            <noscript>
+                                                <img class="galery-img" src="img/jpg/projects/page-2/small-03@2x.jpg" alt="Пример работ фотографа">
+                                            </noscript>
                                         </picture>
                                         <a href="#" class="galery-tag">#пейзаж</a>
                                     </figure>
@@ -354,10 +403,13 @@
                             </ul>
                         </li>
                         <li class="galery__prevhit prevhit galery-different galery-different_page_2">
-                            <picture>
-                                <source srcset="img/webp/projects/page-2/big-02.webp 1x, img/webp/projects/page-2/big-02@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/projects/page-2/big-02.jpg 1x, img/jpg/projects/page-2/big-02@2x.jpg 2x" type="image/jpg">
-                                <img class="galery-img prevhit__img" src="img/jpg/projects/page-2/big-02@2x.jpg 2x" alt="Пример работ фотографа">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/projects/page-2/big-02.webp 1x, img/webp/projects/page-2/big-02@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/projects/page-2/big-02.jpg 1x, img/jpg/projects/page-2/big-02@2x.jpg 2x" type="image/jpg">
+                                <img class="galery-img prevhit__img" data-srcset="img/jpg/projects/page-2/big-02@2x.jpg" alt="Пример работ фотографа">
+                                <noscript>
+                                    <img class="galery-img prevhit__img" src="img/jpg/projects/page-2/big-02@2x.jpg" alt="Пример работ фотографа">
+                                </noscript>
                             </picture>
                             <a href="#" class="galery-tag">#проектджаз</a>
                             <div class="prevhit__info">
@@ -382,24 +434,27 @@
             <div class="service__wrap container">
                 <section class="service__tab service-tab">
                     <h2 class="service-title">Услуги студии</h2>
-                    <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" role="tab" aria-selected="true" checked>
-                    <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" role="tab">
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" role="tab" aria-selected="true" checked tabindex="-1">
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" role="tab" tabindex="-1">
                     <div class="service-tab__label-wrap">
-                        <label for="sas-g" class="service-tab__toggle service-tab__toggle_cat_gen" aria-hidden="true" role="presentation">Основной перечень</label>
-                        <label for="sas-r" class="service-tab__toggle service-tab__toggle_cat_ret" aria-hidden="true" role="presentation">Услуги по ретуши</label>
+                        <label for="sas-g" class="service-tab__toggle service-tab__toggle_cat_gen" aria-hidden="true" role="presentation" tabindex="0">Основной перечень</label>
+                        <label for="sas-r" class="service-tab__toggle service-tab__toggle_cat_ret" aria-hidden="true" role="presentation" tabindex="0">Услуги по ретуши</label>
                     </div>
                     <div class="service-tab__promo promo">
                         <ul class="promo__list promo__list_cat_gen" role="tabpanel" aria-labelledby="sas-g">
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/general/1.webp 1x, img/webp/service/tab/general/1@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/general/1.jpg 1x, img/jpg/service/tab/general/1@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/general/1@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/general/1.webp 1x, img/webp/service/tab/general/1@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/general/1.jpg 1x, img/jpg/service/tab/general/1@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/general/1@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/general/1@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Высокий уровень вовлечения</strong></p>
+                                    <p class="product__heading"><a href="#" id="dsgen">Высокий уровень вовлечения</a></p>
                                     <p class="product__desc">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
                                     <a href="#" class="product__link">
                                         Подробнее
@@ -409,14 +464,17 @@
                             </li>
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">    
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/general/2.webp 1x, img/webp/service/tab/general/2@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/general/2.jpg 1x, img/jpg/service/tab/general/2@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/general/2@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/general/2.webp 1x, img/webp/service/tab/general/2@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/general/2.jpg 1x, img/jpg/service/tab/general/2@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/general/2@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/general/2@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Диаграммы связей</strong></p>
+                                    <p class="product__heading"><a href="#">Диаграммы связей</a></p>
                                     <p class="product__desc">Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за собой процесс.</p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
@@ -426,14 +484,17 @@
                             </li>
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/general/3.webp 1x, img/webp/service/tab/general/3@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/general/3.jpg 1x, img/jpg/service/tab/general/3@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/general/3@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/general/3.webp 1x, img/webp/service/tab/general/3@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/general/3.jpg 1x, img/jpg/service/tab/general/3@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/general/3@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/general/3@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Высоко<wbr>технологичная концепция</strong></p>
+                                    <p class="product__heading"><a href="#">Высоко<wbr>технологичная концепция</a></p>
                                     <p class="product__desc">В частности, убеждённость некоторых оппонентов способствует подготовке и реализации анализа существующих паттернов.</p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
@@ -443,14 +504,17 @@
                             </li>
                             <li class="promo__item product product_cat_gen">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/general/4.webp 1x, img/webp/service/tab/general/4@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/general/4.jpg 1x, img/jpg/service/tab/general/4@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/general/4@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/general/4.webp 1x, img/webp/service/tab/general/4@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/general/4.jpg 1x, img/jpg/service/tab/general/4@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/general/4@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/general/4@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Сложившаяся структура организации</strong></p>
+                                    <p class="product__heading"><a href="#">Сложившаяся структура организации</a></p>
                                     <p class="product__desc">Кстати,  сторонники тоталитаризма в науке будут объединены в целые кластеры себе подобных.</p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
@@ -462,14 +526,17 @@
                         <ul class="promo__list promo__list_cat_ret" role="tabpanel" aria-labelledby="sas-r">
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/1.webp 1x, img/webp/service/tab/retouch/1@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/1.jpg 1x, img/jpg/service/tab/retouch/1@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/1@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/1.webp 1x, img/webp/service/tab/retouch/1@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/1.jpg 1x, img/jpg/service/tab/retouch/1@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/1@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/1@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Принимая во внимание показатели</strong></p>
+                                    <p class="product__heading"><a href="#" id="dsret">Принимая во внимание показатели</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -478,14 +545,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/2.webp 1x, img/webp/service/tab/retouch/2@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/2.jpg 1x, img/jpg/service/tab/retouch/2@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/2@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/2.webp 1x, img/webp/service/tab/retouch/2@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/2.jpg 1x, img/jpg/service/tab/retouch/2@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/2@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/2@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Таким образом, выбранный нами...</strong></p>
+                                    <p class="product__heading"><a href="#">Таким образом, выбранный нами...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -494,14 +564,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/3.webp 1x, img/webp/service/tab/retouch/3@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/3.jpg 1x, img/jpg/service/tab/retouch/3@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/3@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/3.webp 1x, img/webp/service/tab/retouch/3@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/3.jpg 1x, img/jpg/service/tab/retouch/3@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/3@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/3@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Также как высокое качество...</strong></p>
+                                    <p class="product__heading"><a href="#">Также как высокое качество...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -510,14 +583,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/4.webp 1x, img/webp/service/tab/retouch/4@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/4.jpg 1x, img/jpg/service/tab/retouch/4@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/4@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/4.webp 1x, img/webp/service/tab/retouch/4@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/4.jpg 1x, img/jpg/service/tab/retouch/4@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/4@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/4@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Безусловно, семантический разбор...</strong></p>
+                                    <p class="product__heading"><a href="#">Безусловно, семантический разбор...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -526,14 +602,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/5.webp 1x, img/webp/service/tab/retouch/5@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/5.jpg 1x, img/jpg/service/tab/retouch/5@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/5@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/5.webp 1x, img/webp/service/tab/retouch/5@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/5.jpg 1x, img/jpg/service/tab/retouch/5@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/5@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/5@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Внезапно, предприниматели в интернете...</strong></p>
+                                    <p class="product__heading"><a href="#">Внезапно, предприниматели в интернете...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -542,14 +621,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/6.webp 1x, img/webp/service/tab/retouch/6@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/6.jpg 1x, img/jpg/service/tab/retouch/6@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/6@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/6.webp 1x, img/webp/service/tab/retouch/6@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/6.jpg 1x, img/jpg/service/tab/retouch/6@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/6@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/6@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Есть над чем подумать: активные...</strong></p>
+                                    <p class="product__heading"><a href="#">Есть над чем подумать: активные...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -558,14 +640,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/7.webp 1x, img/webp/service/tab/retouch/7@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/7.jpg 1x, img/jpg/service/tab/retouch/7@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/7@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/7.webp 1x, img/webp/service/tab/retouch/7@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/7.jpg 1x, img/jpg/service/tab/retouch/7@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/7@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/7@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Сделанные на базе аналитики выводы...</strong></p>
+                                    <p class="product__heading"><a href="#">Сделанные на базе аналитики выводы...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -574,14 +659,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/8.webp 1x, img/webp/service/tab/retouch/8@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/8.jpg 1x, img/jpg/service/tab/retouch/8@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/8@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/8.webp 1x, img/webp/service/tab/retouch/8@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/8.jpg 1x, img/jpg/service/tab/retouch/8@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/8@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/8@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Как принято считать, сторонники...</strong></p>
+                                    <p class="product__heading"><a href="#">Как принято считать, сторонники...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -590,14 +678,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/9.webp 1x, img/webp/service/tab/retouch/9@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/9.jpg 1x, img/jpg/service/tab/retouch/9@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/9@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/9.webp 1x, img/webp/service/tab/retouch/9@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/9.jpg 1x, img/jpg/service/tab/retouch/9@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/9@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/9@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Задача организации, в особенности...</strong></p>
+                                    <p class="product__heading"><a href="#">Задача организации, в особенности...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -606,14 +697,17 @@
                             </li>
                             <li class="promo__item product product_cat_ret">
                                 <figure class="product__image-wrap">
-                                    <picture>
-                                        <source srcset="img/webp/service/tab/retouch/10.webp 1x, img/webp/service/tab/retouch/10@2x.webp 2x" type="image/webp">
-                                        <source srcset="img/jpg/service/tab/retouch/10.jpg 1x, img/jpg/service/tab/retouch/10@2x.jpg 2x" type="image/jpg">
-                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/10@2x.jpg 2x" alt="Образец выполненных работ">
+                                    <picture class="lazy">
+                                        <source data-srcset="img/webp/service/tab/retouch/10.webp 1x, img/webp/service/tab/retouch/10@2x.webp 2x" type="image/webp">
+                                        <source data-srcset="img/jpg/service/tab/retouch/10.jpg 1x, img/jpg/service/tab/retouch/10@2x.jpg 2x" type="image/jpg">
+                                        <img class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/10@2x.jpg" alt="Образец выполненных работ">
+                                        <noscript>
+                                            <img class="product__img service-img" src="img/jpg/service/tab/retouch/10@2x.jpg" alt="Образец выполненных работ">
+                                        </noscript>
                                     </picture>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><strong>Активно развивающиеся страны...</strong></p>
+                                    <p class="product__heading"><a href="#">Активно развивающиеся страны...</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon" title="Перейти по ссылке" role="image">
                                         Подробнее
@@ -624,10 +718,13 @@
                     </div>
                 </section>
                 <article class="service__sale sale">
-                    <picture>
-                        <source srcset="img/webp/service/sale.webp 1x, img/webp/service/sale@2x.webp 2x" type="image/webp">
-                        <source srcset="img/jpg/service/sale.jpg 1x, img/jpg/service/sale@2x.jpg 2x" type="image/jpg">
-                        <img class="sale__background-img service-img" src="img/jpg/service/sale@2x.jpg 2x" alt="Образец портретной съемки девушки">
+                    <picture class="lazy">
+                        <source data-srcset="img/webp/service/sale.webp 1x, img/webp/service/sale@2x.webp 2x" type="image/webp">
+                        <source data-srcset="img/jpg/service/sale.jpg 1x, img/jpg/service/sale@2x.jpg 2x" type="image/jpg">
+                        <img class="sale__background-img service-img" data-srcset="img/jpg/service/sale@2x.jpg" alt="Образец портретной съемки девушки">
+                        <noscript>
+                            <img class="sale__background-img service-img" src="img/jpg/service/sale@2x.jpg" alt="Образец портретной съемки девушки">
+                        </noscript>
                     </picture>
                     <p class="sale__attent">
                         <b class="sale__1stline">Акция!</b>
@@ -646,229 +743,325 @@
                     <div class="portfolio__area">
                         <ul class="portfolio__list">
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/1.webp 1x, img/webp/service/portfolio/part1/1@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/1.jpg 1x, img/jpg/service/portfolio/part1/1@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/1@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/1.webp 1x, img/webp/service/portfolio/part1/1@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/1.jpg 1x, img/jpg/service/portfolio/part1/1@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/1@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/1@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/2.webp 1x, img/webp/service/portfolio/part1/2@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/2.jpg 1x, img/jpg/service/portfolio/part1/2@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/2@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/2.webp 1x, img/webp/service/portfolio/part1/2@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/2.jpg 1x, img/jpg/service/portfolio/part1/2@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/2@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/2@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/3.webp 1x, img/webp/service/portfolio/part1/3@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/3.jpg 1x, img/jpg/service/portfolio/part1/3@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/3@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/3.webp 1x, img/webp/service/portfolio/part1/3@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/3.jpg 1x, img/jpg/service/portfolio/part1/3@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/3@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/3@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/4.webp 1x, img/webp/service/portfolio/part1/4@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/4.jpg 1x, img/jpg/service/portfolio/part1/4@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/4@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/4.webp 1x, img/webp/service/portfolio/part1/4@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/4.jpg 1x, img/jpg/service/portfolio/part1/4@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/4@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/4@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/5.webp 1x, img/webp/service/portfolio/part1/5@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/5.jpg 1x, img/jpg/service/portfolio/part1/5@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/5@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/5.webp 1x, img/webp/service/portfolio/part1/5@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/5.jpg 1x, img/jpg/service/portfolio/part1/5@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/5@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/5@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/6.webp 1x, img/webp/service/portfolio/part1/6@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/6.jpg 1x, img/jpg/service/portfolio/part1/6@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/6@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/6.webp 1x, img/webp/service/portfolio/part1/6@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/6.jpg 1x, img/jpg/service/portfolio/part1/6@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/6@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/6@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/7.webp 1x, img/webp/service/portfolio/part1/7@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/7.jpg 1x, img/jpg/service/portfolio/part1/7@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/7@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/7.webp 1x, img/webp/service/portfolio/part1/7@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/7.jpg 1x, img/jpg/service/portfolio/part1/7@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/7@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/7@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/8.webp 1x, img/webp/service/portfolio/part1/8@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/8.jpg 1x, img/jpg/service/portfolio/part1/8@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/8@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/8.webp 1x, img/webp/service/portfolio/part1/8@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/8.jpg 1x, img/jpg/service/portfolio/part1/8@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/8@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/8@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/9.webp 1x, img/webp/service/portfolio/part1/9@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/9.jpg 1x, img/jpg/service/portfolio/part1/9@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/9@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/9.webp 1x, img/webp/service/portfolio/part1/9@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/9.jpg 1x, img/jpg/service/portfolio/part1/9@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/9@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/9@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/10.webp 1x, img/webp/service/portfolio/part1/10@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/10.jpg 1x, img/jpg/service/portfolio/part1/10@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/10@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/10.webp 1x, img/webp/service/portfolio/part1/10@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/10.jpg 1x, img/jpg/service/portfolio/part1/10@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/10@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/10@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/11.webp 1x, img/webp/service/portfolio/part1/11@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/11.jpg 1x, img/jpg/service/portfolio/part1/11@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/11@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/11.webp 1x, img/webp/service/portfolio/part1/11@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/11.jpg 1x, img/jpg/service/portfolio/part1/11@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/11@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/11@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/12.webp 1x, img/webp/service/portfolio/part1/12@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/12.jpg 1x, img/jpg/service/portfolio/part1/12@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/12@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/12.webp 1x, img/webp/service/portfolio/part1/12@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/12.jpg 1x, img/jpg/service/portfolio/part1/12@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/12@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/12@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/13.webp 1x, img/webp/service/portfolio/part1/13@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/13.jpg 1x, img/jpg/service/portfolio/part1/13@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/13@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/13.webp 1x, img/webp/service/portfolio/part1/13@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/13.jpg 1x, img/jpg/service/portfolio/part1/13@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/13@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/13@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/14.webp 1x, img/webp/service/portfolio/part1/14@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/14.jpg 1x, img/jpg/service/portfolio/part1/14@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/14@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/14.webp 1x, img/webp/service/portfolio/part1/14@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/14.jpg 1x, img/jpg/service/portfolio/part1/14@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/14@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/14@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/15.webp 1x, img/webp/service/portfolio/part1/15@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/15.jpg 1x, img/jpg/service/portfolio/part1/15@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/15@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/15.webp 1x, img/webp/service/portfolio/part1/15@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/15.jpg 1x, img/jpg/service/portfolio/part1/15@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/15@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/15@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part1/16.webp 1x, img/webp/service/portfolio/part1/16@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part1/16.jpg 1x, img/jpg/service/portfolio/part1/16@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/16@2x.jpg 2x" alt="Архивный снимок(ТОП-16)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part1/16.webp 1x, img/webp/service/portfolio/part1/16@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part1/16.jpg 1x, img/jpg/service/portfolio/part1/16@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part1/16@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part1/16@2x.jpg" alt="Архивный снимок(ТОП-16)">
+                                    </noscript>
                                 </picture>
                             </li>
                         </ul>
                         <ul class="portfolio__list_overlay portfolio__list">
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/1.webp 1x, img/webp/service/portfolio/part2/1@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/1.jpg 1x, img/jpg/service/portfolio/part2/1@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/1@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/1.webp 1x, img/webp/service/portfolio/part2/1@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/1.jpg 1x, img/jpg/service/portfolio/part2/1@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/1@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/1@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/2.webp 1x, img/webp/service/portfolio/part2/2@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/2.jpg 1x, img/jpg/service/portfolio/part2/2@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/2@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/2.webp 1x, img/webp/service/portfolio/part2/2@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/2.jpg 1x, img/jpg/service/portfolio/part2/2@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/2@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/2@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/3.webp 1x, img/webp/service/portfolio/part2/3@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/3.jpg 1x, img/jpg/service/portfolio/part2/3@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/3@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/3.webp 1x, img/webp/service/portfolio/part2/3@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/3.jpg 1x, img/jpg/service/portfolio/part2/3@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/3@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/3@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/4.webp 1x, img/webp/service/portfolio/part2/4@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/4.jpg 1x, img/jpg/service/portfolio/part2/4@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/4@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/4.webp 1x, img/webp/service/portfolio/part2/4@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/4.jpg 1x, img/jpg/service/portfolio/part2/4@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/4@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/4@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/5.webp 1x, img/webp/service/portfolio/part2/5@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/5.jpg 1x, img/jpg/service/portfolio/part2/5@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/5@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/5.webp 1x, img/webp/service/portfolio/part2/5@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/5.jpg 1x, img/jpg/service/portfolio/part2/5@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/5@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/5@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/6.webp 1x, img/webp/service/portfolio/part2/6@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/6.jpg 1x, img/jpg/service/portfolio/part2/6@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/6@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/6.webp 1x, img/webp/service/portfolio/part2/6@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/6.jpg 1x, img/jpg/service/portfolio/part2/6@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/6@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/6@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/7.webp 1x, img/webp/service/portfolio/part2/7@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/7.jpg 1x, img/jpg/service/portfolio/part2/7@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/7@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/7.webp 1x, img/webp/service/portfolio/part2/7@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/7.jpg 1x, img/jpg/service/portfolio/part2/7@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/7@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/7@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/8.webp 1x, img/webp/service/portfolio/part2/8@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/8.jpg 1x, img/jpg/service/portfolio/part2/8@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/8@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/8.webp 1x, img/webp/service/portfolio/part2/8@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/8.jpg 1x, img/jpg/service/portfolio/part2/8@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/8@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/8@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/9.webp 1x, img/webp/service/portfolio/part2/9@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/9.jpg 1x, img/jpg/service/portfolio/part2/9@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/9@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/9.webp 1x, img/webp/service/portfolio/part2/9@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/9.jpg 1x, img/jpg/service/portfolio/part2/9@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/9@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/9@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/10.webp 1x, img/webp/service/portfolio/part2/10@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/10.jpg 1x, img/jpg/service/portfolio/part2/10@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/10@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/10.webp 1x, img/webp/service/portfolio/part2/10@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/10.jpg 1x, img/jpg/service/portfolio/part2/10@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/10@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/10@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/11.webp 1x, img/webp/service/portfolio/part2/11@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/11.jpg 1x, img/jpg/service/portfolio/part2/11@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/11@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/11.webp 1x, img/webp/service/portfolio/part2/11@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/11.jpg 1x, img/jpg/service/portfolio/part2/11@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/11@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/11@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/12.webp 1x, img/webp/service/portfolio/part2/12@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/12.jpg 1x, img/jpg/service/portfolio/part2/12@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/12@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/12.webp 1x, img/webp/service/portfolio/part2/12@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/12.jpg 1x, img/jpg/service/portfolio/part2/12@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/12@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/12@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/13.webp 1x, img/webp/service/portfolio/part2/13@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/13.jpg 1x, img/jpg/service/portfolio/part2/13@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/13@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/13.webp 1x, img/webp/service/portfolio/part2/13@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/13.jpg 1x, img/jpg/service/portfolio/part2/13@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/13@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/13@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/14.webp 1x, img/webp/service/portfolio/part2/14@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/14.jpg 1x, img/jpg/service/portfolio/part2/14@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/14@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/14.webp 1x, img/webp/service/portfolio/part2/14@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/14.jpg 1x, img/jpg/service/portfolio/part2/14@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/14@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/14@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/15.webp 1x, img/webp/service/portfolio/part2/15@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/15.jpg 1x, img/jpg/service/portfolio/part2/15@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/15@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/15.webp 1x, img/webp/service/portfolio/part2/15@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/15.jpg 1x, img/jpg/service/portfolio/part2/15@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/15@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/15@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                             <li class="portfolio__item">
-                                <picture>
-                                    <source srcset="img/webp/service/portfolio/part2/16.webp 1x, img/webp/service/portfolio/part2/16@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/service/portfolio/part2/16.jpg 1x, img/jpg/service/portfolio/part2/16@2x.jpg 2x" type="image/jpg">
-                                    <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/16@2x.jpg 2x" alt="Архивный снимок(ТОП-32)">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/service/portfolio/part2/16.webp 1x, img/webp/service/portfolio/part2/16@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/service/portfolio/part2/16.jpg 1x, img/jpg/service/portfolio/part2/16@2x.jpg 2x" type="image/jpg">
+                                    <img class="portfolio__img service-img" data-srcset="img/jpg/service/portfolio/part2/16@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    <noscript>
+                                        <img class="portfolio__img service-img" src="img/jpg/service/portfolio/part2/16@2x.jpg" alt="Архивный снимок(ТОП-32)">
+                                    </noscript>
                                 </picture>
                             </li>
                         </ul>
@@ -882,10 +1075,13 @@
                 <div class="masterclass__content">
                     <article class="masterclass__bestseller bestseller">
                         <figure class="bestseller__img-wrap">
-                            <picture>
-                                <source srcset="img/webp/masterclass/big.webp 1x, img/webp/masterclass/big@2x.webp 2x" type="image/webp">
-                                <source srcset="img/jpg/masterclass/big.jpg 1x, img/jpg/masterclass/big@2x.jpg 2x" type="image/jpg">
-                                <img class="bestseller__img" src="img/jpg/masterclass/big@2x.jpg 2x" alt="Выставочная работа лектора">
+                            <picture class="lazy">
+                                <source data-srcset="img/webp/masterclass/big.webp 1x, img/webp/masterclass/big@2x.webp 2x" type="image/webp">
+                                <source data-srcset="img/jpg/masterclass/big.jpg 1x, img/jpg/masterclass/big@2x.jpg 2x" type="image/jpg">
+                                <img class="bestseller__img" data-srcset="img/jpg/masterclass/big@2x.jpg" alt="Выставочная работа лектора">
+                                <noscript>
+                                    <img class="bestseller__img" src="img/jpg/masterclass/big@2x.jpg" alt="Выставочная работа лектора">
+                                </noscript>
                             </picture>
                         </figure>
                         <div class="bestseller__info-wrap">
@@ -909,10 +1105,13 @@
                     <ul class="masterclass__list masterclass-list">
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/masterclass/1.webp 1x, img/webp/masterclass/01@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/masterclass/1.jpg 1x, img/jpg/masterclass/01@2x.jpg 2x" type="image/jpg">
-                                    <img class="workshop-img" src="img/jpg/masterclass/01@2x.jpg 2x" alt="Выставочная работа лектора">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/masterclass/1.webp 1x, img/webp/masterclass/01@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/masterclass/1.jpg 1x, img/jpg/masterclass/01@2x.jpg 2x" type="image/jpg">
+                                    <img class="workshop-img" data-srcset="img/jpg/masterclass/01@2x.jpg" alt="Выставочная работа лектора">
+                                    <noscript>
+                                        <img class="workshop-img" src="img/jpg/masterclass/01@2x.jpg" alt="Выставочная работа лектора">
+                                    </noscript>
                                 </picture>
                             </figure>
                             <div class="workshop__info-wrap">
@@ -933,10 +1132,13 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/masterclass/2.webp 1x, img/webp/masterclass/02@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/masterclass/2.jpg 1x, img/jpg/masterclass/02@2x.jpg 2x" type="image/jpg">
-                                    <img class="workshop-img" src="img/jpg/masterclass/02@2x.jpg 2x" alt="Выставочная работа лектора">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/masterclass/2.webp 1x, img/webp/masterclass/02@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/masterclass/2.jpg 1x, img/jpg/masterclass/02@2x.jpg 2x" type="image/jpg">
+                                    <img class="workshop-img" data-srcset="img/jpg/masterclass/02@2x.jpg" alt="Выставочная работа лектора">
+                                    <noscript>
+                                        <img class="workshop-img" src="img/jpg/masterclass/02@2x.jpg" alt="Выставочная работа лектора">
+                                    </noscript>
                                 </picture>
                             </figure>
                             <div class="workshop__info-wrap">
@@ -957,10 +1159,13 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/masterclass/3.webp 1x, img/webp/masterclass/03@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/masterclass/3.jpg 1x, img/jpg/masterclass/03@2x.jpg 2x" type="image/jpg">
-                                    <img class="workshop-img" src="img/jpg/masterclass/03@2x.jpg 2x" alt="Выставочная работа лектора">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/masterclass/3.webp 1x, img/webp/masterclass/03@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/masterclass/3.jpg 1x, img/jpg/masterclass/03@2x.jpg 2x" type="image/jpg">
+                                    <img class="workshop-img" data-srcset="img/jpg/masterclass/03@2x.jpg" alt="Выставочная работа лектора">
+                                    <noscript>
+                                        <img class="workshop-img" src="img/jpg/masterclass/03@2x.jpg" alt="Выставочная работа лектора">
+                                    </noscript>
                                 </picture>
                             </figure>
                             <div class="workshop__info-wrap">
@@ -981,10 +1186,13 @@
                         </li>
                         <li class="masterclass-list__workshop workshop">
                             <figure class="workshop__img-wrap">
-                                <picture>
-                                    <source srcset="img/webp/masterclass/4.webp 1x, img/webp/masterclass/04@2x.webp 2x" type="image/webp">
-                                    <source srcset="img/jpg/masterclass/4.jpg 1x, img/jpg/masterclass/04@2x.jpg 2x" type="image/jpg">
-                                    <img class="workshop-img" src="img/jpg/masterclass/4@2x.jpg 2x" alt="Выставочная работа лектора">
+                                <picture class="lazy">
+                                    <source data-srcset="img/webp/masterclass/4.webp 1x, img/webp/masterclass/04@2x.webp 2x" type="image/webp">
+                                    <source data-srcset="img/jpg/masterclass/4.jpg 1x, img/jpg/masterclass/04@2x.jpg 2x" type="image/jpg">
+                                    <img class="workshop-img" data-srcset="img/jpg/masterclass/4@2x.jpg" alt="Выставочная работа лектора">
+                                    <noscript>
+                                        <img class="workshop-img" src="img/jpg/masterclass/4@2x.jpg" alt="Выставочная работа лектора">
+                                    </noscript>
                                 </picture>
                             </figure>
                             <div class="workshop__info-wrap">
@@ -1012,10 +1220,10 @@
                 <h2 class="contacts__title">Контакты</h2>
                 <div class="contacts__content">
                     <article class="contacts__map map">
-                        <picture>
-                            <source srcset="resources/map.webp 1x, resources/map@2x.webp 2x" type="image/webp">
-                            <source srcset="resources/map.jpg 1x, resources/map@2x.jpg 2x" type="image/jpg">
-                            <img class="map-img" src="iresources/map@2x.jpg 2x" alt="Статичный фрагмент местности (нажмите, чтоб загрузить карту">
+                        <picture class="lazy">
+                            <source data-srcset="img/webp/map.webp" type="image/webp">
+                            <source data-srcset="img/jpg/map.jpg" type="image/jpg">
+                            <img class="map-img" data-srcset="img/jpg/map.jpg" alt="Статичный фрагмент местности (нажмите, чтоб загрузить карту">
                         </picture>
                         <div class="map__layer_upper popup" id="closeL">
                             <p class="popup__heading"><strong>Студия “High pass”</strong></p>

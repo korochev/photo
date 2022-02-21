@@ -148,7 +148,17 @@
         .menu__link {
             font-family: 'TTFirsNeue', sans-serif;
             display: inline-block;
+            padding: 0 5px;
             color: inherit;
+
+            &:hover {
+                color: $primarycolor;
+            }
+            &:focus {
+                outline: none;
+                color: inherit;
+                background-color: $focuscolor;
+            }
 
             @media (max-width:#{$br1st}) { //new
                 display: block;
@@ -184,18 +194,25 @@
             style: normal;
         }
         display: inline-block;
+        padding: 0 5px;
         height: 22px;
         line-height: 22px;
         color: inherit;
 
-        @media (min-width:#{$br3rd}) { 
-            .phone__img path {
-                fill: currentColor;
-            }
+        &:hover {
+            color: $primarycolor;
+        }
+        &:focus {
+            outline: none;
+            color: inherit;
+            background-color: $focuscolor;
         }
         
         @media (max-width:#{$br3rd}) { 
             color: $primarycolor;
+            &:hover {
+                color:inherit;
+            }
         }
 
         @media (max-width:#{$br2nd}) {
@@ -204,6 +221,10 @@
 
         .phone__img {
             @include svgicon;
+
+            & path {
+                fill: currentColor;
+            }
         }
     }
 }
@@ -230,12 +251,24 @@
     &__switch:checked ~ .search__toggle {
         left: 0;
     }
+    &__switch:focus ~ .search__toggle {
+        outline: none;
+        & svg path {
+            fill: $focuscolor;
+        }
+    }
     &__toggle {
         position: absolute;
         width: 22px;
         height: 22px;
         right: 0;
         cursor: pointer;
+
+        &:hover {
+            & svg path {
+                fill: $primarycolor;
+            }
+        }
         
         .search__img {
             width: 100%;
@@ -257,6 +290,14 @@
         color: $formcolor;
         background-color: transparent;
         @include placeholder;
+
+        &:hover {
+            border-bottom-color: $primarycolor;
+        }
+        &:focus {
+            outline: none;
+            border-bottom-color: $focuscolor;
+        }
     }
     &__hidden {
         @include nonvisible;

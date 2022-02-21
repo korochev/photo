@@ -8,6 +8,9 @@ $rarecolor: #CACACA;
 $lightcolor: #999999;
 $formcolor: #E9E9E9;
 $greycolor: #666666;
+$focuscolor: #BC572B;
+$activecolor: #CE4307;
+$pinkcolor: #FFD4C1;
 
 $br1st: 700px;
 $br2nd: 1024px;
@@ -38,6 +41,14 @@ $br3rd: 1280px;
     line-height: 1;
     background-color: $primarycolor;
     color: inherit; 
+
+    &:hover {
+        background-color: $focuscolor;
+    }
+    &:focus {
+        outline: 3px solid $activecolor;
+        outline-offset: -3px;
+    }
 }
 @mixin grid {
     display: grid;
@@ -57,6 +68,14 @@ $br3rd: 1280px;
 }
 
 @mixin placeholder {
+    &:focus {
+        outline: 1px solid $primarycolor;
+        outline-offset: -1px;
+    }
+    
+    &:hover::placeholder {
+        color: $primarycolor;
+    }
     &::placeholder {
         color: currentColor;
     } 
@@ -67,26 +86,31 @@ $br3rd: 1280px;
     $list: map-get($args, $block);
     @if $block == "tab" {
         @each $cat in $list {
+            @at-root &_cat_#{$cat}:focus ~ .service-tab__label-wrap > .service-tab__toggle_cat_#{$cat} {
+                background-color: $pinkcolor;
+            }
             @at-root &_cat_#{$cat}:checked ~ .promo > .promo__list_cat_#{$cat} {
                 display: flex;
             }
             @at-root &_cat_#{$cat}:checked ~ .service-tab__label-wrap > .service-tab__toggle_cat_#{$cat} {
                 color: $primarycolor;
-                border-bottom: 4px solid currentColor;
+                background-color: transparent;
+                border-bottom-color: currentColor;
             }
         }
     }
     @else if $block == "galery" {
         @each $page in $list {
+            @at-root &_page_#{$page}:focus ~ .label-wrap > .projects__toggle_page_#{$page} {
+                //outline: 3px solid red;
+                background-color: #FFD4C1;
+            }
             @at-root &_page_#{$page}:checked ~ .galery > .galery__list_page_#{$page} {
                 display: grid;
             }
             @at-root &_page_#{$page}:checked ~ .label-wrap > .projects__toggle_page_#{$page} {
                 color: $secondcolor;
                 background-color: $primarycolor;
-            }
-            @at-root &_page_#{$page}:focus ~ .label-wrap > .projects__toggle_page_#{$page} {
-                outline: 3px solid red;
             }
         }
     }
@@ -136,8 +160,7 @@ $br3rd: 1280px;
     box-sizing: border-box;
 }
 
-*:focus,
-.search__switch:focus ~  .search__toggle {
+*:focus {
     outline: 1px solid $primarycolor;
 }
 
@@ -203,6 +226,7 @@ svg {
     display: inline-block;
     height: 100%;
     width: auto;
+    pointer-events: none;
 }
 
 input,
@@ -236,9 +260,23 @@ textarea {
     &__item {
         .sn__link {
             display: inline-block;
+
+            &:hover {
+                & svg path {
+                    fill: $primarycolor;
+                }
+            }
+            &:focus {
+                outline: none;
+                
+                & svg path {
+                    fill: $focuscolor;
+                }
+            }
+
             .sn__img {
                 width: 30px;
-                height: 30px;;
+                height: 30px;
             }
         }
         &:not(:last-child) {
@@ -287,6 +325,15 @@ textarea {
     #sbn.valid-input_invalid:invalid + .valid-alert,
     #sbe.valid-input_invalid:invalid + .valid-alert {
         display: block;
+    }
+
+    @keyframes fade-in {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    
+    .fade-in {
+       animation: fade-in 1s ease;
     }
     
 [disabled] {

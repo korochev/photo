@@ -1,6 +1,12 @@
 .galery-img {
     @include tempimg;
 }
+
+.galery__retouch img,
+.galery__portrait img {
+    min-height: 180px;
+}
+
 .galery-tag {
     @include tag;
 }
@@ -20,6 +26,11 @@
         background-color: #C4C4C4;
         cursor: pointer;
         line-height: 1;
+
+        &:hover {
+            background-color: $formcolor;
+            color: $primarycolor;
+        }
 
         @at-root &_page_1 {
             margin-right: 30px;
@@ -181,6 +192,10 @@
                 margin-right: 30px;
             }
 
+            & img {
+                min-height: 180px;
+            }
+
             @media (max-width:$br1st) {
                 flex: 0 0 auto;
                 &:not(:last-child){
@@ -224,6 +239,7 @@
 
     &__img {
         height: 100%;
+        min-height: 300px;
     }
     &__info {
         position: absolute;
@@ -255,7 +271,15 @@
         bottom: 0;
         margin: 0 0 30px 30px;
         background-color: transparent;
-        outline: 3px solid $primarycolor;
+        outline: 3px solid $primarycolor !important;
+        outline-offset: 0 !important;
+
+        &:hover {
+            background-color: $primarycolor;
+        }
+        &:focus {
+            background-color: $focuscolor;
+        }
     }
 }
 

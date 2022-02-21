@@ -53,14 +53,27 @@
         color: $greycolor;
         font-weight: 700;
         border-bottom: 4px solid currentColor;
+        
+
+
         @media (max-width:$br1st) {
             width: 100%;
             justify-content: space-between;
         }
 
         .service-tab__toggle {
+            padding: 0 5px;
             margin-bottom: -4px;
             cursor: pointer;
+            border-bottom: 4px solid $greycolor;
+
+            
+            &:hover {
+                color: $primarycolor;
+            }
+            &:focus {
+                outline: none;
+            }
         }
         .service-tab__toggle_cat_gen {
             margin-right: 130px;
@@ -121,6 +134,12 @@
         }
     }
 
+    .product__image-wrap {
+        & img {
+            min-height: 140px;
+        }
+    }
+
     &__info {
         padding-left: 30px;
         @media (max-width:$br3rd) {
@@ -132,23 +151,32 @@
         }
 
         .product__heading {
-            font: {
-                family: 'TTFirsNeue', sans-serif;
-                size: 20px;
-            }
-            line-height: 24px;
-            color: $basecolor;
-            & > * {
-                display: inline-block;
-            }
-
+            line-height: 1;
             @media (max-width:$br3rd) {
                 margin: 13px 0 5px 0;
             }
-            @media (max-width:$br1st) {
-                font-size: 16px;
+            & > a {
+                font: {
+                    family: 'TTFirsNeue', sans-serif;
+                    size: 20px;
+                }
+                display: inline-block;
+                color: $basecolor;
+                
+                &:hover {
+                    color: $primarycolor;
+                }
+                &:focus {
+                    outline: none;
+                    background-color: $pinkcolor;
+                }
+
+                @media (max-width:$br1st) {
+                    font-size: 16px;
+                }
             }
         }
+        
         .product__desc {
             color: $lightcolor;
         }
@@ -159,15 +187,28 @@
             height: 19px;
             line-height: 19px;
             color: $primarycolor;
+            outline: none;
 
             @media (max-width:$br1st) {
                 height: 17px;
                 line-height: 17px;
             }
 
+            &:focus svg,
+            &:hover svg {
+                transform: scaleX(1.2);
+            }
+            &:focus {
+                padding: 0 10px 0 5px;
+                background-color: $pinkcolor;
+            }
+
             .product__icon {
                 float: right;
                 margin: 0 0 0 5px;
+                
+                /* &:hover { */
+                
             }
 
             @media (max-width:$br3rd) {
@@ -196,6 +237,7 @@
 
 .sale {
     position: relative;
+    min-height: 410px;
     & > *:not(:first-child) {
         position: absolute;
     }
@@ -312,6 +354,12 @@
     
             .portfolio__item {
                 flex: 0 0 calc(25% - 23.5px);
+                margin-top: 30px;
+                
+                & img {
+                    min-height: 50px;
+                }
+
                 @media (max-width:$br3rd) {
                     flex: 0 0 calc(33.33% - 20px);
                 }
@@ -321,7 +369,6 @@
                 @media(max-width:$br1st) {
                     flex: 0 0 calc(50% - 15px);
                 }
-                margin-top: 30px;
                 
     
                 

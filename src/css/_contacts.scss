@@ -47,10 +47,10 @@
             padding-left: 25px;
             border: 0;
             outline: 0;
-            background-color: $formcolor;
+            background-color: $formcolor !important;
             color: $lightcolor;
-            @include placeholder;
 
+            @include placeholder;
 
             @at-root &_textarea {
                 height: 150px;
@@ -131,6 +131,10 @@
             margin-left: 10px;
             font-weight: normal;
             color: $primarycolor;
+
+            &:hover {
+                color: inherit;
+            }
 
             @media (max-width:$br1st) {
                 height: 18px;

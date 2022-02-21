@@ -48,7 +48,7 @@ const docs = () => {
     return src('src/*.html')
         .pipe(inline({
             base: 'src/',
-            disabledTypes: ['js', 'css'] 
+            disabledTypes: ['js', 'css', 'img'] 
         }))
         .pipe(formatHtml())
         .pipe(gulpif(argv.prod, dest('dest/build'), dest('dest/dev')))
