@@ -2,11 +2,6 @@
     @include tempimg;
 }
 
-.galery__retouch img,
-.galery__portrait img {
-    min-height: 180px;
-}
-
 .galery-tag {
     @include tag;
 }
@@ -193,10 +188,6 @@
                 margin-right: 30px;
             }
 
-            & img {
-                min-height: 180px;
-            }
-
             @media (max-width:$br1st) {
                 flex: 0 0 auto;
                 &:not(:last-child){
@@ -240,7 +231,6 @@
 
     &__img {
         height: 100%;
-        min-height: 300px;
     }
     &__info {
         position: absolute;

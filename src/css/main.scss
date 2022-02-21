@@ -229,12 +229,12 @@ svg {
     pointer-events: none;
 }
 
-/* input,
+input,
 textarea {
     border-radius: 0 !important;
     -webkit-appearance: none !important; 
     font-size: 16px !important;
-} */
+}
 
 .container {
     width: 100%;
@@ -341,10 +341,10 @@ textarea {
     cursor: not-allowed !important;
 }
 
-/* [type="checkbox"],
+[type="checkbox"],
 [type="radio"] {
     @include nonvisible;
-} */
+}
 
 [class*="ground-pane"] {
     filter: grayscale(1);
