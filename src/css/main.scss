@@ -341,10 +341,10 @@ textarea {
     cursor: not-allowed !important;
 }
 
-[type="checkbox"],
+/* [type="checkbox"],
 [type="radio"] {
     @include nonvisible;
-}
+} */
 
 [class*="ground-pane"] {
     filter: grayscale(1);
