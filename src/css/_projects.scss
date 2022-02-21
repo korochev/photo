@@ -39,7 +39,8 @@
 }
 
 .projects__switch {
-    bottom: 40px;
+    position: absolute !Important;
+    bottom: 0;
     left: 50%;
     @include switch((galery:(1, 2)));
 
