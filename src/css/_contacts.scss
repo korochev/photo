@@ -105,7 +105,7 @@
     background-color: rgba(32, 32, 32, 0.90);
 
     &:target {
-        display: none;
+        visibility: hidden;
     }
 
     @media (max-width:$br1st) {
@@ -162,11 +162,3 @@
     }
     
 }
-
-/* .close-layer {
-    display: none;
-
-    &:target + .popup {
-        visibility: hidden;
-    }
-} */

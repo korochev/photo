@@ -162,9 +162,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
 
    // Получаем нужный элемент
-var element = document.querySelector('#map-container');
+var target = document.querySelector('#map-container');
 
-var Visible = function (target) {
+var Visible = function () {
+    
   // Все позиции элемента
   var targetPosition = {
       top: window.pageYOffset + target.getBoundingClientRect().top,
@@ -197,14 +198,13 @@ var Visible = function (target) {
         // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
         window.setTimeout(showMap, 1000);
     }
+    window.removeEventListener('scroll', Visible);
     
   } 
 };
 
 // Запускаем функцию при прокрутке страницы
-window.addEventListener('scroll', function() {
-  Visible (element);
-});
+window.addEventListener('scroll', Visible);
 
 // А также запустим функцию сразу. А то вдруг, элемент изначально видно
-Visible (element);
+Visible ();
