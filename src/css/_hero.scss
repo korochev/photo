@@ -43,6 +43,7 @@
 
     &-img {
         @include tempimg;
+        min-height: 160px;
     }
 }
 
