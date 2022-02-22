@@ -196,7 +196,8 @@ h2 {
     line-height: 1;
 }
 
-p {
+p,
+h3 {
     margin: 0;
 }
 
@@ -302,10 +303,6 @@ textarea {
             }
         }
     }  
-}
-
-.mob {
-    display: none !important;
 }
 
 

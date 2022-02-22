@@ -1,5 +1,4 @@
 //##Подписчик на события##
-let i = false;
 let eventCheckers = [
     ['#hfs', 'keydown'],
     ['.projects__toggle', 'focus'],
@@ -9,7 +8,7 @@ let eventCheckers = [
     ['.valid-input', 'input'],
     ['.valid-form', 'change'],
     ['.service-tab__toggle', 'focus'],
-    ['*' , 'focus']
+    ['window' , 'scroll']
 ];
 eventCheckers.forEach(function(item, i) {
     document.querySelectorAll(item[0]).forEach(function(el){el.addEventListener(item[1],function(event){
@@ -59,6 +58,9 @@ eventCheckers.forEach(function(item, i) {
         }
         else if (i == 6) {
             changeFormHandler(event); 
+        }
+        else if (i == 7) {
+            Visible();
         }
     })})
 })
@@ -190,14 +192,10 @@ var Visible = function () {
     //console.log('Вы видите элемент :)');
     
     //##Инициализация Яндекс.Карты##
-
-    if (!i) {
-        i = true;
         include("https://api-maps.yandex.ru/2.1/?apikey=9a00826a-9809-4483-9570-df06b6b46647&lang=ru_RU");
         // Функция ymaps.ready() будет вызвана, когда
         // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-        window.setTimeout(showMap, 1000);
-    }
+        window.setTimeout(showMap, 2000);
     window.removeEventListener('scroll', Visible);
     
   } 
@@ -205,6 +203,3 @@ var Visible = function () {
 
 // Запускаем функцию при прокрутке страницы
 window.addEventListener('scroll', Visible);
-
-// А также запустим функцию сразу. А то вдруг, элемент изначально видно
-Visible ();
