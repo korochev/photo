@@ -1,5 +1,5 @@
 //##Подписчик на события##
-
+let i = false;
 let eventCheckers = [
     ['#hfs', 'keydown'],
     ['.projects__toggle', 'focus'],
@@ -136,6 +136,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
    /* ##Lazy Load Яндекс.Карты## */
 
+   function include(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+
+    function showMap () {
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                        // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.76659735488058,37.63137024464414],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 15,
+                controls: []
+            });
+        } 
+    }
+    
+
    // Получаем нужный элемент
 var element = document.querySelector('#map-container');
 
@@ -160,32 +185,20 @@ var Visible = function (target) {
     targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
     targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
     // Если элемент полностью видно, то запускаем следующий код
-    console.clear();
-    console.log('Вы видите элемент :)');
+    //console.clear();
+    //console.log('Вы видите элемент :)');
     
     //##Инициализация Яндекс.Карты##
 
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-    ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-                    // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.76659735488058,37.63137024464414],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 15,
-            controls: []
-        });
+    if (!i) {
+        i = true;
+        include("https://api-maps.yandex.ru/2.1/?apikey=9a00826a-9809-4483-9570-df06b6b46647&lang=ru_RU");
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        window.setTimeout(showMap, 1000);
     }
-  } else {
-    // Если элемент не видно, то запускаем этот код
-    console.clear();
-  };
+    
+  } 
 };
 
 // Запускаем функцию при прокрутке страницы
