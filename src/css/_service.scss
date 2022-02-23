@@ -325,6 +325,7 @@
             flex-wrap: wrap;
             margin-top: -30px;
             will-change: opacity;
+            
             @at-root &_overlay {
                 position: absolute;
                 top: 0;

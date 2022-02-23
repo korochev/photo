@@ -71,7 +71,7 @@
     position: relative;
 
     &:hover .map__layer_bottom {
-        display: block;
+        visibility: visible;
     }
 
     &-img {
@@ -95,7 +95,7 @@
         left: 0;
         right: 0;
         z-index: 0;
-        display: none;
+        visibility: hidden;
     }
 }
 
