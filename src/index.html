@@ -16,14 +16,21 @@
     <link rel="preload" as="image" href="img/webp/hero/2.webp">
     <link rel="preload" as="image" href="img/webp/hero/3.webp">
     <link rel="preload" as="image" href="img/webp/hero/4.webp">
-    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//1@2x.webp">
-    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//2@2x.webp">
-    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//3@2x.webp">
-    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero//4@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero/1@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero/2@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero/3@2x.webp">
+    <link rel="preload" media="screen and (min-device-pixel-ratio: 2)" as="image" href="img/webp/hero/4@2x.webp">
     
     <link rel="stylesheet" href="resources/normalize.css">
     <link rel="stylesheet" href="main.css">
 
+    <noscript>
+        <style>
+            picture:not(.hero picture, .projects picture) {
+                display: none;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <header class="header"> 
@@ -626,10 +633,10 @@
                                         <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/service/tab/retouch/8.jpg 1x, img/jpg/service/tab/retouch/8@2x.jpg 2x" type="image/jpg">
                                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="product__img service-img" data-srcset="img/jpg/service/tab/retouch/8@2x.jpg" alt="Образец выполненных работ">
                                     </picture>
+                                    <noscript>
+                                        <img class="product__img service-img" src="img/jpg/service/tab/retouch/8@2x.jpg" alt="Образец выполненных работ">
+                                    </noscript>
                                 </figure>
-                                <noscript>
-                                    <img class="product__img service-img" src="img/jpg/service/tab/retouch/8@2x.jpg" alt="Образец выполненных работ">
-                                </noscript>
                                 <div class="product__info">
                                     <p class="product__heading"><a href="#">Как принято считать, сторонники...</a></p>
                                     <a href="#" class="product__link">
@@ -1038,14 +1045,14 @@
                     <article class="masterclass__bestseller bestseller">
                         <h6 hidden>Check</h6>
                         <figure class="bestseller__img-wrap">
+                            <noscript>
+                                <img class="bestseller__img" src="img/jpg/masterclass/big@2x.jpg" alt="Выставочная работа лектора">
+                            </noscript>
                             <picture class="lazy">
                                 <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/webp/masterclass/big.webp 1x, img/webp/masterclass/big@2x.webp 2x" type="image/webp">
                                 <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/masterclass/big.jpg 1x, img/jpg/masterclass/big@2x.jpg 2x" type="image/jpg">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="bestseller__img" data-srcset="img/jpg/masterclass/big@2x.jpg" alt="Выставочная работа лектора">
                             </picture>
-                            <noscript>
-                                <img class="bestseller__img" src="img/jpg/masterclass/big@2x.jpg" alt="Выставочная работа лектора">
-                            </noscript>
                         </figure>
                         <div class="bestseller__info-wrap">
                             <p class="bestseller__validity">
@@ -1152,10 +1159,10 @@
                                 <picture class="lazy">
                                     <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/webp/masterclass/4.webp 1x, img/webp/masterclass/04@2x.webp 2x" type="image/webp">
                                     <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/masterclass/4.jpg 1x, img/jpg/masterclass/04@2x.jpg 2x" type="image/jpg">
-                                    <img class="workshop-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/masterclass/4@2x.jpg" alt="Выставочная работа лектора">
+                                    <img class="workshop-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/masterclass/04@2x.jpg" alt="Выставочная работа лектора">
                                 </picture>
                                 <noscript>
-                                    <img class="workshop-img" src="img/jpg/masterclass/4@2x.jpg" alt="Выставочная работа лектора">
+                                    <img class="workshop-img" src="img/jpg/masterclass/04@2x.jpg" alt="Выставочная работа лектора">
                                 </noscript>
                             </figure>
                             <div class="workshop__info-wrap">
@@ -1189,6 +1196,9 @@
                             <source srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-srcset="img/jpg/map.jpg" type="image/jpg">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="map-img" data-srcset="img/jpg/map.jpg" alt="Статичный фрагмент местности (нажмите, чтоб загрузить карту">
                         </picture>
+                        <noscript>
+                            <img class="map-img" src="img/jpg/map.jpg" alt="Статичный фрагмент местности (нажмите, чтоб загрузить карту">
+                        </noscript>
                         <div class="map__layer_upper popup" id="closeL">
                             <p class="popup__heading"><strong>Студия “High pass”</strong></p>
                             <address class="popup__address">

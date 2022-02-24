@@ -238,7 +238,7 @@
 .sale {
     position: relative;
     min-height: 410px;
-    & > *:not(:first-child) {
+    & > *:not(:first-child, :nth-child(2)) {
         position: absolute;
     }
 
