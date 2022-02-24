@@ -26,6 +26,10 @@
             background-color: $formcolor;
             color: $primarycolor;
         }
+        &:focus {
+            outline: none;
+            background-color: $pinkcolor;
+        }
 
         @at-root &_page_1 {
             margin-right: 30px;
