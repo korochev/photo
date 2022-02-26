@@ -201,8 +201,8 @@
     <section id="projects" class="projects" style="position: relative;">
       <div class="container" style="position: relative;">
         <h2 class="projects__title">Наши проекты</h2>
-        <input type="radio" class="projects__switch projects__switch_page_1" name="ps" id="psp1" aria-label="Список 1" aria-current="true" tabindex="-1" aria-hidden="true" checked>
-        <input type="radio" class="projects__switch projects__switch_page_2" name="ps" id="psp2" aria-label="Список 2" tabindex="-1" aria-hidden="true">
+        <input type="radio" class="projects__switch projects__switch_page_1" name="ps" id="psp1" tabindex="-1" aria-hidden="true" checked>
+        <input type="radio" class="projects__switch projects__switch_page_2" name="ps" id="psp2" tabindex="-1" aria-hidden="true">
         <div class="projects__gallery galery">
           <ul class="galery__list galery__list_page_1">
             <li class="galery-posts galery__posts galery__posts_page_1">
@@ -472,12 +472,12 @@
           </ul>
         </div>
         <div class="label-wrap" role="presentation">
-          <label for="psp1" class="projects__toggle projects__toggle_page_1" role="button" tabindex="0">
+          <label for="psp1" class="projects__toggle projects__toggle_page_1" role="button" tabindex="0" aria-label="Список 1" aria-current="true">
             <span>1</span>
           </label>
           <!-- 
                      -->
-          <label for="psp2" class="projects__toggle projects__toggle_page_2" role="button" tabindex="0">
+          <label for="psp2" class="projects__toggle projects__toggle_page_2" role="button" tabindex="0" aria-label="Список 2">
             <span>2</span>
           </label>
         </div>
@@ -488,8 +488,8 @@
       <div class="service__wrap container">
         <section class="service__tab service-tab">
           <h2 class="service-title">Услуги студии</h2>
-          <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" checked aria-hidden="true" tabindex="-1" aria-labelledby="798">
-          <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" aria-hidden="true" tabindex="-1" aria-labelledby="878">
+          <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" checked aria-hidden="true" tabindex="-1">
+          <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" aria-hidden="true" tabindex="-1">
           <div class="service-tab__label-wrap" role="presentation">
             <label for="sas-g" id="798" class="service-tab__toggle service-tab__toggle_cat_gen" role="button" tabindex="0">
               <span>Основной перечень</span>
