@@ -1,14 +1,11 @@
 //##Подписчик на события##
 let eventCheckers = [
     ['#hfs', 'keydown'],
-    ['.projects__toggle', 'focus'],
-    ['[type = "radio"]', 'keydown'],
-    ['.projects__switch', 'blur'],
+    ['.projects__toggle', 'keydown'],
+    ['.service-tab__toggle', 'keydown'],
     ['.valid-input', 'blur'],
     ['.valid-input', 'input'],
-    ['.valid-form', 'change'],
-    ['.service-tab__toggle', 'focus'],
-    ['window' , 'scroll']
+    ['.valid-form', 'change']
 ];
 eventCheckers.forEach(function(item, i) {
     document.querySelectorAll(item[0]).forEach(function(el){el.addEventListener(item[1],function(event){
@@ -20,47 +17,16 @@ eventCheckers.forEach(function(item, i) {
                 if(!this.checked){this.checked=!0}else{this.checked=!1}
             }
         }
-        else if (i == 1 || i == 7) {
-            event.preventDefault();
-            document.querySelector('#' + this.getAttribute('for')).focus();
-        }
-        else if (i == 2) {
-            if(event.key=='ArrowUp' || event.key=='ArrowDown'){
-                event.preventDefault();
-                this.blur();
-            }
-            if(event.key=='Tab'){
-                if (this.getAttribute('id') == 'psp1' || this.getAttribute('id') == 'sas-g') {
-                    event.preventDefault();
-                    this.nextElementSibling.focus();
-                }
-                if (this.getAttribute('id') == 'sas-r') {
-                    event.preventDefault();
-                    if (!this.checked) {
-                        document.querySelector('#dsgen').focus();
-                    } else {
-                        console.log(this);
-                        document.querySelector('#dsret').focus();
-                    }
-                }
-            }
+        else if (i == 1 || i == 2) {
             if(event.key=='Enter'){
-                this.checked = 1;
+                document.querySelector('#' + this.getAttribute('for')).checked = 1;
             }
         }
-        else if (i == 3) {
-            if (event.relatedTarget && event.relatedTarget.dataset.change) {
-                document.querySelector('.service-tab__switch_cat_gen').focus();      
-            } 
-        }
-        else if (i == 4 || i == 5) {
+        else if (i == 3 || i == 4) {
             changeDefaultFormMessage(event); 
         }
-        else if (i == 6) {
+        else if (i == 5) {
             changeFormHandler(event); 
-        }
-        else if (i == 7) {
-            Visible();
         }
     })})
 })

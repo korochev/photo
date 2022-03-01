@@ -86,9 +86,6 @@ $br3rd: 1280px;
     $list: map-get($args, $block);
     @if $block == "tab" {
         @each $cat in $list {
-            @at-root &_cat_#{$cat}:focus ~ .service-tab__label-wrap > .service-tab__toggle_cat_#{$cat} {
-                background-color: $pinkcolor;
-            }
             @at-root &_cat_#{$cat}:checked ~ .promo > .promo__list_cat_#{$cat} {
                 display: flex;
             }
@@ -101,10 +98,6 @@ $br3rd: 1280px;
     }
     @else if $block == "galery" {
         @each $page in $list {
-            @at-root &_page_#{$page}:focus ~ .label-wrap > .projects__toggle_page_#{$page} {
-                //outline: 3px solid red;
-                background-color: #FFD4C1;
-            }
             @at-root &_page_#{$page}:checked ~ .galery > .galery__list_page_#{$page} {
                 display: grid;
             }

@@ -26,8 +26,11 @@
 
     <noscript>
         <style>
-            picture:not(.hero picture, .projects picture) {
+            /* picture:not(.hero picture, .projects picture) {
                 display: none;
+            } */
+            img {
+                outline: 1px solid red;
             }
         </style>
     </noscript>
@@ -158,10 +161,10 @@
         <section id="projects" class="projects" style="position: relative;">
             <div class="container" style="position: relative;">
                 <h2 class="projects__title">Наши проекты</h2>
-                <input type="radio" class="projects__switch projects__switch_page_1" name="ps" id="psp1" tabindex="-1" aria-hidden="true" checked>
-                <input type="radio" class="projects__switch projects__switch_page_2" name="ps" id="psp2" tabindex="-1" aria-hidden="true">
+                <input type="radio" class="projects__switch projects__switch_page_1" name="ps" id="psp1" tabindex="-1" aria-hidden="true" checked hidden>
+                <input type="radio" class="projects__switch projects__switch_page_2" name="ps" id="psp2" tabindex="-1" aria-hidden="true" hidden>
                 <div class="projects__gallery galery">
-                    <ul class="galery__list galery__list_page_1">
+                    <ul class="galery__list galery__list_page_1" aria-label="Галерея">
                         <li class="galery-posts galery__posts galery__posts_page_1">
                             <ul class="galery-posts__list">
                                 <li class="galery-posts__item evtprofile">
@@ -171,7 +174,7 @@
                                             <source srcset="img/jpg/projects/page-1/small-01.jpg 1x, img/jpg/projects/page-1/small-01@2x.jpg 2x" type="image/jpg">
                                             <img class="galery-img" src="img/jpg/projects/page-1/small-01@2x.jpg" alt="Пример работ фотографа">
                                         </picture>
-                                        <a href="#" class="galery-tag" data-change="have">#пейзаж</a>
+                                        <a href="#" class="galery-tag">#пейзаж</a>
                                     </figure>
                                     <a href="#" class="evtprofile__extract">Синтетически, смешаны с не уникальными данными до степени...</a>
                                     <a href="#" class="evtprofile__date date">
@@ -283,7 +286,7 @@
                                 <source srcset="img/jpg/projects/page-2/big-01.jpg 1x, img/jpg/projects/page-2/big-01@2x.jpg 2x" type="image/jpg">
                                 <img class="galery-img prevhit__img" src="img/jpg/projects/page-2/big-01@2x.jpg" alt="Пример работ фотографа">
                             </picture>
-                            <a href="#" class="galery-tag" data-change="have">#портрет</a>
+                            <a href="#" class="galery-tag">#портрет</a>
                             <div class="prevhit__info">
                                 <a href="#" class="prevhit__date date">
                                     <img src="img/svg/calendar.svg" role="img" class="date__img">
@@ -392,7 +395,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="label-wrap" role="presentation">
+                <div class="label-wrap" role="group" aria-label="Пагинация">
                         <label for="psp1" class="projects__toggle projects__toggle_page_1" role="button" tabindex="0" aria-label="Список 1" aria-current="true"><span>1</span></label><!-- 
                      --><label for="psp2" class="projects__toggle projects__toggle_page_2" role="button" tabindex="0" aria-label="Список 2"><span>2</span></label>
                 </div>
@@ -403,9 +406,9 @@
             <div class="service__wrap container">
                 <section class="service__tab service-tab">
                     <h2 class="service-title">Услуги студии</h2>
-                    <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" checked aria-hidden="true" tabindex="-1">
-                    <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" aria-hidden="true" tabindex="-1">
-                    <div class="service-tab__label-wrap" role="presentation">
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_gen" id="sas-g" name="sas" checked aria-hidden="true" tabindex="-1" hidden>
+                    <input type="radio" class="service-tab__switch service-tab__switch_cat_ret" id="sas-r" name="sas" aria-hidden="true" tabindex="-1" hidden>
+                    <div class="service-tab__label-wrap" role="group" aria-label="Пагинация">
                         <label for="sas-g" id="798" class="service-tab__toggle service-tab__toggle_cat_gen" role="button" tabindex="0"><span>Основной перечень</span></label>
                         <label for="sas-r" id="878" class="service-tab__toggle service-tab__toggle_cat_ret" role="button" tabindex="0"><span>Услуги по ретуши</span></label>
                     </div>
@@ -423,7 +426,7 @@
                                     </noscript>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><a href="#" id="dsgen">Высокий уровень вовлечения</a></p>
+                                    <p class="product__heading"><a href="#">Высокий уровень вовлечения</a></p>
                                     <p class="product__desc">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
                                     <a href="#" class="product__link">
                                         Подробнее
@@ -505,7 +508,7 @@
                                     </noscript>
                                 </figure>
                                 <div class="product__info">
-                                    <p class="product__heading"><a href="#" id="dsret">Принимая во внимание показатели</a></p>
+                                    <p class="product__heading"><a href="#">Принимая во внимание показатели</a></p>
                                     <a href="#" class="product__link">
                                         <img src="img/svg/arrow.svg" class="product__icon">
                                         Подробнее
