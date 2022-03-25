@@ -105,7 +105,7 @@
     background-color: rgba(32, 32, 32, 0.90);
 
     &:target {
-        visibility: hidden;
+        display:none;
     }
 
     @media (max-width:$br1st) {
